@@ -55,7 +55,7 @@ export default function WhyUsPage() {
                       Operational DNA
                     </span>
                   </div>
-                  <h2 className="text-4xl lg:text-5xl font-black text-navy tracking-tighter leading-[0.9] uppercase">
+                  <h2 className="text-3xl lg:text-5xl font-black text-navy tracking-tight leading-[1.05] uppercase text-left">
                     Engineering <br />{" "}
                     <span className="text-primary/20 outline-text">
                       Clinical
@@ -140,7 +140,7 @@ export default function WhyUsPage() {
               <div className="lg:col-span-5 space-y-12 text-white">
                 <div className="space-y-8">
                   <div className="h-px w-24 bg-accent" />
-                  <h2 className="text-3xl lg:text-4xl font-black tracking-tighter leading-none uppercase">
+                  <h2 className="text-3xl lg:text-5xl font-black tracking-tight leading-[1.05] uppercase">
                     Clinical <br />{" "}
                     <span className="text-accent">Velocity</span> <br />{" "}
                     In Motion.

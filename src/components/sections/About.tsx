@@ -14,7 +14,7 @@ export function About() {
           {/* Intellectual Narrative Column - Now on Left */}
           <div className="lg:col-span-12 xl:col-span-7 space-y-10 order-2 xl:order-1">
             <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
                 Excellence in{" "}
                 <span className="text-primary">Clinical Care</span> &
                 Professional{" "}

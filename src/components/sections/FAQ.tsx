@@ -36,7 +36,7 @@ export function FAQ() {
             <Container>
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                     <h2 className="text-primary font-bold tracking-wider uppercase text-xs">FAQ</h2>
-                    <h3 className="text-3xl font-extrabold tracking-tight">Got Questions? We Have Answers</h3>
+                    <h3 className="text-3xl lg:text-5xl font-black tracking-tight text-navy">Got Questions? We Have Answers</h3>
                     <p className="text-base text-muted">
                         Frequently asked questions about our medical coding programs and placement process.
                     </p>

@@ -104,19 +104,19 @@ export function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="group p-8 bg-slate-50 border border-slate-100 rounded-[2.5rem] relative overflow-hidden hover:bg-navy shadow-xl hover:shadow-[0_20px_50px_rgba(0,102,204,0.15)] transition-all duration-700 block outline-none"
+                            className="group p-6 bg-slate-50 border border-slate-100 rounded-3xl relative overflow-hidden hover:bg-navy shadow-lg hover:shadow-[0_15px_40px_rgba(0,102,204,0.12)] transition-all duration-700 block outline-none"
                         >
-                            <channel.icon className="absolute -bottom-4 -right-4 size-32 text-slate-100 group-hover:text-white/5 transition-all duration-700 pointer-events-none" />
-                            <div className="relative z-10 space-y-6">
-                                <div className="size-14 rounded-[1.5rem] bg-white flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-md group-hover:scale-110">
-                                    <channel.icon className="size-6" />
+                            <channel.icon className="absolute -bottom-4 -right-4 size-24 text-slate-100 group-hover:text-white/5 transition-all duration-700 pointer-events-none" />
+                            <div className="relative z-10 space-y-4 text-left">
+                                <div className="size-12 rounded-xl bg-white flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm group-hover:scale-110">
+                                    <channel.icon className="size-5" />
                                 </div>
-                                <div className="space-y-2">
-                                    <p className="text-[10px] font-black text-slate-400 group-hover:text-white/40 uppercase tracking-[0.4em] transition-colors">{channel.label}</p>
-                                    <p className="text-2xl font-black text-navy group-hover:text-white tracking-tight transition-colors">{channel.value}</p>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="size-2 rounded-full bg-secondary animate-pulse" />
-                                        <p className="text-[10px] font-black text-secondary group-hover:text-secondary/80 uppercase tracking-widest">{channel.detail}</p>
+                                <div className="space-y-1">
+                                    <p className="text-[9px] font-black text-slate-400 group-hover:text-white/40 uppercase tracking-[0.3em] transition-colors">{channel.label}</p>
+                                    <p className="text-xl font-black text-navy group-hover:text-white tracking-tight transition-colors">{channel.value}</p>
+                                    <div className="flex items-center space-x-2">
+                                        <div className="size-1.5 rounded-full bg-secondary animate-pulse" />
+                                        <p className="text-[9px] font-black text-secondary group-hover:text-secondary/80 uppercase tracking-widest">{channel.detail}</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@ export function Contact() {
                                 <div className="h-0.5 w-12 bg-primary" />
                                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em]">Inquiry Protocol</span>
                             </div>
-                            <h2 className="text-4xl lg:text-5xl font-black text-navy leading-none tracking-tight">
+                            <h2 className="text-3xl lg:text-5xl font-black text-navy leading-none tracking-tight text-left">
                                 Establish Contact with <br />
                                 <span className="text-primary/10 outline-text">Academic Leadership.</span>
                             </h2>

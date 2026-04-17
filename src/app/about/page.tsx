@@ -114,12 +114,15 @@ export default function AboutPage() {
                       The Visionary Lead
                     </span>
                   </div>
-                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.1] tracking-tight">
+                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight text-left">
                     Crafting the Future of <br />
                     <span className="text-gradient">Medical Integrity.</span>
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium max-w-xl">
-                    “ERO Health is dedicated to client success and the professional growth of our team. By continually raising the bar on our performance results, we ensure our clients receive the highest level of service.”
+                    “ERO Health is dedicated to client success and the
+                    professional growth of our team. By continually raising the
+                    bar on our performance results, we ensure our clients
+                    receive the highest level of service.”
                   </p>
                 </div>
 
@@ -129,7 +132,10 @@ export default function AboutPage() {
                   </div>
                   <div className="space-y-6 relative z-10">
                     <p className="text-xl text-navy font-bold leading-relaxed">
-                      “As Aslan famously noted, the purpose of a new experience is to "know me better" in one’s own world. At ERO Health, we believe the work we do here empowers our clients to achieve excellence in their world.”
+                      “As Aslan famously noted, the purpose of a new experience
+                      is to "know me better" in one’s own world. At ERO Health,
+                      we believe the work we do here empowers our clients to
+                      achieve excellence in their world.”
                     </p>
                     <div className="flex items-center space-x-4">
                       <div className="size-10 rounded-full bg-navy/5 border border-navy/10 flex items-center justify-center">
@@ -166,7 +172,7 @@ export default function AboutPage() {
 
           <Container>
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-              <h2 className="text-2xl lg:text-4xl font-black text-white tracking-tight">
+              <h2 className="text-3xl lg:text-5xl font-black text-white tracking-tight">
                 Our Foundation
               </h2>
               <p className="text-accent/60 text-[10px] font-black uppercase tracking-[0.4em]">
@@ -237,92 +243,135 @@ export default function AboutPage() {
         </section>
 
         {/* Institutional Impact Section */}
-        <section className="py-24 bg-white relative">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02] -z-10" />
+        {/* Institutional Impact - High Fidelity Redesign */}
+        <section className="py-32 bg-[#f8fafc] relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/[0.02] -skew-x-12 translate-x-1/4 -z-10" />
+
           <Container>
-            <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <div className="grid lg:grid-cols-12 gap-24 items-center">
               <motion.div {...fadeIn} className="lg:col-span-5 relative">
-                <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-50 transition-transform duration-500 hover:scale-[1.02]">
+                <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border-8 border-white group">
                   <img
-                    src="/images/data-analytics.png"
-                    alt="Data Analytics"
-                    className="w-full h-auto"
+                    src="https://cdn.pixabay.com/photo/2023/12/22/16/46/matrix-8464029_640.png"
+                    alt="Institutional Data Analytics"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-transparent pointer-events-none" />
                 </div>
-                <div className="absolute -bottom-8 -right-8 p-6 rounded-[2rem] bg-white shadow-2xl border border-slate-50 z-20 group hover:border-accent/20 transition-all">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <LineChart className="text-accent size-4" />
-                    <span className="text-[10px] font-black text-slate-400 tracking-widest uppercase">
-                      Audit Metrics
-                    </span>
+
+                {/* Floating Institutional Badge */}
+                <motion.div
+                  initial={{ x: 20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  className="absolute -bottom-6 -right-6 p-6 rounded-3xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-50 z-20 group hover:-translate-y-1 transition-transform hidden sm:block"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="size-6 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center">
+                        <LineChart className="size-3" />
+                      </div>
+                      <span className="text-[8px] font-black text-slate-400 tracking-[0.2em] uppercase">
+                        Audit Protocol
+                      </span>
+                    </div>
+                    <div className="space-y-0.5">
+                      <p className="text-3xl font-black text-navy tabular-nums tracking-tighter text-left">
+                        99.9<span className="text-primary">%</span>
+                      </p>
+                      <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest text-left">
+                        Accuracy Verified
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-4xl font-black text-navy tabular-nums group-hover:text-accent transition-colors">
-                    99.9%
-                  </p>
-                </div>
+                </motion.div>
               </motion.div>
 
-              <motion.div {...fadeIn} className="lg:col-span-7 space-y-8">
-                <div className="space-y-4">
-                  <h2 className="text-3xl lg:text-4xl font-black text-navy leading-tight">
-                    Quantifiable Excellence in{" "}
-                    <span className="text-primary">
-                      Every Interaction.
+              <motion.div {...fadeIn} className="lg:col-span-7 space-y-12">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-full bg-white border border-slate-200">
+                    <span className="size-2 rounded-full bg-primary animate-pulse" />
+                    <span className="text-[10px] font-black text-navy tracking-[0.3em] uppercase text-left">
+                      Performance Brief
                     </span>
+                  </div>
+
+                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight text-left">
+                    Quantifiable Excellence in <br />
+                    <span className="text-primary">Every Interaction.</span>
                   </h2>
-                  <p className="text-base text-slate-500 font-medium leading-relaxed max-w-xl">
-                    We don't just teach coding; we engineer institutional
-                    efficiency. Our metrics are verified by independent audits,
-                    ensuring that our partners remain at the forefront of the
-                    industry.
+
+                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-left">
+                    We engineer institutional efficiency. Our biometric and
+                    data-driven metrics are verified by independent audit loops.
                   </p>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4">
+
+                <div className="grid sm:grid-cols-2 gap-6 pb-4">
                   {[
                     {
                       label: "Global Partners",
                       value: "250+",
+                      desc: "Institutional stakeholders",
                       icon: Globe,
-                      color: "text-primary",
+                      color: "text-blue-500",
+                      bgColor: "bg-blue-50",
                     },
                     {
                       label: "Certified Coders",
                       value: "15,000+",
+                      desc: "Elite workforce alumni",
                       icon: Users,
                       color: "text-orange-500",
+                      bgColor: "bg-orange-50",
                     },
                     {
                       label: "Compliance Rate",
                       value: "100%",
+                      desc: "Zero-error mandate",
                       icon: ShieldCheck,
-                      color: "text-accent",
+                      color: "text-emerald-500",
+                      bgColor: "bg-emerald-50",
                     },
                     {
-                      label: "RCM Optimization",
+                      label: "Optimization",
                       value: "25%",
+                      desc: "Revenue velocity delta",
                       icon: Dna,
                       color: "text-indigo-500",
+                      bgColor: "bg-indigo-50",
                     },
                   ].map((stat, i) => (
-                    <div
+                    <motion.div
                       key={i}
-                      className="flex items-center space-x-5 p-5 rounded-2xl bg-slate-50/50 border border-slate-100 group hover:bg-white hover:shadow-lg transition-all duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="group p-6 rounded-3xl bg-white border border-slate-50 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 text-left"
                     >
-                      <div
-                        className={`size-10 rounded-lg bg-white flex items-center justify-center ${stat.color} shadow-sm border border-slate-100 group-hover:scale-110 transition-transform`}
-                      >
-                        <stat.icon className="size-5" />
+                      <div className="space-y-4">
+                        <div
+                          className={`size-10 rounded-xl ${stat.bgColor} ${stat.color} flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner`}
+                        >
+                          <stat.icon className="size-5" />
+                        </div>
+                        <div className="space-y-1.5">
+                          <div className="flex items-baseline space-x-2">
+                            <p className="text-2xl font-black text-navy tracking-tighter">
+                              {stat.value}
+                            </p>
+                          </div>
+                          <div className="space-y-0.5">
+                            <p className="text-sm font-black text-navy opacity-80 uppercase tracking-tight leading-none">
+                              {stat.label}
+                            </p>
+                            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                              {stat.desc}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-2xl font-black text-navy">
-                          {stat.value}
-                        </p>
-                        <p className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">
-                          {stat.label}
-                        </p>
-                      </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -341,7 +390,7 @@ export default function AboutPage() {
               <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/2 group-hover:translate-x-[40%] transition-transform duration-1000" />
               <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
                 <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-5xl font-black text-white leading-tight">
+                  <h2 className="text-3xl lg:text-5xl font-black text-white leading-[1.05] tracking-tight">
                     Ready to elevate your{" "}
                     <span className="text-accent underline decoration-accent/20">
                       integrity?

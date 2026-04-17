@@ -33,7 +33,7 @@ export default function SpecialtiesPage() {
                                 <div className="h-[1px] w-12 bg-secondary" />
                             </div>
 
-                            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-none">
+                            <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight leading-none">
                                 Specialized Training for a <span className="text-primary">Complex Healthcare</span> Ecosystem
                             </h2>
 

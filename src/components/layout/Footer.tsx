@@ -74,7 +74,7 @@ export function Footer() {
                 Policies
               </h3>
             </div>
-            <ul className="space-y-4 text-[11px] font-black uppercase tracking-widest">
+            <ul className="space-y-4 text-[12px] font-black tracking-widest">
               <li>
                 <Link
                   href="/privacy"
@@ -102,7 +102,7 @@ export function Footer() {
                 Clinical Hub
               </h3>
             </div>
-            <ul className="space-y-4 text-[11px] font-black uppercase tracking-widest">
+            <ul className="space-y-4 text-[12px] font-black tracking-widest">
               <li>
                 <Link
                   href="#"
