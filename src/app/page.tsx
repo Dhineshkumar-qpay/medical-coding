@@ -47,7 +47,6 @@ export default function Home() {
         <BrandedHero
           subtitle="Empowering the healthcare ecosystem with AAPC/AHIMA aligned precision training and strategic revenue cycle documentation."
           image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzlpZDJ1NDRodDV3cG1waGZ2dnczdXBlNHBqOWQ2Y3JqczBodnQzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOEbLRT4SwD35IELiQ/giphy.gif"
-       
           title={undefined}
         />
 
@@ -72,11 +71,7 @@ export default function Home() {
                   transition={{ delay: 0.1, duration: 0.6 }}
                   className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
                 >
-                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none">
-                    <span className="text-8xl font-black text-slate-100/30 group-hover:text-slate-100 transition-colors duration-500 font-mono">
-                      01
-                    </span>
-                  </div>
+                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none"></div>
 
                   <div className="relative z-10 space-y-8">
                     {/* Glowing Accent Icon container */}
@@ -95,13 +90,6 @@ export default function Home() {
                         success of our partners."
                       </p>
                     </div>
-
-                    <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">
-                        Strategic Objective
-                      </span>
-                      <div className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
-                    </div>
                   </div>
                 </motion.div>
 
@@ -113,11 +101,7 @@ export default function Home() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
                 >
-                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none">
-                    <span className="text-8xl font-black text-slate-100/30 group-hover:text-slate-100 transition-colors duration-500 font-mono">
-                      02
-                    </span>
-                  </div>
+                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none"></div>
 
                   <div className="relative z-10 space-y-8">
                     {/* Glowing Accent Icon container */}
@@ -135,13 +119,6 @@ export default function Home() {
                         excellence, allowing providers to focus entirely on
                         client requirements."
                       </p>
-                    </div>
-
-                    <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">
-                        Tactical Execution
-                      </span>
-                      <div className="size-1.5 rounded-full bg-blue-500 animate-pulse" />
                     </div>
                   </div>
                 </motion.div>
@@ -162,9 +139,7 @@ export default function Home() {
                   </span>
                 </div>
                 <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight text-left">
-                  Specialized <br />{" "}
-                  <span className="text-primary/10 outline-text">Training</span>{" "}
-                  <br /> Architecture.
+                  Specialized Architecture.
                 </h2>
               </div>
               <Button
@@ -197,13 +172,6 @@ export default function Home() {
                     {/* Layered Content Box */}
                     <div className="relative -mt-20 mx-6 bg-white p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] group-hover:-translate-y-3 transition-all duration-500 border border-slate-50">
                       <div className="space-y-4">
-                        <div className="flex items-center space-x-2">
-                          <div className="h-1 w-8 bg-secondary rounded-full" />
-                          <span className="text-[10px] font-black text-primary uppercase tracking-widest leading-none">
-                            Medical Specialty
-                          </span>
-                        </div>
-
                         <h3 className="text-2xl font-black text-navy leading-tight group-hover:text-primary transition-colors">
                           {specialty.title}
                         </h3>
@@ -301,10 +269,10 @@ export default function Home() {
                           <div className="text-center space-y-2">
                             <Award className="size-16 text-primary mx-auto mb-4" />
                             <div className="text-[8px] font-black text-white/40 uppercase tracking-[0.4em]">
-                              Official Institutional
+                              Official
                             </div>
                             <div className="text-[12px] font-black text-white uppercase tracking-[0.2em]">
-                              Certification Hub
+                              Certification <br /> ISO-9001-2015
                             </div>
                           </div>
                         </div>

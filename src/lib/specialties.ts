@@ -25,7 +25,7 @@ export const SPECIALTIES = [
     },
     {
         id: "pathology",
-        title: "Pathology & Lab Coding",
+        title: "Pathology Coding",
         description: "Mastering the coding for clinical laboratory services, surgical pathology, and cytopathology. We focus on qualitative vs quantitative testing and complex laboratory panels.",
         image: "https://www.columbiacancerhospital.com/wp-content/uploads/2025/01/Pathology.jpg",
     },

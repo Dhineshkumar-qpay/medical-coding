@@ -71,13 +71,6 @@ export function BrandedHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div
-              className={`flex items-center space-x-2 text-xs font-extra-bold tracking-[0.3em] uppercase text-primary/80 mb-6 ${!isSplit && "justify-center"}`}
-            >
-              <div className="h-px w-8 bg-primary" />
-              <span>MedCode Global</span>
-            </div>
-
             <p
               className={`text-lg lg:text-xl text-slate-100/90 leading-relaxed font-medium drop-shadow-md ${!isSplit && "max-w-xl mx-auto"}`}
             >

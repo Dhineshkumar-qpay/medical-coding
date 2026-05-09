@@ -44,7 +44,6 @@ export default function AboutPage() {
           }
           subtitle="We are transforming the healthcare revenue cycle through unyielding precision, ethical documentation, and forward-thinking analytics."
           image="/images/about.jpg"
-        
         />
 
         {/* Executive Vision Section - Swapped for Professional Flow */}
@@ -97,21 +96,14 @@ export default function AboutPage() {
                 className="lg:col-span-7 space-y-10"
               >
                 <div className="space-y-6">
-                  <div className="inline-flex items-center space-x-3">
-                    <div className="h-px w-8 bg-accent" />
-                    <span className="text-[10px] font-black text-accent tracking-[0.3em] uppercase">
-                      The Visionary Lead
-                    </span>
-                  </div>
-                  <h2 className="text-3xl lg:text-5xl font-black text-navy tracking-tight leading-tight">
-                    Crafting the Future of <br />
-                    Medical Integrity.
+                  <h2 className="text-3xl lg:text-4xl font-black text-navy tracking-tight leading-tight">
+                    The Visionary Lead
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium max-w-xl">
-                    “ERO HealthCare Innovation Private Limited is dedicated to client success and the
-                    professional growth of our team. By continually raising the
-                    bar on our performance results, we ensure our clients
-                    receive the highest level of service.”
+                    “ERO HealthCare Innovation Private Limited is dedicated to
+                    client success and the professional growth of our team. By
+                    continually raising the bar on our performance results, we
+                    ensure our clients receive the highest level of service.”
                   </p>
                   <p className="text-lg text-navy font-semibold leading-relaxed px-5">
                     “As Aslan famously noted, the purpose of a new experience is
@@ -216,7 +208,7 @@ export default function AboutPage() {
                 {[
                   {
                     title: "Innovation",
-                    desc: "We embrace new ideas and technologies to deliver creative solutions.",
+                    desc: "We embrace new ideas and technologies to deliver creative healthcare solutions.",
                     icon: Lightbulb,
                   },
                   {

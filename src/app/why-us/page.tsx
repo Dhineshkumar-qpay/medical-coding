@@ -37,7 +37,6 @@ export default function WhyUsPage() {
           }
           subtitle="Establishing the global benchmark for medical coding excellence through rigorous operational validation and clinical integrity."
           image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
-        
         />
 
         {/* Section 1: Strategic Architecture */}
@@ -189,46 +188,9 @@ export default function WhyUsPage() {
                       <h3 className="text-5xl font-black tracking-tighter text-white">
                         96.8%
                       </h3>
-                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent">
-                        Institutional Placement
-                      </p>
                     </div>
                     <div className="h-2 bg-white/5 rounded-full overflow-hidden">
                       <div className="h-full bg-accent w-[96.8%] shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
-                    </div>
-                  </div>
-
-                  <div className="col-span-2 md:col-span-1 space-y-8">
-                    {/* Financial Growth Card */}
-                    <div className="p-8 rounded-[2.5rem] bg-white text-navy space-y-4 shadow-2xl">
-                      <div className="flex items-center space-x-3 text-primary">
-                        <BarChart3 className="size-4" />
-                        <p className="text-[9px] font-black uppercase tracking-widest">
-                          Growth Delta
-                        </p>
-                      </div>
-                      <p className="text-3xl font-black tracking-tighter">
-                        +65%{" "}
-                        <span className="text-xs opacity-30 tracking-normal font-bold">
-                          Avg. Salary
-                        </span>
-                      </p>
-                    </div>
-
-                    {/* Global Network Card */}
-                    <div className="p-8 rounded-[2.5rem] border border-white/20 bg-transparent text-white space-y-4">
-                      <div className="flex items-center space-x-3 text-secondary">
-                        <Globe className="size-4" />
-                        <p className="text-[9px] font-black uppercase tracking-widest">
-                          Connect Hub
-                        </p>
-                      </div>
-                      <p className="text-3xl font-black tracking-tighter">
-                        150+{" "}
-                        <span className="text-xs opacity-30 tracking-normal font-bold">
-                          Hiring Nodes
-                        </span>
-                      </p>
                     </div>
                   </div>
                 </div>
