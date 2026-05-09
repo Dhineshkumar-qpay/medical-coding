@@ -22,6 +22,7 @@ import {
   X,
   Clock,
   BookOpen,
+  Lightbulb,
 } from "lucide-react";
 
 import { SPECIALTIES } from "@/lib/specialties";
@@ -44,235 +45,106 @@ export default function Home() {
       <main className="bg-white overflow-hidden">
         {/* Dynamic Institutional Hero */}
         <BrandedHero
-          title={
-            <>
-              Institutional Accuracy. <br />{" "}
-              <span className="text-secondary tracking-tighter">
-                Global Integrity.
-              </span>
-            </>
-          }
           subtitle="Empowering the healthcare ecosystem with AAPC/AHIMA aligned precision training and strategic revenue cycle documentation."
           image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzlpZDJ1NDRodDV3cG1waGZ2dnczdXBlNHBqOWQ2Y3JqczBodnQzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOEbLRT4SwD35IELiQ/giphy.gif"
-          gifOverlay="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enMmaz1WUkEmY3Q9Zw/l0HlJzE6o6sZJb8W4/giphy.gif"
-          action={
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-7 text-xs font-black uppercase tracking-[0.2em] shadow-2xl">
-                Enter Enrollment Portal
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 rounded-none px-10 py-7 text-xs font-black uppercase tracking-[0.2em]"
-              >
-                Institutional Brief
-              </Button>
-            </div>
-          }
+       
+          title={undefined}
         />
 
-        {/* Global Stats Overlay - Professional High-Density Design */}
-        <section className="relative -mt-20 z-40">
+        {/* Institutional Mission & Vision - Premium High-Fidelity Replacement */}
+        <section className="py-32 relative overflow-hidden bg-[#fafbfc]">
+          {/* Decorative grid pattern and glowing elements */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
+          <div className="absolute top-1/4 left-10 size-[30rem] bg-primary/[0.02] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-1/4 right-10 size-[30rem] bg-secondary/[0.015] rounded-full blur-3xl pointer-events-none" />
+
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {[
-                {
-                  label: "Audit Accuracy",
-                  value: "99.9%",
-                  icon: Target,
-                  color: "bg-emerald-500",
-                  textColor: "text-emerald-600",
-                  description: "Institutional Standard"
-                },
-                {
-                  label: "Placement Rate",
-                  value: "96.8%",
-                  icon: Zap,
-                  color: "bg-amber-500",
-                  textColor: "text-amber-600",
-                  description: "Global Network"
-                },
-                {
-                  label: "Hiring Partners",
-                  value: "150+",
-                  icon: Globe2,
-                  color: "bg-blue-500",
-                  textColor: "text-blue-600",
-                  description: "Strategic Alliances"
-                },
-                {
-                  label: "Certifications",
-                  value: "12,000+",
-                  icon: Award,
-                  color: "bg-indigo-500",
-                  textColor: "text-indigo-600",
-                  description: "Professional Alumni"
-                },
-              ].map((stat, i) => (
+            <div className="grid lg:grid-cols-12 gap-16 items-center">
+              {/* Dynamic Left Column: Section Title & Focus */}
+
+              {/* High-Fidelity Interactive Vision & Mission Cards */}
+              <div className="lg:col-span-8 grid md:grid-cols-2 gap-8">
+                {/* Vision Card */}
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative bg-white rounded-[2rem] p-7 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 border border-slate-100 overflow-hidden"
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                  className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
                 >
-                  {/* Decorative Glow */}
-                  <div className={`absolute -top-12 -right-12 size-24 rounded-full ${stat.color} opacity-[0.03] group-hover:opacity-[0.08] blur-3xl transition-opacity duration-500`} />
+                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none">
+                    <span className="text-8xl font-black text-slate-100/30 group-hover:text-slate-100 transition-colors duration-500 font-mono">
+                      01
+                    </span>
+                  </div>
 
-                  <div className="relative z-10 space-y-6">
-                    <div className="flex items-center justify-between">
-                      <div className={`size-11 rounded-xl ${stat.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                        <stat.icon className="size-5" />
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <span className={`text-[7px] font-black uppercase tracking-[0.3em] ${stat.textColor} opacity-40`}>
-                          Verified
-                        </span>
-                        <div className="h-0.5 w-4 bg-slate-100 mt-1" />
-                      </div>
+                  <div className="relative z-10 space-y-8">
+                    {/* Glowing Accent Icon container */}
+                    <div className="size-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500">
+                      <Target className="size-6" />
                     </div>
 
-                    <div className="space-y-1.5">
-                      <p className="text-3xl lg:text-4xl font-black text-navy leading-none tabular-nums tracking-tighter">
-                        {stat.value}
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-black text-navy leading-tight">
+                        Our Vision
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed font-semibold">
+                        "To redefine the healthcare revenue cycle through
+                        ethical coding excellence and advanced analytics,
+                        ensuring the financial sustainability and operational
+                        success of our partners."
                       </p>
-                      <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{stat.label}</h3>
                     </div>
 
-                    <div className="pt-5 border-t border-slate-50">
-                      <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{stat.description}</span>
+                    <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">
+                        Strategic Objective
+                      </span>
+                      <div className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
                     </div>
                   </div>
                 </motion.div>
-              ))}
-            </div>
-          </Container>
-        </section>
 
-        {/* The ERO Architectural Framework - Institutional Redesign */}
-        <section className="py-32 relative overflow-hidden bg-[#fdfdfd]">
-          {/* Decorative background elements */}
-          <div className="absolute top-0 right-0 w-1/3 h-[80%] bg-primary/[0.03] rounded-bl-[10rem] -z-10" />
-          <div className="absolute top-[20%] -left-20 size-[30rem] bg-secondary/[0.02] rounded-full blur-3xl -z-10" />
-
-          <Container>
-            <div className="grid lg:grid-cols-12 gap-20 items-center">
-              <motion.div {...fadeIn} className="lg:col-span-5 space-y-12">
-                <div className="space-y-6">
-                  <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-full bg-slate-100 border border-slate-200">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    <span className="text-[10px] font-black text-navy tracking-[0.3em] uppercase">
-                      Core Methodology
+                {/* Mission Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
+                >
+                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none">
+                    <span className="text-8xl font-black text-slate-100/30 group-hover:text-slate-100 transition-colors duration-500 font-mono">
+                      02
                     </span>
                   </div>
 
-                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight">
-                    Engineering Precision at Every Stage.
-                  </h2>
-
-                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
-                    Our institutional framework bridges the gap between clinical complexity and financial integrity with unparalleled accuracy.
-                  </p>
-                </div>
-
-                <div className="grid gap-4 text-left">
-                  {[
-                    "Clinical Diagnostic Engineering",
-                    "Advanced RCM Optimization",
-                    "Global Compliance Standards",
-                    "Elite Corporate Placement",
-                  ].map((feat, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex items-center space-x-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:border-primary/20 transition-all group"
-                    >
-                      <div className="size-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                        <CheckCircle2 className="size-5" />
-                      </div>
-                      <span className="text-base font-bold text-navy opacity-80 group-hover:opacity-100 transition-opacity">
-                        {feat}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <div className="lg:col-span-7 grid sm:grid-cols-2 gap-8">
-                {[
-                  {
-                    title: "Medical Integrity",
-                    desc: "Upholding the highest standards of clinical documentation and ethical coding protocols.",
-                    icon: ShieldCheck,
-                    num: "01",
-                    color: "text-emerald-500",
-                    bgColor: "bg-emerald-50",
-                  },
-                  {
-                    title: "Diagnostic Velocity",
-                    desc: "Optimizing throughput without compromising the structural integrity of clinical data.",
-                    icon: Zap,
-                    num: "02",
-                    color: "text-amber-500",
-                    bgColor: "bg-amber-50",
-                  },
-                  {
-                    title: "Placement Intelligence",
-                    desc: "Leveraging our 150+ partner network for immediate executive-level integration.",
-                    icon: Users,
-                    num: "03",
-                    color: "text-blue-500",
-                    bgColor: "bg-blue-50",
-                  },
-                  {
-                    title: "Operational Rigor",
-                    desc: "Continuous audit loops ensuring 100% compliance with AAPC/AHIMA protocols.",
-                    icon: Award,
-                    num: "04",
-                    color: "text-indigo-500",
-                    bgColor: "bg-indigo-50",
-                  },
-                ].map((card, i) => (
-                  <motion.div
-                    key={i}
-                    {...fadeIn}
-                    transition={{ delay: i * 0.1 + 0.2 }}
-                    className="group relative p-8 rounded-[2rem] bg-white border border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
-                  >
-                    <div className="absolute top-0 right-0 p-6">
-                      <span className="text-3xl font-black text-slate-50 group-hover:text-slate-100 transition-colors">
-                        {card.num}
-                      </span>
+                  <div className="relative z-10 space-y-8">
+                    {/* Glowing Accent Icon container */}
+                    <div className="size-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 shadow-sm group-hover:bg-blue-500 group-hover:text-white group-hover:border-transparent transition-all duration-500">
+                      <Lightbulb className="size-6" />
                     </div>
 
-                    <div className="relative z-10 space-y-6">
-                      <div
-                        className={`size-13 rounded-2xl ${card.bgColor} ${card.color} flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner`}
-                      >
-                        <card.icon className="size-6" />
-                      </div>
-
-                      <div className="space-y-3">
-                        <h3 className="text-xl font-black text-navy leading-tight">
-                          {card.title}
-                        </h3>
-                        <p className="text-sm text-slate-500 leading-relaxed font-medium">
-                          {card.desc}
-                        </p>
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-50 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-[10px] font-black uppercase tracking-widest">Learn More</span>
-                        <ChevronRight className="ml-2 size-3.5" />
-                      </div>
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-black text-navy leading-tight">
+                        Our Mission
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed font-semibold">
+                        "To ensure healthcare data integrity through rigorous
+                        accuracy, total confidentiality, and revenue cycle
+                        excellence, allowing providers to focus entirely on
+                        client requirements."
+                      </p>
                     </div>
-                  </motion.div>
-                ))}
+
+                    <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">
+                        Tactical Execution
+                      </span>
+                      <div className="size-1.5 rounded-full bg-blue-500 animate-pulse" />
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </Container>
@@ -403,28 +275,19 @@ export default function Home() {
                   <div className="space-y-5">
                     <div className="inline-flex items-center space-x-3 text-primary">
                       <div className="h-px w-10 bg-current" />
-                      <span className="text-[9px] font-black uppercase tracking-[0.4em]">Strategic Integration</span>
+                      <span className="text-[9px] font-black uppercase tracking-[0.4em]">
+                        Strategic Integration
+                      </span>
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
                       Secure Your <br />
                       <span className="text-primary">Clinical Future.</span>
                     </h2>
                     <p className="text-lg text-white/50 font-medium leading-relaxed max-w-md">
-                      Join our elite network of healthcare professionals. Connect with an institutional advisor for a comprehensive career placement brief.
+                      Join our elite network of healthcare professionals.
+                      Connect with an institutional advisor for a comprehensive
+                      career placement brief.
                     </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-5">
-                    <Button className="group bg-primary hover:bg-white text-white hover:text-navy rounded-xl px-10 py-6 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500">
-                      <span>Get Started Now</span>
-                      <ChevronRight className="ml-2 size-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border-white/10 text-white hover:bg-white/5 rounded-xl px-10 py-6 text-[11px] font-black uppercase tracking-[0.2em] backdrop-blur-md transition-all"
-                    >
-                      Institutional Standards
-                    </Button>
                   </div>
                 </div>
 
@@ -437,8 +300,12 @@ export default function Home() {
                         <div className="size-60 rounded-full border border-primary/20 flex items-center justify-center p-8 bg-white/[0.02]">
                           <div className="text-center space-y-2">
                             <Award className="size-16 text-primary mx-auto mb-4" />
-                            <div className="text-[8px] font-black text-white/40 uppercase tracking-[0.4em]">Official Institutional</div>
-                            <div className="text-[12px] font-black text-white uppercase tracking-[0.2em]">Certification Hub</div>
+                            <div className="text-[8px] font-black text-white/40 uppercase tracking-[0.4em]">
+                              Official Institutional
+                            </div>
+                            <div className="text-[12px] font-black text-white uppercase tracking-[0.2em]">
+                              Certification Hub
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -450,9 +317,9 @@ export default function Home() {
                           className="absolute size-2 bg-primary rounded-full animate-ping"
                           style={{
                             top: `${20 + i * 20}%`,
-                            left: i % 2 === 0 ? '-10px' : 'auto',
-                            right: i % 2 !== 0 ? '-10px' : 'auto',
-                            animationDelay: `${i * 0.5}s`
+                            left: i % 2 === 0 ? "-10px" : "auto",
+                            right: i % 2 !== 0 ? "-10px" : "auto",
+                            animationDelay: `${i * 0.5}s`,
                           }}
                         />
                       ))}
@@ -523,70 +390,7 @@ export default function Home() {
                     <p className="text-base text-slate-600 leading-relaxed font-semibold">
                       "{selectedSpecialty.description}"
                     </p>
-
-                    <div className="grid grid-cols-3 gap-4 pt-4 text-center">
-                      <div className="p-4 bg-slate-50 rounded-2xl space-y-1">
-                        <Clock className="size-4 text-secondary mx-auto" />
-                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
-                          Duration
-                        </div>
-                        <div className="text-sm font-black text-primary">
-                          6 Months
-                        </div>
-                      </div>
-                      <div className="p-4 bg-slate-50 rounded-2xl space-y-1">
-                        <BookOpen className="size-4 text-secondary mx-auto" />
-                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
-                          Modules
-                        </div>
-                        <div className="text-sm font-black text-primary">
-                          12 Units
-                        </div>
-                      </div>
-                      <div className="p-4 bg-slate-50 rounded-2xl space-y-1">
-                        <ShieldCheck className="size-4 text-secondary mx-auto" />
-                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
-                          Type
-                        </div>
-                        <div className="text-sm font-black text-primary">
-                          Online
-                        </div>
-                      </div>
-                    </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-black text-slate-900">
-                      Learning Path
-                    </h4>
-                    <div className="grid gap-3">
-                      {[
-                        "Advanced ICD-10-CM guidelines",
-                        "Complex coding scenarios",
-                        "RCM lifecycle management",
-                        "Compliance & audit prep",
-                      ].map((feature, i) => (
-                        <div
-                          key={i}
-                          className="flex items-start space-x-3 p-4 rounded-xl border border-slate-50 hover:border-secondary/20 transition-colors"
-                        >
-                          <div className="size-4 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <ShieldCheck className="size-3" />
-                          </div>
-                          <span className="text-xs text-slate-600 font-medium">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-primary py-7 text-xs font-black uppercase tracking-widest"
-                    onClick={() => (window.location.href = "/contact")}
-                  >
-                    Enroll in Program
-                  </Button>
                 </div>
               </div>
             </motion.div>

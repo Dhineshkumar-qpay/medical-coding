@@ -36,7 +36,7 @@ export function About() {
                 </div>
                 <div className="space-y-6 relative z-10">
                   <p className="text-xl text-navy font-bold leading-relaxed">
-                    “ERO Health is dedicated to client success and the
+                    “ERO HealthCare Innovation Private Limited is dedicated to client success and the
                     professional growth of our team. By continually raising the
                     bar on our performance results, we ensure our clients
                     receive the highest level of service.”

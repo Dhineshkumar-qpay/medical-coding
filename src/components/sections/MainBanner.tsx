@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 export function MainBanner() {
     return (
-        <section className="relative w-full h-[500px] lg:h-[600px] overflow-hidden bg-slate-100 flex items-center pt-20">
+        <section className="relative w-full h-[450px] lg:h-[550px] overflow-hidden bg-slate-100 flex items-center pt-20">
             {/* Professional Animated Data GIF Background */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -39,7 +39,7 @@ export function MainBanner() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h1 className="text-4xl lg:text-7xl font-bold tracking-tight mb-4">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">
                             Excellence in <br />
                             <span className="text-white/90">Medical Coding</span>
                         </h1>

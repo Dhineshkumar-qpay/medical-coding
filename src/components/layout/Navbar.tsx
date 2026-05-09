@@ -2,40 +2,52 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Send, User, Mail, Phone, BookOpen, MessageSquare, CheckCircle } from "lucide-react";
+import {
+    Menu,
+    X,
+    ChevronDown,
+    Send,
+    User,
+    Mail,
+    Phone,
+    BookOpen,
+    MessageSquare,
+    CheckCircle,
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
-import { TopBanner } from "./TopBanner";
 import LogoImg from "@/assets/app-logo.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Why Us", href: "/why-us" },
+    { name: "FAQ's", href: "/faq" },
+    { name: "Career", href: "/career" },
+    { name: "Contact", href: "/contact" },
     {
-        name: "Specialties",
-        href: "/specialties",
+        name: "Specialities",
+        href: "/specialities",
         dropdown: [
             "Anesthesia",
             "Emergency Medicine",
             "Hospital Medicine",
             "Radiology",
-            "Pathology"
-        ]
+            "Pathology",
+        ],
     },
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Why Us", href: "/why-us" },
-    { name: "FAQ's", href: "/faq" },
-    { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isEnrollOpen, setIsEnrollOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [enrollStatus, setEnrollStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [enrollStatus, setEnrollStatus] = useState<
+        "idle" | "loading" | "success" | "error"
+    >("idle");
 
     const handleEnrollSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -77,13 +89,12 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
 
     return (
         <div className="fixed top-0 z-50 w-full">
-            {showTopBanner && !scrolled && <TopBanner />}
             <nav
                 className={cn(
                     "w-full transition-all duration-500 border-b",
                     scrolled
-                        ? "bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3 border-slate-200/50"
-                        : "bg-white/50 backdrop-blur-sm py-5 border-transparent"
+                        ? "bg-white backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3 border-slate-200/50"
+                        : "bg-white backdrop-blur-sm py-5 border-transparent",
                 )}
             >
                 <Container className="flex items-center justify-between">
@@ -100,17 +111,16 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                         </div>
                         <div className="flex flex-col border-l-2 border-slate-100 pl-4 py-1">
                             <span className="text-xl font-black tracking-tighter text-navy leading-none">
-                                ERO <span className="text-primary">HEALTH</span>
+                                ERO <span className="text-primary">HEALTHCARE</span>
                             </span>
                             <div className="flex items-center space-x-2 mt-1.5">
                                 <div className="h-0.5 w-3 bg-accent rounded-full" />
                                 <span className="text-[7.5px] font-bold tracking-[0.3em] text-slate-500 uppercase leading-none">
-                                    Healthcare Innovation
+                                    Innovation Private Limited
                                 </span>
                             </div>
                         </div>
                     </Link>
-
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-1">
@@ -131,7 +141,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                             {link.dropdown.map((item) => (
                                                 <Link
                                                     key={item}
-                                                    href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
+                                                    href={`/specialities/${item.toLowerCase().replace(" ", "-")}`}
                                                     className="block px-6 py-3 text-sm font-bold text-navy hover:bg-slate-50 hover:text-secondary transition-colors"
                                                 >
                                                     {item}
@@ -183,7 +193,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                             {link.dropdown.map((item) => (
                                                 <Link
                                                     key={item}
-                                                    href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
+                                                    href={`/specialities/${item.toLowerCase().replace(" ", "-")}`}
                                                     className="block text-xl font-bold text-slate-800 hover:text-secondary py-1"
                                                     onClick={() => setIsOpen(false)}
                                                 >
@@ -239,9 +249,13 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                     <div className="space-y-1">
                                         <div className="flex items-center space-x-2">
                                             <div className="h-1 w-6 bg-secondary rounded-full" />
-                                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Registration Hub</span>
+                                            <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">
+                                                Registration Hub
+                                            </span>
                                         </div>
-                                        <h2 className="text-3xl font-black text-navy tracking-tight">Enrollment <span className="text-secondary">Portal</span></h2>
+                                        <h2 className="text-3xl font-black text-navy tracking-tight">
+                                            Enrollment <span className="text-secondary">Portal</span>
+                                        </h2>
                                     </div>
                                     <button
                                         onClick={() => setIsEnrollOpen(false)}
@@ -254,7 +268,9 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                 <div className="space-y-8">
                                     <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                                         <p className="text-sm font-medium text-slate-600 leading-relaxed">
-                                            "Secure your position in the next cohort of precision medical coding professionals. Complete the institutional brief below."
+                                            "Secure your position in the next cohort of precision
+                                            medical coding professionals. Complete the institutional
+                                            brief below."
                                         </p>
                                     </div>
 
@@ -264,9 +280,12 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                                 <CheckCircle className="size-10" />
                                             </div>
                                             <div className="space-y-2">
-                                                <h3 className="text-2xl font-black text-navy">Application Received</h3>
+                                                <h3 className="text-2xl font-black text-navy">
+                                                    Application Received
+                                                </h3>
                                                 <p className="text-sm text-slate-500 font-medium leading-relaxed">
-                                                    Your institutional brief has been registered. Our specialists will contact you soon.
+                                                    Your institutional brief has been registered. Our
+                                                    specialists will contact you soon.
                                                 </p>
                                             </div>
                                             <Button
@@ -332,9 +351,13 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                                         className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all appearance-none cursor-pointer"
                                                     >
                                                         <option value="">Select Target Specialty</option>
-                                                        {navLinks[0].dropdown?.map(item => (
-                                                            <option key={item} value={item}>{item}</option>
-                                                        ))}
+                                                        {navLinks
+                                                            .find((link) => link.name === "Specialities")
+                                                            ?.dropdown?.map((item) => (
+                                                                <option key={item} value={item}>
+                                                                    {item}
+                                                                </option>
+                                                            ))}
                                                     </select>
                                                     <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400">
                                                         <ChevronDown className="size-4" />
@@ -359,12 +382,17 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                                 disabled={enrollStatus === "loading"}
                                                 className="w-full bg-primary text-white py-8 rounded-2xl text-xs font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/20 hover:bg-primary/95 hover:scale-[1.02] active:scale-[0.98] transition-all group"
                                             >
-                                                <span>{enrollStatus === "loading" ? "Processing..." : "Transmit Application"}</span>
+                                                <span>
+                                                    {enrollStatus === "loading"
+                                                        ? "Processing..."
+                                                        : "Transmit Application"}
+                                                </span>
                                                 <Send className="ml-3 size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                             </Button>
 
                                             <p className="text-[10px] text-center font-bold text-slate-400 uppercase tracking-widest leading-relaxed">
-                                                By submitting, you agree to the institutional protocols for professional certification training.
+                                                By submitting, you agree to the institutional protocols
+                                                for professional certification training.
                                             </p>
                                         </form>
                                     )}
@@ -374,6 +402,6 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                     </>
                 )}
             </AnimatePresence>
-        </div >
+        </div>
     );
 }

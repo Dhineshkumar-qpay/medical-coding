@@ -18,7 +18,7 @@ export default function FAQPage() {
                     title="Frequently Asked Questions"
                     subtitle="Everything you need to know about Medical Coding and our training programs."
                     image="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=2000"
-                    gifOverlay="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enMmaz1WUkEmY3Q9Zw/l0HlJzE6o6sZJb8W4/giphy.gif"
+                  
                 />
                 <FAQ />
             </main>

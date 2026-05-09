@@ -21,7 +21,7 @@ export default function SpecialtiesPage() {
                     title="Our Specialties"
                     subtitle="Expert-led training in high-demand medical coding disciplines."
                     image="https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=2000"
-                    gifOverlay="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enMmaz1WUkEmY3Q9Zw/l0HlJzE6o6sZJb8W4/giphy.gif"
+                    
                 />
 
                 <section className="py-20 bg-white">

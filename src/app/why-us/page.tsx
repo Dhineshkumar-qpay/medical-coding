@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Why Us | ERO Healthcare Institutional Excellence",
+  title: "Why Us | ERO Healthcare ",
   description:
     "Our core philosophy, performance metrics, and the institutional standards that define ERO Healthcare.",
 };
@@ -37,7 +37,7 @@ export default function WhyUsPage() {
           }
           subtitle="Establishing the global benchmark for medical coding excellence through rigorous operational validation and clinical integrity."
           image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
-          gifOverlay="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enMmaz1WUkEmY3Q9Zw/l41lI4bYucsR8SUTe/giphy.gif"
+        
         />
 
         {/* Section 1: Strategic Architecture */}
@@ -142,8 +142,8 @@ export default function WhyUsPage() {
                   <div className="h-px w-24 bg-accent" />
                   <h2 className="text-3xl lg:text-5xl font-black tracking-tight leading-[1.05] uppercase">
                     Clinical <br />{" "}
-                    <span className="text-accent">Velocity</span> <br />{" "}
-                    In Motion.
+                    <span className="text-accent">Velocity</span> <br /> In
+                    Motion.
                   </h2>
                   <p className="text-base text-white/50 font-medium leading-relaxed max-w-sm">
                     We measure success through operational throughput and
@@ -252,7 +252,6 @@ export default function WhyUsPage() {
               <div className="space-y-8">
                 <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.6em] leading-relaxed">
                   Clinical Integrity • Operational Professionalism •
-                  Institutional Excellence
                 </h3>
                 <div className="max-w-2xl mx-auto h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
                 <p className="text-[8px] font-black text-slate-300 uppercase tracking-[0.4em] max-w-xl mx-auto">

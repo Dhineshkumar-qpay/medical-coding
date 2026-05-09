@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { BrandedHero } from "@/components/layout/BrandedHero";
+import { Button } from "@/components/ui/Button";
 import {
   Target,
   Lightbulb,
@@ -42,8 +43,8 @@ export default function AboutPage() {
             </>
           }
           subtitle="We are transforming the healthcare revenue cycle through unyielding precision, ethical documentation, and forward-thinking analytics."
-          image="/images/about-hero.png"
-          gifOverlay="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enN4enMmaz1WUkEmY3Q9Zw/l0HlJzE6o6sZJb8W4/giphy.gif"
+          image="/images/about.jpg"
+        
         />
 
         {/* Executive Vision Section - Swapped for Professional Flow */}
@@ -79,18 +80,6 @@ export default function AboutPage() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Floating Professional Badge */}
-                  <div className="absolute -bottom-6 -right-6 size-32 bg-white rounded-full p-2 shadow-2xl z-20 flex items-center justify-center border border-slate-100 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                    <div className="size-full rounded-full border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center">
-                      <Award className="text-primary size-6 mb-1" />
-                      <span className="text-[8px] font-black text-navy leading-none uppercase tracking-tighter">
-                        Certified
-                        <br />
-                        Excellence
-                      </span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Decorative elements */}
@@ -114,53 +103,160 @@ export default function AboutPage() {
                       The Visionary Lead
                     </span>
                   </div>
-                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight text-left">
+                  <h2 className="text-3xl lg:text-5xl font-black text-navy tracking-tight leading-tight">
                     Crafting the Future of <br />
-                    <span className="text-gradient">Medical Integrity.</span>
+                    Medical Integrity.
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium max-w-xl">
-                    “ERO Health is dedicated to client success and the
+                    “ERO HealthCare Innovation Private Limited is dedicated to client success and the
                     professional growth of our team. By continually raising the
                     bar on our performance results, we ensure our clients
                     receive the highest level of service.”
                   </p>
-                </div>
-
-                <div className="relative p-10 bg-white/50 backdrop-blur-sm rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 group overflow-hidden">
-                  <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:scale-110 transition-transform duration-700">
-                    <ShieldCheck className="size-48 text-navy" />
-                  </div>
-                  <div className="space-y-6 relative z-10">
-                    <p className="text-xl text-navy font-bold leading-relaxed">
-                      “As Aslan famously noted, the purpose of a new experience
-                      is to "know me better" in one’s own world. At ERO Health,
-                      we believe the work we do here empowers our clients to
-                      achieve excellence in their world.”
-                    </p>
-                    <div className="flex items-center space-x-4">
-                      <div className="size-10 rounded-full bg-navy/5 border border-navy/10 flex items-center justify-center">
-                        <Target className="size-5 text-primary" />
-                      </div>
-                      <div className="h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8 pt-4">
-                  <div className="space-y-1">
-                    <p className="text-3xl font-black text-navy">10+</p>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                      Years of Clinical Leadership
-                    </p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-3xl font-black text-primary">A+ Rated</p>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                      Institutional Trust Score
-                    </p>
-                  </div>
+                  <p className="text-lg text-navy font-semibold leading-relaxed px-5">
+                    “As Aslan famously noted, the purpose of a new experience is
+                    to "know me better" in one’s own world. At ERO Health, we
+                    believe the work we do here empowers our clients to achieve
+                    excellence in their world.”
+                  </p>
                 </div>
               </motion.div>
+            </div>
+          </Container>
+        </section>
+
+        {/* OUR STORY / Who We Are Section - Replicating Image Style */}
+        <section className="py-24 bg-white relative">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
+          <Container>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Side: Story Text & Action */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="space-y-6 text-left"
+              >
+                <div className="space-y-2">
+                  <span className="text-primary font-black uppercase text-xs tracking-widest">
+                    OUR STORY
+                  </span>
+                  <h2 className="text-3xl lg:text-5xl font-black text-navy tracking-tight leading-tight">
+                    Who We Are
+                  </h2>
+                </div>
+
+                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
+                  Founded in 2015, our company has been at the forefront of
+                  delivering advanced clinical documentation and medical coding
+                  solutions that make a real impact. We believe in precision,
+                  integrity, and building long-term relationships with
+                  healthcare networks worldwide.
+                </p>
+
+                <div className="pt-4">
+                  <a href="/why-us" className="inline-block">
+                    <Button className="bg-primary text-white hover:bg-navy px-8 rounded-xl font-extrabold text-xs uppercase tracking-wider h-[50px]">
+                      Learn More About Us
+                    </Button>
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Right Side: Image with Overlay Years of Experience Badge */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.06)] border-4 border-slate-50 group">
+                  <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+                    alt="Clinical HQ Building"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-navy/5 pointer-events-none" />
+                </div>
+
+                {/* Overlapping Rounded Experience Card Badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="absolute bottom-6 right-6 bg-primary text-white p-4 rounded-2xl shadow-xl flex items-center space-x-4 max-w-[240px] border border-white/15"
+                >
+                  <Users className="size-5 flex-shrink-0 text-white" />
+                </motion.div>
+              </motion.div>
+            </div>
+          </Container>
+        </section>
+
+        {/* OUR VALUES / What We Stand For Section - Replicating Image Style */}
+        <section className="py-24 bg-slate-50/50 border-t border-slate-100 relative">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808003_1px,transparent_1px),linear-gradient(to_bottom,#80808003_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
+          <Container>
+            <div className="space-y-16">
+              {/* Value Header */}
+              <div className="text-left space-y-2">
+                <span className="text-primary font-black uppercase text-xs tracking-widest">
+                  OUR VALUES
+                </span>
+                <h2 className="text-3xl lg:text-4xl font-black text-navy tracking-tight">
+                  What We Stand For
+                </h2>
+              </div>
+
+              {/* 4 Column Values Grid with custom colored icons matching style */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                {[
+                  {
+                    title: "Innovation",
+                    desc: "We embrace new ideas and technologies to deliver creative solutions.",
+                    icon: Lightbulb,
+                  },
+                  {
+                    title: "Quality",
+                    desc: "We are committed to excellence in everything we do.",
+                    icon: Award,
+                  },
+                  {
+                    title: "Integrity",
+                    desc: "We believe in honesty, transparency, and building trust.",
+                    icon: ShieldCheck,
+                  },
+                  {
+                    title: "Collaboration",
+                    desc: "We work closely with our clients to achieve shared success.",
+                    icon: Users,
+                  },
+                ].map((value, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.6 }}
+                    className="space-y-5 text-left group"
+                  >
+                    <div className="size-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                      <value.icon className="size-6" />
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-lg font-black text-navy tracking-tight leading-none">
+                        {value.title}
+                      </h4>
+                      <p className="text-sm text-slate-500 font-semibold leading-relaxed">
+                        {value.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </Container>
         </section>
@@ -189,7 +285,6 @@ export default function AboutPage() {
                   color: "text-accent",
                   border: "group-hover:border-accent/30",
                   glow: "group-hover:shadow-accent/5",
-                  num: "01",
                 },
                 {
                   icon: Lightbulb,
@@ -198,7 +293,6 @@ export default function AboutPage() {
                   color: "text-secondary",
                   border: "group-hover:border-secondary/30",
                   glow: "group-hover:shadow-secondary/5",
-                  num: "02",
                 },
               ].map((pillar, i) => (
                 <motion.div
@@ -209,9 +303,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className={`group relative p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-xl border border-white/5 ${pillar.border} transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_45px_100px_-20px_rgba(0,0,0,0.4)] ${pillar.glow} overflow-hidden`}
                 >
-                  <div className="absolute -bottom-6 -right-4 text-9xl font-black text-white/[0.02] select-none pointer-events-none group-hover:text-white/[0.05] transition-colors duration-700">
-                    {pillar.num}
-                  </div>
+                  <div className="absolute -bottom-6 -right-4 text-9xl font-black text-white/[0.02] select-none pointer-events-none group-hover:text-white/[0.05] transition-colors duration-700"></div>
 
                   <div className="relative z-10 space-y-8">
                     <div
@@ -227,13 +319,6 @@ export default function AboutPage() {
                       <p className="text-white/40 text-base leading-relaxed font-medium group-hover:text-white/60 transition-colors">
                         {pillar.desc}
                       </p>
-                    </div>
-
-                    <div className="pt-6 flex items-center justify-between border-t border-white/5">
-                      <span className="text-[10px] font-black text-white/20 uppercase tracking-widest group-hover:text-accent transition-colors">
-                        Institutional Core
-                      </span>
-                      <div className="size-2 rounded-full bg-white/10 group-hover:bg-accent animate-pulse" />
                     </div>
                   </div>
                 </motion.div>
@@ -259,32 +344,6 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-transparent pointer-events-none" />
                 </div>
-
-                {/* Floating Institutional Badge */}
-                <motion.div
-                  initial={{ x: 20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  className="absolute -bottom-6 -right-6 p-6 rounded-3xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-50 z-20 group hover:-translate-y-1 transition-transform hidden sm:block"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="size-6 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center">
-                        <LineChart className="size-3" />
-                      </div>
-                      <span className="text-[8px] font-black text-slate-400 tracking-[0.2em] uppercase">
-                        Audit Protocol
-                      </span>
-                    </div>
-                    <div className="space-y-0.5">
-                      <p className="text-3xl font-black text-navy tabular-nums tracking-tighter text-left">
-                        99.9<span className="text-primary">%</span>
-                      </p>
-                      <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest text-left">
-                        Accuracy Verified
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </motion.div>
 
               <motion.div {...fadeIn} className="lg:col-span-7 space-y-12">
@@ -296,133 +355,22 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl lg:text-5xl font-black text-navy leading-[1.05] tracking-tight text-left">
-                    Quantifiable Excellence in <br />
-                    <span className="text-primary">Every Interaction.</span>
-                  </h2>
+                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-left">
+                    To redefine the healthcare revenue cycle through ethical
+                    coding excellence and advanced analytic, ensuring the
+                    financial sustainability and operational success of our
+                    partners.
+                  </p>
 
                   <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-left">
-                    We engineer institutional efficiency. Our biometric and
-                    data-driven metrics are verified by independent audit loops.
+                    To ensure healthcare data integrity through rigorous
+                    accuracy, total confidentiality, and revenue cycle
+                    excellence, allowing providers to focus entirely on client
+                    requirements.
                   </p>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6 pb-4">
-                  {[
-                    {
-                      label: "Global Partners",
-                      value: "250+",
-                      desc: "Institutional stakeholders",
-                      icon: Globe,
-                      color: "text-blue-500",
-                      bgColor: "bg-blue-50",
-                    },
-                    {
-                      label: "Certified Coders",
-                      value: "15,000+",
-                      desc: "Elite workforce alumni",
-                      icon: Users,
-                      color: "text-orange-500",
-                      bgColor: "bg-orange-50",
-                    },
-                    {
-                      label: "Compliance Rate",
-                      value: "100%",
-                      desc: "Zero-error mandate",
-                      icon: ShieldCheck,
-                      color: "text-emerald-500",
-                      bgColor: "bg-emerald-50",
-                    },
-                    {
-                      label: "Optimization",
-                      value: "25%",
-                      desc: "Revenue velocity delta",
-                      icon: Dna,
-                      color: "text-indigo-500",
-                      bgColor: "bg-indigo-50",
-                    },
-                  ].map((stat, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="group p-6 rounded-3xl bg-white border border-slate-50 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 text-left"
-                    >
-                      <div className="space-y-4">
-                        <div
-                          className={`size-10 rounded-xl ${stat.bgColor} ${stat.color} flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner`}
-                        >
-                          <stat.icon className="size-5" />
-                        </div>
-                        <div className="space-y-1.5">
-                          <div className="flex items-baseline space-x-2">
-                            <p className="text-2xl font-black text-navy tracking-tighter">
-                              {stat.value}
-                            </p>
-                          </div>
-                          <div className="space-y-0.5">
-                            <p className="text-sm font-black text-navy opacity-80 uppercase tracking-tight leading-none">
-                              {stat.label}
-                            </p>
-                            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                              {stat.desc}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
                 </div>
               </motion.div>
             </div>
-          </Container>
-        </section>
-
-        {/* Call to Action - Professional Banner */}
-        <section className="pb-24">
-          <Container>
-            <motion.div
-              {...fadeIn}
-              className="relative rounded-[3rem] bg-navy p-12 lg:p-20 overflow-hidden group shadow-2xl shadow-navy/20"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50" />
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/2 group-hover:translate-x-[40%] transition-transform duration-1000" />
-              <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
-                <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-5xl font-black text-white leading-[1.05] tracking-tight">
-                    Ready to elevate your{" "}
-                    <span className="text-accent underline decoration-accent/20">
-                      integrity?
-                    </span>
-                  </h2>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    <a
-                      href="/contact"
-                      className="px-8 py-4 bg-white text-navy font-black rounded-xl hover:bg-accent hover:text-white transition-all duration-300 flex items-center space-x-2 text-sm"
-                    >
-                      <span>Consultation</span>
-                      <ArrowRight className="size-4" />
-                    </a>
-                    <a
-                      href="/why-us"
-                      className="px-8 py-4 bg-white/5 text-white font-black rounded-xl backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all text-sm"
-                    >
-                      Methodology
-                    </a>
-                  </div>
-                </div>
-                <div className="hidden lg:flex justify-end pr-10">
-                  <div className="size-48 rounded-full border border-white/5 flex items-center justify-center animate-spin-slow">
-                    <div className="size-32 rounded-full border border-accent/20 flex items-center justify-center">
-                      <div className="size-20 rounded-full bg-white/5 flex items-center justify-center backdrop-blur-xl">
-                        <Target className="text-accent size-8 opacity-50" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </Container>
         </section>
       </main>

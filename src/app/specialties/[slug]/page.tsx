@@ -23,8 +23,8 @@ export default async function SpecialtyPage({ params }: { params: { slug: string
                     title={specialty.title}
                     subtitle="Advanced Professional Development Curriculum"
                     image={specialty.image}
-                    gifOverlay={specialty.gifOverlay}
-                    height="h-[500px] lg:h-[650px]"
+                    gifOverlay={"gifOverlay" in specialty ? (specialty.gifOverlay as string) : undefined}
+                    height="h-[450px] lg:h-[550px]"
                 />
 
                 <section className="py-24 bg-white relative overflow-hidden">

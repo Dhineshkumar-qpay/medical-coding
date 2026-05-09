@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                 <Container>
                     <div className="max-w-4xl mx-auto">
                         <div className="mb-16">
-                            <h1 className="text-4xl font-bold text-slate-900 mb-4">Privacy Policy</h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4">Privacy Policy</h1>
                            
                         </div>
 

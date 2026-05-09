@@ -1,201 +1,154 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SITE_CONFIG } from "@/lib/constants";
-import { Globe, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import { Globe, Mail, Phone, MessageSquare } from "lucide-react";
 import appLogo from "@/assets/app-logo.jpeg";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white/70 pt-24 pb-12 relative overflow-hidden">
-      {/* Background Decorative Gradient */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[120px] -z-10" />
+    <footer className="bg-[#09152b] text-white/75 relative overflow-hidden border-t border-slate-800 flex flex-col w-full">
+      
+      {/* Abstract Diagonal Vector Geometric Lines Overlay */}
+      <svg className="absolute inset-0 size-full pointer-events-none opacity-[0.04]" stroke="rgba(255,255,255,0.6)" strokeWidth="1" fill="none">
+        <line x1="5%" y1="0%" x2="75%" y2="100%" />
+        <line x1="25%" y1="0%" x2="95%" y2="100%" />
+        <line x1="60%" y1="0%" x2="15%" y2="100%" />
+        <line x1="85%" y1="0%" x2="40%" y2="100%" />
+      </svg>
 
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
-          {/* Logo & About Node */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="space-y-6">
-              <Link
-                href="/"
-                className="flex items-center space-x-5 text-white group"
-              >
-                <div className="relative">
-                  <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative size-12 overflow-hidden rounded-2xl bg-white p-2 shadow-2xl transition-transform duration-500 group-hover:scale-105">
-                    <img
-                      src={appLogo.src}
-                      alt="ERO Health Logo"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col border-l border-white/20 pl-4 py-1.5">
-                  <span className="text-xl font-black tracking-tight text-white leading-none">
-                    ERO <span className="text-accent">HEALTH</span>
-                  </span>
-                  <div className="flex items-center space-x-2 mt-2">
-                    <div className="h-0.5 w-3 bg-secondary rounded-full" />
-                    <span className="text-[8px] font-black uppercase tracking-[0.3em] text-accent opacity-80">
-                      Healthcare Innovation
-                    </span>
-                  </div>
-                </div>
-              </Link>
-
-              <p className="text-xs leading-relaxed font-semibold text-white/60 max-w-sm border-l-2 border-accent/30 pl-6 py-1">
-                ERO Healthcare Innovation Private Limited is an ISO 9001:2015
-                Certified institute specializing in medical coding, medical
-                billing, and professional certification training.
-              </p>
+      {/* Main Grid Content Container */}
+      <Container className="max-w-6xl relative z-10 py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-start text-left">
+          
+          {/* Column 1: Identity & Brand Info (4 Cols) */}
+          <div className="md:col-span-4 space-y-6">
+            <div className="flex items-center space-x-3.5">
+              <div className="size-9 rounded-xl overflow-hidden bg-white p-1.5 shadow-md flex items-center justify-center shrink-0">
+                <img
+                  src={appLogo.src}
+                  alt="ERO Healthcare Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-base font-black tracking-widest text-white uppercase leading-none">
+                ERO Healthcare
+              </span>
             </div>
-            <div className="flex space-x-4">
+
+            <p className="text-xs leading-relaxed font-semibold text-slate-400 max-w-sm">
+              Empowering healthcare professionals with advanced clinical billing and coding standardizations to optimize international revenue cycles.
+            </p>
+
+            {/* Minimalist Outlined Social Icons */}
+            <div className="flex items-center space-x-4 pt-1">
               {[
-                { icon: Globe, href: "#" },
-                { icon: MessageSquare, href: "#" },
-                { icon: Mail, href: "#" },
-              ].map((social, i) => (
-                <Link
-                  key={i}
+                { Icon: Globe, href: "#" },
+                { Icon: MessageSquare, href: "#" },
+                { Icon: Mail, href: "#" },
+                { Icon: Phone, href: "#" }
+              ].map((social, idx) => (
+                <a
+                  key={idx}
                   href={social.href}
-                  className="size-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all duration-300 group"
+                  className="text-slate-400 hover:text-white transition-colors duration-200"
                 >
-                  <social.icon className="size-4 group-hover:scale-110 transition-transform" />
-                </Link>
+                  <social.Icon className="size-4" />
+                </a>
               ))}
             </div>
+
+            {/* Outlined "BACK TO TOP" Interactive Button */}
+            <div className="pt-2">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="inline-flex items-center space-x-2 border border-slate-700 hover:border-slate-400 px-4 py-2 rounded-lg text-[9px] font-black uppercase tracking-widest text-white hover:bg-white/5 transition-all cursor-pointer outline-none"
+              >
+                <svg className="size-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+                <span>Back to Top</span>
+              </button>
+            </div>
           </div>
 
-          {/* Navigation Nodes */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-4">
-              <div className="h-1 w-6 bg-secondary rounded-full" />
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em]">
-                Policies
-              </h3>
-            </div>
-            <ul className="space-y-4 text-[12px] font-black tracking-widest">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Terms and Conditions
-                </Link>
-              </li>
+          {/* Column 2: Site Map Links (3 Cols) */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-white text-[11px] font-black uppercase tracking-widest pl-0.5">
+              Site Map
+            </h4>
+            <div className="h-0.5 w-8 bg-primary rounded-full mb-2" />
+            <ul className="space-y-3 text-xs font-semibold text-slate-400">
+              {[
+                { name: "Homepage", href: "/" },
+                { name: "Careers", href: "/career" },
+                { name: "Why Us", href: "/why-us" },
+                { name: "Contact Us", href: "/contact" },
+                { name: "About Us", href: "/about" },
+                { name: "FAQ", href: "/faq" }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Resources */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-4">
-              <div className="h-1 w-6 bg-primary rounded-full" />
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em]">
-                Clinical Hub
-              </h3>
-            </div>
-            <ul className="space-y-4 text-[12px] font-black tracking-widest">
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Certification
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Placement Hub
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Alumni Node
-                </Link>
-              </li>
+          {/* Column 3: Specialities Links (3 Cols) */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-white text-[11px] font-black uppercase tracking-widest pl-0.5">
+              Specialities
+            </h4>
+            <div className="h-0.5 w-8 bg-secondary rounded-full mb-2" />
+            <ul className="space-y-3 text-xs font-semibold text-slate-400">
+              {[
+                { name: "Anesthesia", href: "/specialities/anesthesia" },
+                { name: "Emergency Medicine", href: "/specialities/emergency-medicine" },
+                { name: "Hospital Medicine", href: "/specialities/hospital-medicine" },
+                { name: "Radiology", href: "/specialities/radiology" },
+                { name: "Pathology", href: "/specialities/pathology" }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Global Command Center */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="space-y-4">
-              <div className="h-1 w-6 bg-accent rounded-full" />
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em]">
-                Global Presence
-              </h3>
-            </div>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4 group">
-                <div className="size-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
-                  <MapPin className="size-4" />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[8px] font-black uppercase tracking-widest opacity-50">
-                    Headquarters
-                  </p>
-                  <p className="text-xs font-bold text-white leading-tight">
-                    {SITE_CONFIG.contact.address}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="size-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">
-                  <Phone className="size-4" />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[8px] font-black uppercase tracking-widest opacity-50">
-                    Career Hotline
-                  </p>
-                  <p className="text-xs font-bold text-white leading-none">
-                    {SITE_CONFIG.contact.phone}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="size-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                  <Mail className="size-4" />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[8px] font-black uppercase tracking-widest opacity-50">
-                    Institutional Email
-                  </p>
-                  <p className="text-xs font-bold text-white leading-none">
-                    {SITE_CONFIG.contact.email}
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* Column 4: Legal Policy Links (2 Cols) */}
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-white text-[11px] font-black uppercase tracking-widest pl-0.5">
+              Legal
+            </h4>
+            <div className="h-0.5 w-8 bg-slate-500 rounded-full mb-2" />
+            <ul className="space-y-3 text-xs font-semibold text-slate-400">
+              {[
+                { name: "Privacy Policy", href: "/privacy" },
+                { name: "Terms of Services", href: "/terms" }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        <div className="pt-12 border-t border-white/5 flex items-center justify-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-40 text-center">
-            © 2026 ERO Healthcare. Redefining Medical Excellence.
-          </p>
         </div>
       </Container>
+
+      {/* Full-width Accent Golden/Orange Bottom Bar */}
+      <div className="bg-stone py-4 px-6 text-center border-t border-slate-800 w-full relative z-10">
+        <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white">
+          Copyright © 2026 ERO Healthcare. All Rights Reserved.
+        </p>
+      </div>
+
     </footer>
   );
 }
