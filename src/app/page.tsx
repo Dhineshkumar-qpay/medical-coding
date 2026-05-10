@@ -58,11 +58,9 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-10 size-[30rem] bg-secondary/[0.015] rounded-full blur-3xl pointer-events-none" />
 
           <Container>
-            <div className="grid lg:grid-cols-12 gap-16 items-center">
-              {/* Dynamic Left Column: Section Title & Focus */}
-
+            <div className="w-full">
               {/* High-Fidelity Interactive Vision & Mission Cards */}
-              <div className="lg:col-span-8 grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                 {/* Vision Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}

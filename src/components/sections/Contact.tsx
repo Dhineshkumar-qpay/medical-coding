@@ -10,6 +10,7 @@ import {
   Clock,
   CheckCircle,
   User,
+  ChevronRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -104,96 +105,93 @@ export function Contact() {
               </h3>
             </div>
 
-            {/* 2x2 Clean Minimalist Informational Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 flex-1">
-              {/* Cell 1: Phone */}
+            {/* Another Professional Look: Premium Floating Card Deck */}
+            <div className="p-6 space-y-4 flex-1 bg-slate-50/40">
+              {/* Card 1: Direct Line */}
               <a
                 href="tel:+919488393395"
-                className="p-8 flex flex-col items-center text-center space-y-3 border-b border-slate-100 sm:border-r hover:bg-slate-50/40 group/quadrant transition-all duration-300 outline-none cursor-pointer"
+                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
               >
-                <div className="size-11 rounded-full bg-slate-50 flex items-center justify-center text-[#09152b] group-hover/quadrant:bg-primary group-hover/quadrant:text-white group-hover/quadrant:scale-110 transition-all duration-300 shadow-sm">
-                  <Phone className="size-5" />
+                <div className="flex items-center space-x-4">
+                  <div className="size-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
+                    <Phone className="size-4.5" />
+                  </div>
+                  <div className="text-left">
+                    <span className="text-[9px] font-black tracking-widest text-primary uppercase block leading-none">Admissions Hotline</span>
+                    <h4 className="text-base font-bold text-navy leading-tight mt-1">+91-9488393395</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to call direct office line</p>
+                  </div>
                 </div>
-                <h4 className="text-base font-black text-navy leading-none group-hover/quadrant:text-primary transition-colors duration-300">
-                  Phone Number
-                </h4>
-                <div className="text-xs text-slate-500 font-bold space-y-1">
-                  <p className="group-hover/quadrant:text-primary transition-colors">
-                    +91-9488393395
-                  </p>
-                  <p className="text-[10px] text-primary">Click to Call Now</p>
+                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-primary/10 group-hover/item:text-primary transition-all duration-300 flex-shrink-0">
+                  <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
 
-              {/* Cell 2: Email */}
-              <a
-                href="mailto:erohealthcare026@gmail.com"
-                className="p-8 flex flex-col items-center text-center space-y-3 border-b border-slate-100 hover:bg-slate-50/40 group/quadrant transition-all duration-300 outline-none cursor-pointer"
-              >
-                <div className="size-11 rounded-full bg-slate-50 flex items-center justify-center text-[#09152b] group-hover/quadrant:bg-primary group-hover/quadrant:text-white group-hover/quadrant:scale-110 transition-all duration-300 shadow-sm">
-                  <Mail className="size-5" />
-                </div>
-                <h4 className="text-base font-black text-navy leading-none group-hover/quadrant:text-primary transition-colors duration-300">
-                  Email
-                </h4>
-                <div className="text-xs text-slate-500 font-bold space-y-1">
-                  <p className="group-hover/quadrant:text-primary transition-colors">
-                    erohealthcare026@gmail.com
-                  </p>
-                  <p className="text-[10px] text-primary">
-                    Click to Send Email
-                  </p>
-                </div>
-              </a>
-
-              {/* Cell 3: Location */}
-              <a
-                href="https://maps.google.com/?q=Health+City+12345"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-8 flex flex-col items-center text-center space-y-3 border-b sm:border-b-0 border-slate-100 sm:border-r hover:bg-slate-50/40 group/quadrant transition-all duration-300 outline-none cursor-pointer"
-              >
-                <div className="size-11 rounded-full bg-slate-50 flex items-center justify-center text-[#09152b] group-hover/quadrant:bg-primary group-hover/quadrant:text-white group-hover/quadrant:scale-110 transition-all duration-300 shadow-sm">
-                  <MapPin className="size-5" />
-                </div>
-                <h4 className="text-base font-black text-navy leading-none group-hover/quadrant:text-primary transition-colors duration-300">
-                  Location
-                </h4>
-                <div className="text-xs text-slate-500 font-bold space-y-1 leading-relaxed">
-                  <p>
-                    36C,Sukkuramaniya Valasu,Veerappamchathram, Erode -638004,
-                    Tamilnadu
-                  </p>
-                  <p className="text-[10px] text-primary">Click to Open Maps</p>
-                </div>
-              </a>
-
-              {/* Cell 4: WhatsApp Support */}
+              {/* Card 2: WhatsApp Live Support */}
               <a
                 href="https://wa.me/+919488393395"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-8 flex flex-col items-center text-center space-y-3 hover:bg-slate-50/40 group/quadrant transition-all duration-300 outline-none cursor-pointer"
+                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
               >
-                <div className="size-11 rounded-full bg-slate-50 flex items-center justify-center text-[#09152b] group-hover/quadrant:bg-emerald-500 group-hover/quadrant:text-white group-hover/quadrant:scale-110 transition-all duration-300 shadow-sm">
-                  <svg
-                    className="size-5 fill-current"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 1.974 14.12 1.95 11.47 1.95c-5.434 0-9.858 4.37-9.863 9.8-.001 1.762.486 3.48 1.412 5.013l-1.01 3.693 3.793-.984zM16.57 14.4c-.25-.125-1.476-.725-1.705-.808-.228-.083-.393-.125-.558.125-.166.25-.64.808-.784.975-.145.166-.29.187-.54.062-.25-.125-1.05-.386-2-1.229-.738-.655-1.236-1.465-1.38-1.714-.145-.25-.015-.385.11-.51.112-.11.25-.29.375-.435.125-.145.166-.25.25-.417.083-.166.04-.312-.02-.437-.062-.125-.558-1.333-.765-1.833-.2-.486-.403-.412-.558-.412h-.475c-.166 0-.437.062-.663.312-.228.25-.87.85-.87 2.075s.9 2.408.995 2.541c.095.13 1.762 2.675 4.263 3.746.595.255 1.057.408 1.417.523.598.19 1.143.163 1.573.1.48-.07 1.477-.6 1.684-1.18.207-.58.207-1.08.145-1.18-.062-.1-.228-.145-.478-.27z" />
-                  </svg>
+                <div className="flex items-center space-x-4">
+                  <div className="size-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
+                    <svg className="size-4.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 1.974 14.12 1.95 11.47 1.95c-5.434 0-9.858 4.37-9.863 9.8-.001 1.762.486 3.48 1.412 5.013l-1.01 3.693 3.793-.984zM16.57 14.4c-.25-.125-1.476-.725-1.705-.808-.228-.083-.393-.125-.558.125-.166.25-.64.808-.784.975-.145.166-.29.187-.54.062-.25-.125-1.05-.386-2-1.229-.738-.655-1.236-1.465-1.38-1.714-.145-.25-.015-.385.11-.51.112-.11.25-.29.375-.435.125-.145.166-.25.25-.417.083-.166.04-.312-.02-.437-.062-.125-.558-1.333-.765-1.833-.2-.486-.403-.412-.558-.412h-.475c-.166 0-.437.062-.663.312-.228.25-.87.85-.87 2.075s.9 2.408.995 2.541c.095.13 1.762 2.675 4.263 3.746.595.255 1.057.408 1.417.523.598.19 1.143.163 1.573.1.48-.07 1.477-.6 1.684-1.18.207-.58.207-1.08.145-1.18-.062-.1-.228-.145-.478-.27z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-[9px] font-black tracking-widest text-emerald-500 uppercase block leading-none">Instant Chat</span>
+                    <h4 className="text-base font-bold text-navy leading-tight mt-1">WhatsApp Messenger</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to message live advisor</p>
+                  </div>
                 </div>
-                <h4 className="text-base font-black text-navy leading-none group-hover/quadrant:text-emerald-600 transition-colors duration-300">
-                  WhatsApp Chat
-                </h4>
-                <div className="text-xs text-slate-500 font-bold space-y-1">
-                  <p className="group-hover/quadrant:text-emerald-600 transition-colors">
-                    +91-9488393395
-                  </p>
-                  <p className="text-[10px] text-emerald-500 font-extrabold">
-                    Click to Chat Live
-                  </p>
+                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-emerald-500/10 group-hover/item:text-emerald-500 transition-all duration-300 flex-shrink-0">
+                  <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
+                </div>
+              </a>
+
+              {/* Card 3: Email Inquiry */}
+              <a
+                href="mailto:erohealthcare026@gmail.com"
+                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+              >
+                <div className="flex items-center space-x-4 min-w-0">
+                  <div className="size-11 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
+                    <Mail className="size-4.5" />
+                  </div>
+                  <div className="text-left min-w-0">
+                    <span className="text-[9px] font-black tracking-widest text-secondary uppercase block leading-none">Email Office</span>
+                    <h4 className="text-sm md:text-base font-bold text-navy leading-tight truncate mt-1">erohealthcare026@gmail.com</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to send an email query</p>
+                  </div>
+                </div>
+                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-secondary/10 group-hover/item:text-secondary transition-all duration-300 flex-shrink-0">
+                  <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
+                </div>
+              </a>
+
+              {/* Card 4: Campus Headquarters */}
+              <a
+                href="https://maps.google.com/?q=36C,Sukkuramaniya+Valasu,Veerappamchathram,Erode-638004"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+              >
+                <div className="flex items-center space-x-4 min-w-0">
+                  <div className="size-11 rounded-xl bg-navy/10 flex items-center justify-center text-navy group-hover/item:bg-[#0a1931] group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
+                    <MapPin className="size-4.5" />
+                  </div>
+                  <div className="text-left min-w-0">
+                    <span className="text-[9px] font-black tracking-widest text-navy uppercase block leading-none">Campus HQ</span>
+                    <h4 className="text-xs font-bold text-navy leading-relaxed truncate mt-1">
+                      36C, Sukkuramaniya Valasu, Veerappamchathram, Erode
+                    </h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to view on Google Maps</p>
+                  </div>
+                </div>
+                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-navy/10 group-hover/item:text-navy transition-all duration-300 flex-shrink-0">
+                  <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
             </div>

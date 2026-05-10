@@ -70,14 +70,6 @@ export default function AboutPage() {
                       className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-60" />
-                    <div className="absolute bottom-10 left-10 text-white">
-                      <p className="text-2xl font-black tracking-tight">
-                        Poovarasan Krishnamoorthi
-                      </p>
-                      <p className="text-accent text-xs font-bold tracking-widest uppercase">
-                        Founder & Chief Executive Officer
-                      </p>
-                    </div>
                   </div>
                 </div>
 
@@ -93,24 +85,51 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="lg:col-span-7 space-y-10"
+                className="lg:col-span-7 space-y-8"
               >
-                <div className="space-y-6">
+                <div className="space-y-4">
+                  <span className="text-primary font-black uppercase text-[10px] tracking-widest pl-0.5">
+                    Executive Leadership
+                  </span>
                   <h2 className="text-3xl lg:text-4xl font-black text-navy tracking-tight leading-tight">
                     The Visionary Lead
                   </h2>
-                  <p className="text-lg text-slate-500 leading-relaxed font-medium max-w-xl">
-                    “ERO HealthCare Innovation Private Limited is dedicated to
-                    client success and the professional growth of our team. By
-                    continually raising the bar on our performance results, we
-                    ensure our clients receive the highest level of service.”
-                  </p>
-                  <p className="text-lg text-navy font-semibold leading-relaxed px-5">
-                    “As Aslan famously noted, the purpose of a new experience is
-                    to "know me better" in one’s own world. At ERO Health, we
-                    believe the work we do here empowers our clients to achieve
-                    excellence in their world.”
-                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Card 1: Corporate Mission Quote */}
+                  <div className="relative p-6 bg-white border border-slate-100 rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.02)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.04)] transition-all duration-500 hover:-translate-y-1 overflow-hidden pl-8 group">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold">
+                      ERO HealthCare Innovation Private Limited is dedicated to
+                      client success and the professional growth of our team. By
+                      continually raising the bar on our performance results, we
+                      ensure our clients receive the highest level of service.
+                    </p>
+                  </div>
+
+                  {/* Card 2: Philosophy Quote */}
+                  <div className="relative p-6 bg-white border border-slate-100 rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.02)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.04)] transition-all duration-500 hover:-translate-y-1 overflow-hidden pl-8 group">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-secondary" />
+                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold">
+                      As Aslan famously noted, the purpose of a new experience
+                      is to "know me better" in one’s own world. At ERO Health,
+                      we believe the work we do here empowers our clients to
+                      achieve excellence in their world.
+                    </p>
+                  </div>
+
+                  {/* Card 3: Executive Profile Signature Card */}
+                  <div className="relative p-6 bg-gradient-to-r from-[#0a1931] to-[#15305b] rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.06)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.12)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden pl-8 group">
+                    <div className="space-y-1">
+                      <h4 className="text-lg md:text-xl font-black text-white tracking-tight">
+                        Poovarasan Krishnamoorthi
+                      </h4>
+                      <p className="text-accent text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                        Founder & Chief Executive Officer
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>

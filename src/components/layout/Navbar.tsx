@@ -25,12 +25,10 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Why Us", href: "/why-us" },
-  { name: "FAQ's", href: "/faq" },
-  { name: "Career", href: "/career" },
   { name: "Contact", href: "/contact" },
   {
     name: "Specialities",
-    href: "/specialities",
+    href: "/specialties",
     dropdown: [
       "Anesthesia",
       "Emergency Medicine",
@@ -141,7 +139,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                       {link.dropdown.map((item) => (
                         <Link
                           key={item}
-                          href={`/specialities/${item.toLowerCase().replace(" ", "-")}`}
+                          href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
                           className="block px-6 py-3 text-sm font-bold text-navy hover:bg-slate-50 hover:text-secondary transition-colors"
                         >
                           {item}
@@ -193,7 +191,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                       {link.dropdown.map((item) => (
                         <Link
                           key={item}
-                          href={`/specialities/${item.toLowerCase().replace(" ", "-")}`}
+                          href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
                           className="block text-xl font-bold text-slate-800 hover:text-secondary py-1"
                           onClick={() => setIsOpen(false)}
                         >
@@ -300,9 +298,10 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                     </div>
                   ) : (
                     <form className="space-y-6" onSubmit={handleEnrollSubmit}>
-                      <div className="space-y-5">
-                        <div className="relative group">
-                          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                      <div className="space-y-4">
+                        {/* Full Name */}
+                        <div className="relative group/input">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
                             <User className="size-4" />
                           </div>
                           <input
@@ -310,13 +309,14 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                             name="name"
                             type="text"
                             placeholder="Candidate Full Name"
-                            className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all placeholder:text-slate-400"
+                            className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                           />
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                          {/* Primary Email */}
+                          <div className="relative group/input">
+                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
                               <Mail className="size-4" />
                             </div>
                             <input
@@ -324,11 +324,12 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                               name="email"
                               type="email"
                               placeholder="Primary Email"
-                              className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all placeholder:text-slate-400"
+                              className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                             />
                           </div>
-                          <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                          {/* Contact Number */}
+                          <div className="relative group/input">
+                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
                               <Phone className="size-4" />
                             </div>
                             <input
@@ -336,19 +337,20 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                               name="phone"
                               type="tel"
                               placeholder="Contact Number"
-                              className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all placeholder:text-slate-400"
+                              className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                             />
                           </div>
                         </div>
 
-                        <div className="relative group">
-                          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                        {/* Specialty Dropdown */}
+                        <div className="relative group/input">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
                             <BookOpen className="size-4" />
                           </div>
                           <select
                             required
                             name="course"
-                            className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all appearance-none cursor-pointer"
+                            className="pl-11 pr-8 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy outline-none transition-all appearance-none cursor-pointer shadow-sm"
                           >
                             <option value="">Select Specialty</option>
                             {navLinks
@@ -359,41 +361,32 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                                 </option>
                               ))}
                           </select>
-                          <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400">
-                            <ChevronDown className="size-4" />
+                          <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none border-l border-slate-200 pl-2 text-slate-400 text-[10px]">
+                            ▼
                           </div>
                         </div>
 
-                        <div className="relative group">
-                          <div className="absolute top-4 left-4 pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
-                            <MessageSquare className="size-4" />
-                          </div>
-                          <textarea
-                            name="message"
-                            rows={4}
-                            placeholder="Enter your description"
-                            className="w-full bg-slate-50 border-2 border-slate-100 p-4 pl-12 rounded-2xl font-bold text-navy focus:outline-none focus:border-primary focus:bg-white transition-all placeholder:text-slate-400 resize-none"
-                          />
-                        </div>
+                        {/* Description Message Box */}
+                        <textarea
+                          name="message"
+                          rows={4}
+                          placeholder="Enter your description"
+                          className="p-4 w-full rounded-xl bg-white border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all resize-none shadow-sm"
+                        />
                       </div>
 
                       <Button
                         type="submit"
                         disabled={enrollStatus === "loading"}
-                        className="w-full bg-primary text-white py-8 rounded-2xl text-xs font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/20 hover:bg-primary/95 hover:scale-[1.02] active:scale-[0.98] transition-all group"
+                        className="w-full bg-[#09152b] text-white hover:bg-primary text-xs font-black uppercase tracking-wider rounded-xl h-[50px] transition-all flex items-center justify-center space-x-2 border border-transparent hover:shadow-lg shadow-sm group/btn"
                       >
                         <span>
                           {enrollStatus === "loading"
                             ? "Processing..."
                             : "Transmit Application"}
                         </span>
-                        <Send className="ml-3 size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        <Send className="ml-3 size-3.5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
                       </Button>
-
-                      <p className="text-[10px] text-center font-bold text-slate-400 uppercase tracking-widest leading-relaxed">
-                        By submitting, you agree to the institutional protocols
-                        for professional certification training.
-                      </p>
                     </form>
                   )}
                 </div>

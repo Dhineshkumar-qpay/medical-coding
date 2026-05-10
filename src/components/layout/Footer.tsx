@@ -1,16 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Globe, Mail, Phone, MessageSquare } from "lucide-react";
+import {
+  Globe,
+  Mail,
+  Phone,
+  MessageSquare,
+  X,
+  Clock,
+  BookOpen,
+  ShieldCheck,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { SPECIALTIES } from "@/lib/specialties";
 import appLogo from "@/assets/app-logo.jpeg";
 
 export function Footer() {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const selectedSpecialty = SPECIALTIES.find((s) => s.id === selectedId);
+
   return (
-    <footer className="bg-[#09152b] text-white/75 relative overflow-hidden border-t border-slate-800 flex flex-col w-full">
-      
+    <footer className="bg-[#09152b] text-white/75 relative overflow-hidden py-5 border-t border-slate-800 flex flex-col w-full">
       {/* Abstract Diagonal Vector Geometric Lines Overlay */}
-      <svg className="absolute inset-0 size-full pointer-events-none opacity-[0.04]" stroke="rgba(255,255,255,0.6)" strokeWidth="1" fill="none">
+      <svg
+        className="absolute inset-0 size-full pointer-events-none opacity-[0.04]"
+        stroke="rgba(255,255,255,0.6)"
+        strokeWidth="1"
+        fill="none"
+      >
         <line x1="5%" y1="0%" x2="75%" y2="100%" />
         <line x1="25%" y1="0%" x2="95%" y2="100%" />
         <line x1="60%" y1="0%" x2="15%" y2="100%" />
@@ -18,9 +37,8 @@ export function Footer() {
       </svg>
 
       {/* Main Grid Content Container */}
-      <Container className="max-w-6xl relative z-10 py-16 lg:py-20">
+      <Container className="max-w-6xl relative z-10 py-8 lg:py-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-start text-left">
-          
           {/* Column 1: Identity & Brand Info (4 Cols) */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center space-x-3.5">
@@ -31,13 +49,20 @@ export function Footer() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-base font-black tracking-widest text-white uppercase leading-none">
-                ERO Healthcare
-              </span>
+              <div className="flex flex-col text-left">
+                <span className="text-base font-black tracking-widest text-white uppercase leading-none">
+                  ERO Healthcare
+                </span>
+                <span className="text-[9px] font-bold tracking-wider text-slate-400 uppercase mt-1 leading-none">
+                  Innovation Private Limited
+                </span>
+              </div>
             </div>
 
             <p className="text-xs leading-relaxed font-semibold text-slate-400 max-w-sm">
-              Empowering healthcare professionals with advanced clinical billing and coding standardizations to optimize international revenue cycles.
+              Empowering healthcare professionals with advanced clinical billing
+              and coding standardizations to optimize international revenue
+              cycles.
             </p>
 
             {/* Minimalist Outlined Social Icons */}
@@ -46,7 +71,7 @@ export function Footer() {
                 { Icon: Globe, href: "#" },
                 { Icon: MessageSquare, href: "#" },
                 { Icon: Mail, href: "#" },
-                { Icon: Phone, href: "#" }
+                { Icon: Phone, href: "#" },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -64,8 +89,18 @@ export function Footer() {
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center space-x-2 border border-slate-700 hover:border-slate-400 px-4 py-2 rounded-lg text-[9px] font-black uppercase tracking-widest text-white hover:bg-white/5 transition-all cursor-pointer outline-none"
               >
-                <svg className="size-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                <svg
+                  className="size-3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                  />
                 </svg>
                 <span>Back to Top</span>
               </button>
@@ -85,10 +120,13 @@ export function Footer() {
                 { name: "Why Us", href: "/why-us" },
                 { name: "Contact Us", href: "/contact" },
                 { name: "About Us", href: "/about" },
-                { name: "FAQ", href: "/faq" }
+                { name: "FAQ", href: "/faq" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -104,16 +142,19 @@ export function Footer() {
             <div className="h-0.5 w-8 bg-secondary rounded-full mb-2" />
             <ul className="space-y-3 text-xs font-semibold text-slate-400">
               {[
-                { name: "Anesthesia", href: "/specialities/anesthesia" },
-                { name: "Emergency Medicine", href: "/specialities/emergency-medicine" },
-                { name: "Hospital Medicine", href: "/specialities/hospital-medicine" },
-                { name: "Radiology", href: "/specialities/radiology" },
-                { name: "Pathology", href: "/specialities/pathology" }
+                { name: "Anesthesia", id: "anesthesia" },
+                { name: "Emergency Medicine", id: "emergency-medicine" },
+                { name: "Hospital Medicine", id: "hospital-medicine" },
+                { name: "Radiology", id: "radiology" },
+                { name: "Pathology", id: "pathology" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <button
+                    onClick={() => setSelectedId(link.id)}
+                    className="hover:text-white transition-colors text-left outline-none cursor-pointer"
+                  >
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -128,17 +169,19 @@ export function Footer() {
             <ul className="space-y-3 text-xs font-semibold text-slate-400">
               {[
                 { name: "Privacy Policy", href: "/privacy" },
-                { name: "Terms of Services", href: "/terms" }
+                { name: "Terms of Services", href: "/terms" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
         </div>
       </Container>
 
@@ -149,6 +192,84 @@ export function Footer() {
         </p>
       </div>
 
+      {/* Specialty Side Drawer Container */}
+      <AnimatePresence>
+        {selectedSpecialty && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedId(null)}
+              className="fixed inset-0 bg-slate-900/65 backdrop-blur-sm z-[200]"
+            />
+
+            {/* Drawer Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed top-0 right-0 h-full w-full max-w-lg bg-white shadow-2xl z-[201] overflow-y-auto"
+            >
+              <div className="relative text-slate-800">
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedId(null)}
+                  className="absolute top-6 left-6 size-10 rounded-full bg-slate-900/10 backdrop-blur-md flex items-center justify-center text-slate-800 hover:bg-secondary hover:text-white transition-all duration-300 z-10 outline-none cursor-pointer"
+                >
+                  <X className="size-5" />
+                </button>
+
+                {/* Hero Image Section */}
+                <div className="h-64 relative">
+                  <img
+                    src={selectedSpecialty.image}
+                    alt={selectedSpecialty.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-slate-900" />
+
+                  <div className="absolute bottom-6 left-8 right-8 text-left">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <span className="bg-secondary text-[8px] text-white px-3 py-0.5 rounded-full font-black uppercase tracking-widest">
+                        Active Program
+                      </span>
+                    </div>
+                    <h2 className="text-3xl font-black text-white tracking-tight leading-none">
+                      {selectedSpecialty.title}
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 space-y-8 text-left">
+                  <div className="space-y-4">
+                    {/* Program Description split into stacked cards one-by-one */}
+                    {selectedSpecialty.description
+                      .split(/(?<=[.!?])\s*(?=[A-Z])/)
+                      .filter(Boolean)
+                      .map((part, index) => (
+                        <div
+                          key={index}
+                          className="relative p-5 bg-slate-50/50 border border-slate-100/80 rounded-2xl shadow-[0_4px_20px_rgba(9,21,43,0.01)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.03)] hover:-translate-y-0.5 transition-all duration-300 overflow-hidden pl-7 group"
+                        >
+                          <div
+                            className={`absolute top-0 left-0 w-1 h-full ${index === 0 ? "bg-primary" : "bg-secondary"}`}
+                          />
+                          <p className="text-sm text-slate-600 leading-relaxed font-semibold">
+                            "{part.trim()}"
+                          </p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </footer>
   );
 }
