@@ -97,37 +97,55 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Card 1: Corporate Mission Quote */}
-                  <div className="relative p-6 bg-white border border-slate-100 rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.02)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.04)] transition-all duration-500 hover:-translate-y-1 overflow-hidden pl-8 group">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold">
-                      ERO HealthCare Innovation Private Limited is dedicated to
-                      client success and the professional growth of our team. By
-                      continually raising the bar on our performance results, we
-                      ensure our clients receive the highest level of service.
-                    </p>
-                  </div>
+                  {/* Unified Executive Card containing quotes and leader profile */}
+                  <div className="relative p-10 md:p-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_30px_60px_rgba(12,85,151,0.03)] hover:shadow-[0_45px_90px_rgba(12,85,151,0.08)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden pl-12 md:pl-14 group space-y-8">
+                    {/* Glowing logo-colored side indicator */}
+                    <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#0c5597] via-[#4bbac3] to-[#78bb30]" />
 
-                  {/* Card 2: Philosophy Quote */}
-                  <div className="relative p-6 bg-white border border-slate-100 rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.02)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.04)] transition-all duration-500 hover:-translate-y-1 overflow-hidden pl-8 group">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-secondary" />
-                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold">
-                      As Aslan famously noted, the purpose of a new experience
-                      is to "know me better" in one’s own world. At ERO Health,
-                      we believe the work we do here empowers our clients to
-                      achieve excellence in their world.
-                    </p>
-                  </div>
+                    {/* Background glowing aura */}
+                    <div className="absolute -right-24 -bottom-24 size-72 bg-gradient-to-br from-[#0c5597]/5 to-[#78bb30]/5 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700" />
 
-                  {/* Card 3: Executive Profile Signature Card */}
-                  <div className="relative p-6 bg-gradient-to-r from-[#0a1931] to-[#15305b] rounded-3xl shadow-[0_15px_40px_rgba(9,21,43,0.06)] hover:shadow-[0_25px_60px_rgba(9,21,43,0.12)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden pl-8 group">
-                    <div className="space-y-1">
-                      <h4 className="text-lg md:text-xl font-black text-white tracking-tight">
-                        Poovarasan Krishnamoorthi
-                      </h4>
-                      <p className="text-accent text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                        Founder & Chief Executive Officer
+                    {/* Styled Background Quote Icon */}
+                    <div className="absolute top-6 right-10 text-slate-100 select-none pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500">
+                      <svg
+                        width="48"
+                        height="38"
+                        viewBox="0 0 48 38"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 22C0 9.8497 9.8497 0 22 0V11C15.9249 11 11 15.9249 11 22H22V38H0V22ZM26 22C26 9.8497 35.8497 0 48 0V11C41.9249 11 37 15.9249 37 22H48V38H26V22Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+
+                    <div className="space-y-6 relative z-10">
+                      {/* Paragraph 1 */}
+                      <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold pr-4">
+                        ERO HealthCare Innovation Private Limited is dedicated
+                        to client success and the professional growth of our
+                        team. By continually raising the bar on our performance
+                        results, we ensure our clients receive the highest level
+                        of service. As Aslan famously noted, the purpose of a
+                        new experience is to 'know me better' in one’s own
+                        world. At ERO Health, we believe the work we do here
+                        empowers our clients to achieve excellence in their
+                        world.
                       </p>
+                    </div>
+
+                    {/* Leader Profile block */}
+                    <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                      <div className="space-y-1">
+                        <h4 className="text-lg md:text-xl font-black text-navy tracking-tight group-hover:text-[#0c5597] transition-colors duration-300">
+                          Poovarasan Krishnamoorthi
+                        </h4>
+                        <p className="text-[#0c5597] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                          Founder & Chief Executive Officer
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

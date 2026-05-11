@@ -67,21 +67,28 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1, duration: 0.6 }}
-                  className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
+                  className="group relative p-10 md:p-12 pt-16 md:pt-16 rounded-[2.5rem] bg-[#0b1329] border border-white/5 hover:border-[#0c5597]/40 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_80px_rgba(12,85,151,0.15)] hover:-translate-y-2 transition-all duration-500 overflow-hidden text-left"
                 >
-                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none"></div>
+                  {/* High-tech gradient top accent line */}
+                  <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#0c5597] via-[#4bbac3] to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="relative z-10 space-y-8">
-                    {/* Glowing Accent Icon container */}
-                    <div className="size-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500">
+                  {/* Neon logo glow blob */}
+                  <div className="absolute -right-20 -bottom-20 size-56 bg-[#0c5597]/15 rounded-full blur-[60px] pointer-events-none group-hover:bg-[#4bbac3]/20 transition-all duration-700" />
+
+                  {/* Soft high-tech grid overlay */}
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.03] pointer-events-none" />
+
+                  <div className="relative z-10 space-y-6">
+                    {/* Futuristic Icon Container */}
+                    <div className="inline-flex size-14 rounded-2xl bg-[#0c5597]/20 border border-[#4bbac3]/30 items-center justify-center text-[#4bbac3] shadow-[0_0_20px_rgba(75,186,195,0.15)] group-hover:bg-[#4bbac3] group-hover:text-white group-hover:scale-105 transition-all duration-500">
                       <Target className="size-6" />
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-black text-navy leading-tight">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-black text-white leading-tight tracking-tight group-hover:text-[#4bbac3] transition-colors">
                         Our Vision
                       </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed font-semibold">
+                      <p className="text-slate-400 text-sm leading-relaxed font-semibold group-hover:text-slate-300 transition-colors">
                         "To redefine the healthcare revenue cycle through
                         ethical coding excellence and advanced analytics,
                         ensuring the financial sustainability and operational
@@ -97,21 +104,28 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.6 }}
-                  className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 overflow-hidden text-left"
+                  className="group relative p-10 md:p-12 pt-16 md:pt-16 rounded-[2.5rem] bg-[#0b1329] border border-white/5 hover:border-[#78bb30]/40 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_80px_rgba(120,187,48,0.15)] hover:-translate-y-2 transition-all duration-500 overflow-hidden text-left"
                 >
-                  <div className="absolute top-0 right-0 p-8 select-none pointer-events-none"></div>
+                  {/* High-tech gradient top accent line */}
+                  <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#78bb30] via-[#9bc69f] to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="relative z-10 space-y-8">
-                    {/* Glowing Accent Icon container */}
-                    <div className="size-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 shadow-sm group-hover:bg-blue-500 group-hover:text-white group-hover:border-transparent transition-all duration-500">
+                  {/* Neon logo glow blob */}
+                  <div className="absolute -right-20 -bottom-20 size-56 bg-[#78bb30]/15 rounded-full blur-[60px] pointer-events-none group-hover:bg-[#9bc69f]/20 transition-all duration-700" />
+
+                  {/* Soft high-tech grid overlay */}
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.03] pointer-events-none" />
+
+                  <div className="relative z-10 space-y-6">
+                    {/* Futuristic Icon Container */}
+                    <div className="inline-flex size-14 rounded-2xl bg-[#78bb30]/20 border border-[#9bc69f]/30 items-center justify-center text-[#78bb30] shadow-[0_0_20px_rgba(120,187,48,0.15)] group-hover:bg-[#78bb30] group-hover:text-white group-hover:scale-105 transition-all duration-500">
                       <Lightbulb className="size-6" />
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-black text-navy leading-tight">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-black text-white leading-tight tracking-tight group-hover:text-[#78bb30] transition-colors">
                         Our Mission
                       </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed font-semibold">
+                      <p className="text-slate-400 text-sm leading-relaxed font-semibold group-hover:text-slate-300 transition-colors">
                         "To ensure healthcare data integrity through rigorous
                         accuracy, total confidentiality, and revenue cycle
                         excellence, allowing providers to focus entirely on
