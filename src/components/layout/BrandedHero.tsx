@@ -12,6 +12,7 @@ interface BrandedHeroProps {
   height?: string;
   action?: React.ReactNode;
   titleClassName?: string;
+  animateLogoColors?: boolean;
 }
 
 export function BrandedHero({
@@ -20,8 +21,9 @@ export function BrandedHero({
   gifOverlay,
   isSplit = false,
   height = "h-[450px] lg:h-[550px]",
-
+  action,
   titleClassName = "text-4xl md:text-5xl lg:text-6xl font-black",
+  animateLogoColors = false,
 }: BrandedHeroProps) {
   return (
     <section
@@ -43,6 +45,61 @@ export function BrandedHero({
             src={gifOverlay}
             alt="Animation"
             className="w-full h-full object-cover scale-110"
+          />
+        </div>
+      )}
+
+      {/* Animated logo color matching backdrop */}
+      {animateLogoColors && (
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          {/* Animated Blob 1 (Blue #0c5597) */}
+          <motion.div
+            animate={{
+              x: ["-20%", "25%", "-20%"],
+              y: ["-20%", "20%", "-20%"],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute -top-40 -left-40 size-[35rem] bg-[#0c5597] rounded-full blur-[120px] opacity-40 mix-blend-screen"
+          />
+          {/* Animated Blob 2 (Teal #4bbac3) */}
+          <motion.div
+            animate={{
+              x: ["25%", "-15%", "25%"],
+              y: ["20%", "-20%", "20%"],
+              scale: [1.2, 0.9, 1.2],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute -bottom-40 -right-40 size-[35rem] bg-[#4bbac3] rounded-full blur-[120px] opacity-35 mix-blend-screen"
+          />
+          {/* Animated Blob 3 (Green #78bb30) */}
+          <motion.div
+            animate={{
+              x: ["-10%", "20%", "-10%"],
+              y: ["15%", "-20%", "15%"],
+              scale: [0.9, 1.2, 0.9],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[30rem] bg-[#78bb30] rounded-full blur-[130px] opacity-25 mix-blend-screen"
+          />
+          <div 
+            className="absolute inset-0 opacity-40 mix-blend-overlay animate-logo-gradient"
+            style={{
+              background: "linear-gradient(-45deg, rgba(12, 85, 151, 0.6), rgba(75, 186, 195, 0.5), rgba(120, 187, 48, 0.4), rgba(12, 85, 151, 0.6))",
+              backgroundSize: "400% 400%",
+            }}
           />
         </div>
       )}
@@ -69,7 +126,7 @@ export function BrandedHero({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
             <p
               className={`text-lg lg:text-xl text-slate-100/90 leading-relaxed font-medium drop-shadow-md ${!isSplit && "max-w-xl mx-auto"}`}
@@ -77,6 +134,17 @@ export function BrandedHero({
               {subtitle}
             </p>
           </motion.div>
+
+          {action && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="pt-4"
+            >
+              {action}
+            </motion.div>
+          )}
         </div>
       </Container>
 

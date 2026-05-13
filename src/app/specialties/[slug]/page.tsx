@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { ChevronRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
-export default async function SpecialtyPage({ params }: { params: { slug: string } }) {
-    const specialty = SPECIALTIES.find((s) => s.id === params.slug);
+export default async function SpecialtyPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const specialty = SPECIALTIES.find((s) => s.id === slug);
 
     if (!specialty) {
         notFound();
@@ -37,7 +38,7 @@ export default async function SpecialtyPage({ params }: { params: { slug: string
                                         Master the Complexities of <br />
                                         <span className="text-primary/80">{specialty.title}</span>
                                     </h3>
-                                    <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                                    <p className="text-lg text-slate-600 leading-relaxed font-medium text-justify">
                                         {specialty.description}
                                     </p>
                                 </div>

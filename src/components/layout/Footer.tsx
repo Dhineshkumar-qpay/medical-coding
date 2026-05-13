@@ -246,23 +246,9 @@ export function Footer() {
                 {/* Content Section */}
                 <div className="p-8 space-y-8 text-left">
                   <div className="space-y-4">
-                    {/* Program Description split into stacked cards one-by-one */}
-                    {selectedSpecialty.description
-                      .split(/(?<=[.!?])\s*(?=[A-Z])/)
-                      .filter(Boolean)
-                      .map((part, index) => (
-                        <div
-                          key={index}
-                          className="relative p-5 bg-slate-50/50 border border-slate-100/80 rounded-2xl shadow-[0_4px_20px_rgba(9,21,43,0.01)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.03)] hover:-translate-y-0.5 transition-all duration-300 overflow-hidden pl-7 group"
-                        >
-                          <div
-                            className={`absolute top-0 left-0 w-1 h-full ${index === 0 ? "bg-primary" : "bg-secondary"}`}
-                          />
-                          <p className="text-sm text-slate-600 leading-relaxed font-semibold">
-                            "{part.trim()}"
-                          </p>
-                        </div>
-                      ))}
+                    <p className="text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                      "{selectedSpecialty.description}"
+                    </p>
                   </div>
                 </div>
               </div>

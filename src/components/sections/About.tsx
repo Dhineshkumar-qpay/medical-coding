@@ -35,14 +35,14 @@ export function About() {
                   </svg>
                 </div>
                 <div className="space-y-6 relative z-10">
-                  <p className="text-xl text-navy font-bold leading-relaxed">
+                  <p className="text-xl text-navy font-bold leading-relaxed text-justify">
                     “ERO HealthCare Innovation Private Limited is dedicated to client success and the
                     professional growth of our team. By continually raising the
                     bar on our performance results, we ensure our clients
                     receive the highest level of service.”
                   </p>
                   <div className="h-px w-16 bg-accent/20" />
-                  <p className="text-slate-500  font-medium">
+                  <p className="text-slate-500 font-medium text-justify">
                     “At ERO Health, we believe the work we do here empowers our
                     clients to achieve excellence in their world, transforming
                     medical documentation into a strategic asset.”

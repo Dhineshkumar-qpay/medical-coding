@@ -21,7 +21,7 @@ export default function PrivacyPage() {
                            
                         </div>
 
-                        <div className="space-y-12 text-slate-700 leading-relaxed font-normal">
+                        <div className="space-y-12 text-slate-700 leading-relaxed font-normal text-justify">
                             {/* Section 1 */}
                             <section>
                                 <h2 className="text-xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-100">1. Information Collection and Usage</h2>

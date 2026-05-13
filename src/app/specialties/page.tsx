@@ -46,7 +46,7 @@ export default function SpecialtiesPage() {
                 Ecosystem
               </h2>
 
-              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+              <p className="text-lg text-slate-600 leading-relaxed font-medium text-justify">
                 At the Medical Coding Training Institute, we recognize that
                 excellence in modern healthcare requires more than general
                 knowledge. Our specialized tracks are meticulously designed by

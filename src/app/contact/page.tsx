@@ -18,7 +18,7 @@ export default function ContactPage() {
         <BrandedHero
           title="Get In Touch"
           subtitle="Have questions? We're here to help. Contact our counselors today for a free career roadmap."
-          image="/images/contact.jpg"
+          image="https://t4.ftcdn.net/jpg/04/81/72/77/360_F_481727770_1u2ylNpie8WRosMVbv1COXDnnEK6ofwh.jpg"
         />
         <Contact />
       </main>

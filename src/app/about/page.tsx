@@ -34,14 +34,7 @@ export default function AboutPage() {
       <main className="bg-white overflow-hidden">
         {/* Institutional Hero */}
         <BrandedHero
-          title={
-            <>
-              Pioneering <br />{" "}
-              <span className="text-secondary tracking-tighter">
-                Clinical Intelligence.
-              </span>
-            </>
-          }
+          title="About Us"
           subtitle="We are transforming the healthcare revenue cycle through unyielding precision, ethical documentation, and forward-thinking analytics."
           image="/images/about.jpg"
         />
@@ -123,7 +116,7 @@ export default function AboutPage() {
 
                     <div className="space-y-6 relative z-10">
                       {/* Paragraph 1 */}
-                      <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold pr-4">
+                      <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold pr-4 text-justify">
                         ERO HealthCare Innovation Private Limited is dedicated
                         to client success and the professional growth of our
                         team. By continually raising the bar on our performance
@@ -139,12 +132,12 @@ export default function AboutPage() {
                     {/* Leader Profile block */}
                     <div className="px-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
                       <div className="space-y-1">
-                        <p className="text-[#0c5597] text-md md:text-lg font-semibold tracking-widest">
+                        <div className="text-[#0c5597] text-md md:text-lg font-semibold tracking-widest">
                           <p className="text-xl font-black uppercase tracking-widest text-[#FF8C00]">
                             Poovarasan Krishnamoorthi
                           </p>
                           Founder & Chief Executive Officer
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -175,7 +168,7 @@ export default function AboutPage() {
                     Who We Are
                   </h2>
                 </div>
-                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
+                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl text-justify">
                   Established on March 22, 2022, Aslan Medical Coding Training
                   Center began with a mission to empower aspiring professionals.
                   Having successfully placed over 400 students in leading MNCs
@@ -187,7 +180,7 @@ export default function AboutPage() {
                   Inspired by the wisdom of Aslan:
                 </span>
                 <br />
-                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
+                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl text-justify">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In your world,
                   I have another name. You must learn to know me by it. That was
                   the very reason why you were brought to Narnia, that by
@@ -363,7 +356,7 @@ export default function AboutPage() {
                       <h3 className="text-2xl font-bold text-white tracking-tight">
                         {pillar.title}
                       </h3>
-                      <p className="text-white/40 text-base leading-relaxed font-medium group-hover:text-white/60 transition-colors">
+                      <p className="text-white/40 text-base leading-relaxed font-medium group-hover:text-white/60 transition-colors text-justify">
                         {pillar.desc}
                       </p>
                     </div>
@@ -402,14 +395,14 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-left">
+                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-justify">
                     To redefine the healthcare revenue cycle through ethical
                     coding excellence and advanced analytic, ensuring the
                     financial sustainability and operational success of our
                     partners.
                   </p>
 
-                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-left">
+                  <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-xl text-justify">
                     To ensure healthcare data integrity through rigorous
                     accuracy, total confidentiality, and revenue cycle
                     excellence, allowing providers to focus entirely on client

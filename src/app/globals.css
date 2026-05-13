@@ -49,3 +49,14 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@keyframes logoGradientSweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-logo-gradient {
+  background-size: 400% 400%;
+  animation: logoGradientSweep 15s ease infinite;
+}

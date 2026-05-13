@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import LogoImg from "@/assets/app-logo.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
+import { SPECIALTIES } from "@/lib/specialties";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -46,6 +47,12 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
   const [enrollStatus, setEnrollStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [selectedSpecialtyId, setSelectedSpecialtyId] = useState<string | null>(
+    null,
+  );
+  const selectedSpecialty = SPECIALTIES.find(
+    (s) => s.id === selectedSpecialtyId,
+  );
 
   const handleEnrollSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -81,8 +88,15 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+    const handleOpenEnroll = () => {
+      setIsEnrollOpen(true);
+    };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("openEnrollModal", handleOpenEnroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("openEnrollModal", handleOpenEnroll);
+    };
   }, []);
 
   return (
@@ -136,15 +150,21 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
 
                     {/* Dropdown Menu */}
                     <div className="absolute top-full left-0 w-64 bg-white shadow-2xl py-4 border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-[60]">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item}
-                          href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
-                          className="block px-6 py-3 text-sm font-bold text-navy hover:bg-slate-50 hover:text-secondary transition-colors"
-                        >
-                          {item}
-                        </Link>
-                      ))}
+                      {link.dropdown.map((item) => {
+                        const id = item.toLowerCase().replace(" ", "-");
+                        return (
+                          <button
+                            key={item}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setSelectedSpecialtyId(id);
+                            }}
+                            className="block w-full text-left px-6 py-3 text-sm font-bold text-navy hover:bg-slate-50 hover:text-secondary transition-colors cursor-pointer"
+                          >
+                            {item}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 ) : (
@@ -188,16 +208,22 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                       <div className="text-lg font-black text-slate-400 uppercase tracking-widest text-[10px] mb-2">
                         {link.name}
                       </div>
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item}
-                          href={`/specialties/${item.toLowerCase().replace(" ", "-")}`}
-                          className="block text-xl font-bold text-slate-800 hover:text-secondary py-1"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item}
-                        </Link>
-                      ))}
+                      {link.dropdown.map((item) => {
+                        const id = item.toLowerCase().replace(" ", "-");
+                        return (
+                          <button
+                            key={item}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setIsOpen(false);
+                              setSelectedSpecialtyId(id);
+                            }}
+                            className="block w-full text-left text-xl font-bold text-slate-800 hover:text-secondary py-1 cursor-pointer"
+                          >
+                            {item}
+                          </button>
+                        );
+                      })}
                     </div>
                   ) : (
                     <Link
@@ -266,9 +292,9 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                 <div className="space-y-8">
                   <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                     <p className="text-sm font-medium text-slate-600 leading-relaxed">
-                      "Secure your position in the next cohort of precision
-                      medical coding professionals. Complete the institutional
-                      brief below."
+                      "Take the next step toward a successful career in
+                      precision medical coding. Complete the registration form
+                      below to begin your professional journey."
                     </p>
                   </div>
 
@@ -282,8 +308,8 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                           Application Received
                         </h3>
                         <p className="text-sm text-slate-500 font-medium leading-relaxed">
-                          Your institutional brief has been registered. Our
-                          specialists will contact you soon.
+                          Your registration has been successfully submitted. Our
+                          team will contact you shortly with the next steps.
                         </p>
                       </div>
                       <Button
@@ -389,6 +415,71 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                       </Button>
                     </form>
                   )}
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Specialty Detail Drawer */}
+      <AnimatePresence>
+        {selectedSpecialty && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedSpecialtyId(null)}
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100]"
+            />
+
+            {/* Drawer Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed top-0 right-0 h-full w-full max-w-lg bg-white shadow-2xl z-[101] overflow-y-auto"
+            >
+              <div className="relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedSpecialtyId(null)}
+                  className="absolute top-6 left-6 size-10 rounded-full bg-slate-900/10 backdrop-blur-md flex items-center justify-center text-slate-800 hover:bg-secondary hover:text-white transition-all duration-300 z-10"
+                >
+                  <X className="size-5" />
+                </button>
+
+                {/* Hero Image Section */}
+                <div className="h-64 relative">
+                  <img
+                    src={selectedSpecialty.image}
+                    alt={selectedSpecialty.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-slate-900" />
+
+                  <div className="absolute bottom-6 left-8 right-8">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <span className="bg-secondary text-[8px] text-white px-3 py-0.5 rounded-full font-black uppercase tracking-widest">
+                        Active Program
+                      </span>
+                    </div>
+                    <h2 className="text-3xl font-black text-white tracking-tight leading-none">
+                      {selectedSpecialty.title}
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 space-y-8">
+                  <div className="space-y-4">
+                    <p className="text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                      "{selectedSpecialty.description}"
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
