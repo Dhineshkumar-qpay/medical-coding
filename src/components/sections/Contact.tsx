@@ -117,9 +117,15 @@ export function Contact() {
                     <Phone className="size-4.5" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[9px] font-black tracking-widest text-primary uppercase block leading-none">Admissions Hotline</span>
-                    <h4 className="text-base font-bold text-navy leading-tight mt-1">+91-9488393395</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to call direct office line</p>
+                    <span className="text-[9px] font-black tracking-widest text-primary uppercase block leading-none">
+                      Admissions Hotline
+                    </span>
+                    <h4 className="text-base font-bold text-navy leading-tight mt-1">
+                      +91-9488393395
+                    </h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                      Click to call direct office line
+                    </p>
                   </div>
                 </div>
                 <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-primary/10 group-hover/item:text-primary transition-all duration-300 flex-shrink-0">
@@ -136,14 +142,24 @@ export function Contact() {
               >
                 <div className="flex items-center space-x-4">
                   <div className="size-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
-                    <svg className="size-4.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      className="size-4.5 fill-current"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 1.974 14.12 1.95 11.47 1.95c-5.434 0-9.858 4.37-9.863 9.8-.001 1.762.486 3.48 1.412 5.013l-1.01 3.693 3.793-.984zM16.57 14.4c-.25-.125-1.476-.725-1.705-.808-.228-.083-.393-.125-.558.125-.166.25-.64.808-.784.975-.145.166-.29.187-.54.062-.25-.125-1.05-.386-2-1.229-.738-.655-1.236-1.465-1.38-1.714-.145-.25-.015-.385.11-.51.112-.11.25-.29.375-.435.125-.145.166-.25.25-.417.083-.166.04-.312-.02-.437-.062-.125-.558-1.333-.765-1.833-.2-.486-.403-.412-.558-.412h-.475c-.166 0-.437.062-.663.312-.228.25-.87.85-.87 2.075s.9 2.408.995 2.541c.095.13 1.762 2.675 4.263 3.746.595.255 1.057.408 1.417.523.598.19 1.143.163 1.573.1.48-.07 1.477-.6 1.684-1.18.207-.58.207-1.08.145-1.18-.062-.1-.228-.145-.478-.27z" />
                     </svg>
                   </div>
                   <div className="text-left">
-                    <span className="text-[9px] font-black tracking-widest text-emerald-500 uppercase block leading-none">Instant Chat</span>
-                    <h4 className="text-base font-bold text-navy leading-tight mt-1">WhatsApp Messenger</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to message live advisor</p>
+                    <span className="text-[9px] font-black tracking-widest text-emerald-500 uppercase block leading-none">
+                      Instant Chat
+                    </span>
+                    <h4 className="text-base font-bold text-navy leading-tight mt-1">
+                      WhatsApp Messenger
+                    </h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                      Click to message live advisor
+                    </p>
                   </div>
                 </div>
                 <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-emerald-500/10 group-hover/item:text-emerald-500 transition-all duration-300 flex-shrink-0">
@@ -161,9 +177,15 @@ export function Contact() {
                     <Mail className="size-4.5" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="text-[9px] font-black tracking-widest text-secondary uppercase block leading-none">Email Office</span>
-                    <h4 className="text-sm md:text-base font-bold text-navy leading-tight truncate mt-1">erohealthcare026@gmail.com</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to send an email query</p>
+                    <span className="text-[9px] font-black tracking-widest text-secondary uppercase block leading-none">
+                      Email Office
+                    </span>
+                    <h4 className="text-sm md:text-base font-bold text-navy leading-tight truncate mt-1">
+                      erohealthcare026@gmail.com
+                    </h4>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                      Click to send an email query
+                    </p>
                   </div>
                 </div>
                 <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-secondary/10 group-hover/item:text-secondary transition-all duration-300 flex-shrink-0">
@@ -183,11 +205,15 @@ export function Contact() {
                     <MapPin className="size-4.5" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="text-[9px] font-black tracking-widest text-navy uppercase block leading-none">Campus HQ</span>
+                    <span className="text-[9px] font-black tracking-widest text-navy uppercase block leading-none">
+                      Campus HQ
+                    </span>
                     <h4 className="text-xs font-bold text-navy leading-relaxed truncate mt-1">
                       36C, Sukkuramaniya Valasu, Veerappamchathram, Erode
                     </h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">Click to view on Google Maps</p>
+                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                      Click to view on Google Maps
+                    </p>
                   </div>
                 </div>
                 <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-navy/10 group-hover/item:text-navy transition-all duration-300 flex-shrink-0">
@@ -271,6 +297,7 @@ export function Contact() {
                     name="course"
                     className="pl-11 pr-8 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy outline-none transition-all appearance-none cursor-pointer shadow-sm"
                   >
+                    <option value="">Select Specialty</option>
                     <option className="bg-white">Anesthesia</option>
                     <option className="bg-white">Emergency Medicine</option>
                     <option className="bg-white">Hospital Medicine</option>
