@@ -55,7 +55,6 @@ export default function WhyUsPage() {
                     </span>
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-black text-navy tracking-tight leading-[1.05] uppercase text-left">
-                    Engineering <br />{" "}
                     <span className="text-primary/20 outline-text">
                       Clinical
                     </span>{" "}
@@ -90,12 +89,12 @@ export default function WhyUsPage() {
                   },
                   {
                     title: "Expert Mentors",
-                    desc: "Veteran AAPC certified professionals.",
+                    desc: "AAPC certified professionals.",
                     icon: Users,
                   },
                   {
                     title: "Global Standards",
-                    desc: "ISO 9001:2015 institutional alignment.",
+                    desc: "ISO 9001:2015 ",
                     icon: Globe,
                   },
                 ].map((item, i) => (
@@ -153,7 +152,7 @@ export default function WhyUsPage() {
                 <div className="space-y-4">
                   {[
                     "98.4% First-Attempt Certification",
-                    "Multi-Specialty Lab Environment",
+                    "Multi-Specialty",
                     "Executive Branding Suite",
                     "24/7 Global Support Matrix",
                   ].map((text, i) => (
@@ -217,7 +216,7 @@ export default function WhyUsPage() {
                 </h3>
                 <div className="max-w-2xl mx-auto h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
                 <p className="text-[8px] font-black text-slate-300 uppercase tracking-[0.4em] max-w-xl mx-auto">
-                  ERO Healthcare Institutional Framework © 2024. All Rights
+                  ERO Healthcare Innovation Framework © 2025. All Rights
                   Reserved. Redefining the Global Revenue Cycle.
                 </p>
               </div>

@@ -137,12 +137,12 @@ export default function AboutPage() {
                     </div>
 
                     {/* Leader Profile block */}
-                    <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                    <div className="px-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
                       <div className="space-y-1">
-                        <h4 className="text-lg md:text-xl font-black text-navy tracking-tight group-hover:text-[#0c5597] transition-colors duration-300">
-                          Poovarasan Krishnamoorthi
-                        </h4>
-                        <p className="text-[#0c5597] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                        <p className="text-[#0c5597] text-md md:text-lg font-semibold tracking-widest">
+                          <p className="text-xl font-black uppercase tracking-widest text-[#FF8C00]">
+                            Poovarasan Krishnamoorthi
+                          </p>
                           Founder & Chief Executive Officer
                         </p>
                       </div>
@@ -175,15 +175,33 @@ export default function AboutPage() {
                     Who We Are
                   </h2>
                 </div>
-
                 <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
-                  Founded in 2015, our company has been at the forefront of
-                  delivering advanced clinical documentation and medical coding
-                  solutions that make a real impact. We believe in precision,
-                  integrity, and building long-term relationships with
-                  healthcare networks worldwide.
+                  Established on March 22, 2022, Aslan Medical Coding Training
+                  Center began with a mission to empower aspiring professionals.
+                  Having successfully placed over 400 students in leading MNCs
+                  through dedication and confidence, we are proud to announce
+                  our evolution. In 2026, we are launching ERO Healthcare
+                  Innovation Pvt Ltd.
                 </p>
-
+                <span className="text-[#000000] font-bold text-lg">
+                  Inspired by the wisdom of Aslan:
+                </span>
+                <br />
+                <p className="text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In your world,
+                  I have another name. You must learn to know me by it. That was
+                  the very reason why you were brought to Narnia, that by
+                  knowing me here for a little, you may know me better there. We
+                  invite you to join us at ERO Healthcare; by knowing us here
+                  for a little, you may come to know our excellence even better
+                  in the wider world of healthcare." We invite you to grow with
+                  us. By knowing us here at ERO Healthcare for a little, you
+                  will find that the same excellence you trusted at Aslan has
+                  evolved into something even more powerful.
+                </p>
+                <p className="font-bold text-green-900">
+                  "To know us here is to prepare for the world beyond."
+                </p>
                 <div className="pt-4">
                   <a href="/why-us" className="inline-block">
                     <Button className="bg-primary text-white hover:bg-navy px-8 rounded-xl font-extrabold text-xs uppercase tracking-wider h-[50px]">

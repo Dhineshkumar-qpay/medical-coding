@@ -45,7 +45,7 @@ export default function Home() {
       <main className="bg-white overflow-hidden">
         {/* Dynamic Institutional Hero */}
         <BrandedHero
-          subtitle="Empowering the healthcare ecosystem with AAPC/AHIMA aligned precision training and strategic revenue cycle documentation."
+          subtitle="At ERO Healthcare Innovation is a premier provider of technology-enabled Revenue Cycle Management (RCM) and certified medical coding solutions. We partner with healthcare organizations to navigate the increasing complexity of the payer landscape, ensuring financial resilience through administrative precision. In an era defined by the shift to value-based care, we provide the intelligence and infrastructure necessary to optimize clinical reimbursement and protect practice integrity."
           image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzlpZDJ1NDRodDV3cG1waGZ2dnczdXBlNHBqOWQ2Y3JqczBodnQzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOEbLRT4SwD35IELiQ/giphy.gif"
           title={undefined}
         />
@@ -226,11 +226,11 @@ export default function Home() {
                     methodology."
                   </h2>
                   <div className="space-y-2">
-                    <p className="text-lg font-black text-navy uppercase tracking-widest">
-                      Santhosh Kumar
+                    <p className="text-xl font-black uppercase tracking-widest text-[#FF8C00]">
+                      Poovarasan Krishnamoorthi
                     </p>
                     <p className="text-sm font-bold text-primary tracking-widest uppercase">
-                      Senior Lead Auditor, UnitedHealth Group
+                      Founder & Chief Executive Officer
                     </p>
                   </div>
                 </div>
