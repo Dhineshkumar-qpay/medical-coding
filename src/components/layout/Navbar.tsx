@@ -334,7 +334,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                             required
                             name="name"
                             type="text"
-                            placeholder="Candidate Full Name"
+                            placeholder="First Name"
                             className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                           />
                         </div>
@@ -349,7 +349,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                               required
                               name="email"
                               type="email"
-                              placeholder="Primary Email"
+                              placeholder="Email"
                               className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                             />
                           </div>

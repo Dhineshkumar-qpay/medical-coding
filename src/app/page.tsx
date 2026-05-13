@@ -126,7 +126,7 @@ export default function Home() {
                 >
                   <Link href="/specialties" className="w-full sm:w-auto">
                     <Button className="w-full bg-[#0c5597] hover:bg-[#09152b] text-white font-black tracking-wider uppercase text-xs px-8 h-[52px] rounded-xl shadow-lg hover:shadow-[#0c5597]/20 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-2 border border-transparent">
-                      <span>Explore Courses</span>
+                      <span>Explore Careers</span>
                       <div className="size-5 rounded-full bg-white flex items-center justify-center text-[#0c5597]">
                         <ChevronRight className="size-3.5" />
                       </div>
@@ -242,14 +242,7 @@ export default function Home() {
                       Specialist Track
                     </span>
                   </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-xs font-black text-navy uppercase tracking-tight">
-                      Medical Coding
-                    </h4>
-                    <p className="text-[8px] font-bold text-slate-400">
-                      ICD-10-CM | PCS | HCPCS
-                    </p>
-                  </div>
+
                   {/* Visual micro chart */}
                   <div className="flex items-end space-x-1 pt-1.5 h-6">
                     <div className="w-1.5 bg-[#0c5597] h-[40%] rounded-full animate-pulse" />
@@ -286,23 +279,7 @@ export default function Home() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
                   className="absolute bottom-6 right-0 md:-right-6 z-20 flex flex-col items-end"
-                >
-                  {/* Stylized stacked medical books */}
-                  <div className="space-y-[-12px] group cursor-pointer">
-                    {/* Book 1 (Top): ICD-10-CM */}
-                    <div className="w-32 h-6 rounded-md bg-[#4bbac3] text-white flex items-center justify-center text-[9px] font-black uppercase tracking-wider shadow-md transform hover:translate-x-1 transition-transform border-b border-black/10">
-                      ICD-10-CM
-                    </div>
-                    {/* Book 2 (Middle): PCS */}
-                    <div className="w-32 h-6 rounded-md bg-[#0c5597] text-white flex items-center justify-center text-[9px] font-black uppercase tracking-wider shadow-md transform hover:translate-x-1 transition-transform border-b border-black/10">
-                      PCS
-                    </div>
-                    {/* Book 3 (Bottom): HCPCS */}
-                    <div className="w-32 h-6 rounded-md bg-[#09152b] text-white flex items-center justify-center text-[9px] font-black uppercase tracking-wider shadow-md transform hover:translate-x-1 transition-transform">
-                      HCPCS
-                    </div>
-                  </div>
-                </motion.div>
+                ></motion.div>
 
                 {/* Floating Circles on Right connecting with dotted lines */}
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 md:-right-16 flex flex-col space-y-10 z-20">

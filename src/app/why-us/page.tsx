@@ -90,7 +90,7 @@ export default function WhyUsPage() {
                     </h2>
                     <p className="text-sm md:text-base text-slate-500 font-semibold leading-relaxed text-justify">
                       At ERO Healthcare, we believe that medical coding is not
-                      merely standard documentation—it is a critical science
+                      merely standard documentation. It is a critical science
                       that governs the global healthcare economy. Our
                       methodology is built from the ground up to prepare
                       professionals for absolute precision, direct corporate
@@ -136,47 +136,12 @@ export default function WhyUsPage() {
                     glowColor: "group-hover:bg-[#0c5597]/5",
                     iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
                   },
-                  {
-                    title: "Immersive EHR Sandbox",
-                    desc: "Gain hands-on clinical confidence in our customized electronic health record sandboxes, practicing with complex ICD-10-CM, CPT, and HCPCS coding.",
-                    icon: Code,
-                    badge: "Practical",
-                    borderHover: "hover:border-[#4bbac3]/40",
-                    glowColor: "group-hover:bg-[#4bbac3]/5",
-                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
-                  },
+
                   {
                     title: "Expert Clinical Mentors",
                     desc: "Learn from highly seasoned AAPC/AHIMA instructors with over 15 years of industry tenure, ready to deliver deep technical knowledge and 1-on-1 feedback.",
                     icon: Users,
                     badge: "15+ Years Exp",
-                    borderHover: "hover:border-[#78bb30]/40",
-                    glowColor: "group-hover:bg-[#78bb30]/5",
-                    iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
-                  },
-                  {
-                    title: "98.4% CPC Pass Rate",
-                    desc: "Our strategic speed-runs, custom mock examinations, and diagnostic error analysis ensure an unmatched pass rate on the very first certification attempt.",
-                    icon: ShieldCheck,
-                    badge: "Industry Best",
-                    borderHover: "hover:border-[#0c5597]/40",
-                    glowColor: "group-hover:bg-[#0c5597]/5",
-                    iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
-                  },
-                  {
-                    title: "Direct MNC Placement",
-                    desc: "Capitalize on our exclusive partnerships with 150+ premier global healthcare organizations and MNCs, resulting in immediate job matching upon credentialing.",
-                    icon: Target,
-                    badge: "Guaranteed Matches",
-                    borderHover: "hover:border-[#4bbac3]/40",
-                    glowColor: "group-hover:bg-[#4bbac3]/5",
-                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
-                  },
-                  {
-                    title: "Specialty-Coding Tracks",
-                    desc: "Go beyond basic outpatient files. Train in high-demand domains like Interventional Radiology, Cardiology, Emergency Department, and Surgery coding.",
-                    icon: Layers,
-                    badge: "Elite Level",
                     borderHover: "hover:border-[#78bb30]/40",
                     glowColor: "group-hover:bg-[#78bb30]/5",
                     iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
@@ -250,86 +215,7 @@ export default function WhyUsPage() {
                 </p>
               </div>
 
-              {/* Timeline Layout */}
-              <div className="relative mt-12">
-                {/* Horizontal line for desktop, vertical line for mobile */}
-                <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0c5597] via-[#4bbac3] to-[#78bb30] -translate-y-1/2 rounded-full hidden lg:block opacity-40" />
-
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
-                  {[
-                    {
-                      title: "Clinical Essentials",
-                      subtitle: "Month 1 • Medical Terminology",
-                      desc: "Establish a flawless clinical foundation covering Human Anatomy, Physiology, Pathology, and Pharmacology basics essential for accurate diagnosis coding.",
-                      color: "border-[#0c5597]",
-                      icon: HeartPulse,
-                      glow: "bg-[#0c5597]/10",
-                    },
-                    {
-                      title: "Standard Architecture",
-                      subtitle: "Month 2 • ICD-10 & CPT Core",
-                      desc: "Dive deep into modern coding guidelines. Master structured ICD-10-CM diagnostic hierarchies, CPT procedure rules, and HCPCS national codes.",
-                      color: "border-[#4bbac3]",
-                      icon: FileText,
-                      glow: "bg-[#4bbac3]/10",
-                    },
-                    {
-                      title: "Clinical Simulation",
-                      subtitle: "Month 3 • Real Chart Audits",
-                      desc: "Code live, redacted multi-specialty clinical charts under professional supervision. Perform thorough speed runs and resolve quality assurance error logs.",
-                      color: "border-[#78bb30]",
-                      icon: Cpu,
-                      glow: "bg-[#78bb30]/10",
-                    },
-                    {
-                      title: "Corporate Launchpad",
-                      subtitle: "Month 4 • MNC Placement",
-                      desc: "Gain comprehensive mock interview training, customized resume building, executive communication workshops, and direct matching with top global healthcare recruiters.",
-                      color: "border-[#0c5597]",
-                      icon: GraduationCap,
-                      glow: "bg-[#0c5597]/10",
-                    },
-                  ].map((phase, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.15, duration: 0.6 }}
-                      className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_45px_rgba(12,85,151,0.03)] hover:shadow-[0_30px_60px_rgba(12,85,151,0.08)] transition-all duration-300 relative group text-left"
-                    >
-                      {/* Connection point dot for desktop */}
-                      <div
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 rounded-full bg-white border-4 border-[#4bbac3] z-20 hidden lg:block group-hover:scale-125 transition-transform duration-300"
-                        style={{ top: "-2px" }}
-                      />
-
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-between">
-                          <div
-                            className={`size-10 rounded-xl flex items-center justify-center ${phase.glow}`}
-                          >
-                            <phase.icon className="size-5 text-primary" />
-                          </div>
-                        </div>
-
-                        <div className="space-y-1">
-                          <h4 className="text-base font-black text-navy uppercase tracking-tight">
-                            {phase.title}
-                          </h4>
-                          <span className="text-[10px] font-black uppercase text-slate-400 tracking-wider block">
-                            {phase.subtitle}
-                          </span>
-                        </div>
-
-                        <p className="text-xs font-semibold text-slate-500 leading-relaxed text-justify pt-2">
-                          {phase.desc}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+             
             </div>
           </Container>
         </section>
