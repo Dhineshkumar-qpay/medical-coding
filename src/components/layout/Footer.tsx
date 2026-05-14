@@ -244,12 +244,36 @@ export function Footer() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 space-y-8 text-left">
-                  <div className="space-y-4">
-                    <p className="text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                      "{selectedSpecialty.description}"
-                    </p>
-                  </div>
+                <div className="p-8 space-y-6 text-left">
+                  {(() => {
+                    const cleanText = selectedSpecialty.description.replace(/([a-z])\.([A-Z])/g, "$1. $2");
+                    const sentences = (cleanText.match(/[^.!?]+[.!?]+/g) || [cleanText]).map((s) => s.trim());
+                    const c1 = Math.max(1, Math.ceil(sentences.length / 3));
+                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 3));
+                    const p1 = sentences.slice(0, c1).join(" ");
+                    const p2 = sentences.slice(c1, c2).join(" ");
+                    const p3 = sentences.slice(c2).join(" ");
+
+                    return (
+                      <>
+                        {p1 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p1}&quot;
+                          </p>
+                        )}
+                        {p2 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p2}&quot;
+                          </p>
+                        )}
+                        {p3 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p3}&quot;
+                          </p>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.div>

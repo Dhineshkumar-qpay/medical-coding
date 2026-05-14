@@ -123,6 +123,15 @@ export function BrandedHero({
         <div
           className={`${isSplit ? "max-w-2xl" : "max-w-4xl mx-auto text-center"} text-white space-y-6`}
         >
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className={titleClassName}
+          >
+            
+          </motion.h1>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

@@ -34,23 +34,24 @@ export default function CareerPage() {
       <Navbar showTopBanner={true} />
       <main className="bg-white overflow-hidden pt-20">
         {/* Section 1: Modern Corporate Hero Header */}
-        <section className="relative py-20 lg:py-28 bg-[radial-gradient(circle_at_top_right,rgba(75,186,195,0.08),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(12,85,151,0.05),transparent_50%),linear-gradient(135deg,#f8fafc_0%,#ffffff_50%,#f1f5f9_100%)] overflow-hidden border-b border-slate-100">
+        <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#09152b] via-[#0c5597] to-[#4bbac3] overflow-hidden border-b border-slate-100 text-white">
+          {/* Glowing gradient accent balls */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#78bb30]/20 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4bbac3]/20 rounded-full blur-[100px] pointer-events-none" />
           {/* Grid mesh backdrop */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.015] pointer-events-none" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.05] pointer-events-none" />
 
           <Container className="relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8">
-              {/* Placement Track Badge */}
-
               <div className="space-y-4">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
-                  className="text-2xl md:text-3xl lg:text-3xl font-black text-navy leading-none tracking-tight uppercase"
+                  className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-none tracking-tight uppercase"
                 >
                   Your Path to <br />
-                  <span className="text-[#0c5597] bg-gradient-to-r from-[#0c5597] to-[#4bbac3] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#4bbac3] to-[#78bb30] bg-clip-text text-transparent">
                     Career Eminence.
                   </span>
                 </motion.h1>
@@ -60,7 +61,7 @@ export default function CareerPage() {
                   initial={{ opacity: 0, scaleX: 0 }}
                   animate={{ opacity: 1, scaleX: 1 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="h-1.5 w-24 bg-gradient-to-r from-[#0c5597] via-[#4bbac3] to-[#78bb30] rounded-full mx-auto"
+                  className="h-1.5 w-24 bg-gradient-to-r from-[#4bbac3] to-[#78bb30] rounded-full mx-auto"
                 />
               </div>
 
@@ -68,7 +69,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-sm md:text-base text-slate-500 font-semibold max-w-2xl mx-auto leading-relaxed text-justify md:text-center"
+                className="text-sm md:text-base text-slate-100/90 font-semibold max-w-2xl mx-auto leading-relaxed text-justify md:text-center"
               >
                 Step into a high-demand, multi-billion dollar healthcare
                 ecosystem with our certified professional pathways and premier
@@ -89,7 +90,7 @@ export default function CareerPage() {
                     const event = new CustomEvent("openEnrollModal");
                     window.dispatchEvent(event);
                   }}
-                  className="bg-[#0c5597] hover:bg-[#09152b] text-white font-black tracking-wider uppercase text-xs px-8 py-6 rounded-xl shadow-lg hover:shadow-[#0c5597]/20 transition-all duration-300 flex items-center justify-center space-x-2.5 mx-auto border border-transparent"
+                  className="bg-white hover:bg-slate-100 text-[#0c5597] font-black tracking-wider uppercase text-xs px-8 py-6 rounded-xl shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2.5 mx-auto border border-transparent cursor-pointer"
                 >
                   <span>Connect with us</span>
                   <ArrowRight className="size-4" />

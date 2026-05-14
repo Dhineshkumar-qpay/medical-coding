@@ -34,7 +34,7 @@ export default function SpecialtiesPage() {
         <BrandedHero
           title="Our Specialties"
           subtitle="Expert-led training in high-demand medical coding disciplines."
-          image="https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=2000"
+          image="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2000"
         />
 
         <section className="py-20 bg-white">
@@ -167,27 +167,37 @@ export default function SpecialtiesPage() {
                   </div>
                 </div>
 
-                {/* Content Section - Tightened */}
-                <div className="p-8 space-y-8">
-                  <div className="space-y-4">
-                    {/* Program Description split into stacked cards one-by-one */}
-                    {selectedSpecialty.description
-                      .split(/(?<=[.!?])\s*(?=[A-Z])/)
-                      .filter(Boolean)
-                      .map((part, index) => (
-                        <div
-                          key={index}
-                          className="relative p-5 bg-slate-50/50 border border-slate-100/80 rounded-2xl shadow-[0_4px_20px_rgba(9,21,43,0.01)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.03)] hover:-translate-y-0.5 transition-all duration-300 overflow-hidden pl-7 group text-left"
-                        >
-                          <div
-                            className={`absolute top-0 left-0 w-1 h-full ${index === 0 ? "bg-primary" : "bg-secondary"}`}
-                          />
-                          <p className="text-sm text-slate-600 leading-relaxed font-semibold">
-                            "{part.trim()}"
+                {/* Content Section */}
+                <div className="p-8 space-y-6 text-left">
+                  {(() => {
+                    const cleanText = selectedSpecialty.description.replace(/([a-z])\.([A-Z])/g, "$1. $2");
+                    const sentences = (cleanText.match(/[^.!?]+[.!?]+/g) || [cleanText]).map((s) => s.trim());
+                    const c1 = Math.max(1, Math.ceil(sentences.length / 3));
+                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 3));
+                    const p1 = sentences.slice(0, c1).join(" ");
+                    const p2 = sentences.slice(c1, c2).join(" ");
+                    const p3 = sentences.slice(c2).join(" ");
+
+                    return (
+                      <>
+                        {p1 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p1}&quot;
                           </p>
-                        </div>
-                      ))}
-                  </div>
+                        )}
+                        {p2 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p2}&quot;
+                          </p>
+                        )}
+                        {p3 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p3}&quot;
+                          </p>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.div>

@@ -243,8 +243,16 @@ export default function Home() {
                     </span>
                   </div>
 
+                  <div className="w-full h-20 rounded-xl overflow-hidden pt-1">
+                    <img
+                      src="https://cdn.create.vista.com/api/media/small/300484738/stock-photo-medical-technology-stethoscope-on-white-keyboard"
+                      alt="Specialist Analytics"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
                   {/* Visual micro chart */}
-                  <div className="flex items-end space-x-1 pt-1.5 h-6">
+                  <div className="flex items-end space-x-1 pt-1 h-6">
                     <div className="w-1.5 bg-[#0c5597] h-[40%] rounded-full animate-pulse" />
                     <div className="w-1.5 bg-[#4bbac3] h-[75%] rounded-full" />
                     <div className="w-1.5 bg-[#78bb30] h-[55%] rounded-full" />
@@ -370,10 +378,10 @@ export default function Home() {
                         Our Vision
                       </h3>
                       <p className="text-slate-400 text-sm leading-relaxed font-semibold group-hover:text-slate-300 transition-colors text-justify">
-                        "To redefine the healthcare revenue cycle through
+                        &quot;To redefine the healthcare revenue cycle through
                         ethical coding excellence and advanced analytics,
                         ensuring the financial sustainability and operational
-                        success of our partners."
+                        success of our partners.&quot;
                       </p>
                     </div>
                   </div>
@@ -407,10 +415,10 @@ export default function Home() {
                         Our Mission
                       </h3>
                       <p className="text-slate-400 text-sm leading-relaxed font-semibold group-hover:text-slate-300 transition-colors text-justify">
-                        "To ensure healthcare data integrity through rigorous
+                        &quot;To ensure healthcare data integrity through rigorous
                         accuracy, total confidentiality, and revenue cycle
                         excellence, allowing providers to focus entirely on
-                        client requirements."
+                        client requirements.&quot;
                       </p>
                     </div>
                   </div>
@@ -502,9 +510,9 @@ export default function Home() {
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-2xl lg:text-4xl font-black text-navy tracking-tight leading-relaxed">
-                    "The ERO Healthcare framework didn't just provide a
+                    &quot;The ERO Healthcare framework didn&apos;t just provide a
                     certification; it redefined my entire professional
-                    methodology."
+                    methodology.&quot;
                   </h2>
                   <div className="space-y-2">
                     <p className="text-xl font-black uppercase tracking-widest text-[#FF8C00]">
@@ -646,12 +654,36 @@ export default function Home() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 space-y-8">
-                  <div className="space-y-4">
-                    <p className="text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                      "{selectedSpecialty.description}"
-                    </p>
-                  </div>
+                <div className="p-8 space-y-6 text-left">
+                  {(() => {
+                    const cleanText = selectedSpecialty.description.replace(/([a-z])\.([A-Z])/g, "$1. $2");
+                    const sentences = (cleanText.match(/[^.!?]+[.!?]+/g) || [cleanText]).map((s) => s.trim());
+                    const c1 = Math.max(1, Math.ceil(sentences.length / 3));
+                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 3));
+                    const p1 = sentences.slice(0, c1).join(" ");
+                    const p2 = sentences.slice(c1, c2).join(" ");
+                    const p3 = sentences.slice(c2).join(" ");
+
+                    return (
+                      <>
+                        {p1 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p1}&quot;
+                          </p>
+                        )}
+                        {p2 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p2}&quot;
+                          </p>
+                        )}
+                        {p3 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p3}&quot;
+                          </p>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.div>
@@ -659,31 +691,5 @@ export default function Home() {
         )}
       </AnimatePresence>
     </>
-  );
-}
-
-// Visual placeholders for icons not explicitly imported
-function Building2(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-      <path d="M10 6h4" />
-      <path d="M10 10h4" />
-      <path d="M10 14h4" />
-      <path d="M10 18h4" />
-    </svg>
   );
 }

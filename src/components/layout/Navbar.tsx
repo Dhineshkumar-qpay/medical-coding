@@ -25,6 +25,7 @@ import { SPECIALTIES } from "@/lib/specialties";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
+  { name: "Career", href: "/career" },
   { name: "Why Us", href: "/why-us" },
   { name: "Contact", href: "/contact" },
   {
@@ -292,9 +293,9 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                 <div className="space-y-8">
                   <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                     <p className="text-sm font-medium text-slate-600 leading-relaxed">
-                      "Take the next step toward a successful career in
+                      &quot;Take the next step toward a successful career in
                       precision medical coding. Complete the registration form
-                      below to begin your professional journey."
+                      below to begin your professional journey.&quot;
                     </p>
                   </div>
 
@@ -474,12 +475,36 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 space-y-8">
-                  <div className="space-y-4">
-                    <p className="text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                      "{selectedSpecialty.description}"
-                    </p>
-                  </div>
+                <div className="p-8 space-y-6">
+                  {(() => {
+                    const cleanText = selectedSpecialty.description.replace(/([a-z])\.([A-Z])/g, "$1. $2");
+                    const sentences = (cleanText.match(/[^.!?]+[.!?]+/g) || [cleanText]).map((s) => s.trim());
+                    const c1 = Math.max(1, Math.ceil(sentences.length / 3));
+                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 3));
+                    const p1 = sentences.slice(0, c1).join(" ");
+                    const p2 = sentences.slice(c1, c2).join(" ");
+                    const p3 = sentences.slice(c2).join(" ");
+
+                    return (
+                      <>
+                        {p1 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p1}&quot;
+                          </p>
+                        )}
+                        {p2 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p2}&quot;
+                          </p>
+                        )}
+                        {p3 && (
+                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
+                            &quot;{p3}&quot;
+                          </p>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.div>
