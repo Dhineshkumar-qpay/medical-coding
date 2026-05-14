@@ -118,9 +118,9 @@ export default function WhyUsPage() {
                   <span className="text-primary">Corporate distinction.</span>
                 </h2>
                 <p className="text-sm md:text-base text-slate-500 font-semibold max-w-2xl mx-auto">
-                  Discover the systematic operational practices and educational
-                  advantages that make us the premium choice for medical coding
-                  and clinical documentation.
+                  Discover the systematic operational practices and corporate
+                  advantages that make us the premium choice for healthcare
+                  revenue cycle and clinical documentation.
                 </p>
               </div>
 
@@ -128,23 +128,58 @@ export default function WhyUsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
-                    title: "AAPC Certified Curriculum",
-                    desc: "Rigorous alignment with global gold standards. We prepare you with official licensed materials, real-life specialty case files, and deep compliance audits.",
+                    title: "AAPC & AHIMA Certified Operations",
+                    desc: "Our coding workflows are executed by licensed experts rigorously aligned with global gold standards, ensuring absolute clinical accuracy and regulatory compliance.",
                     icon: Award,
-                    badge: "Authorized",
+                    badge: "Certified",
                     borderHover: "hover:border-[#0c5597]/40",
                     glowColor: "group-hover:bg-[#0c5597]/5",
                     iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
                   },
-
                   {
-                    title: "Expert Clinical Mentors",
-                    desc: "Learn from highly seasoned AAPC/AHIMA instructors with over 15 years of industry tenure, ready to deliver deep technical knowledge and 1-on-1 feedback.",
-                    icon: Users,
+                    title: "Seasoned Clinical Auditors",
+                    desc: "Our quality assurance leadership brings over 15 years of healthcare revenue cycle tenure, providing rigorous multi-tier reviews and unmatched data integrity.",
+                    icon: ShieldCheck,
                     badge: "15+ Years Exp",
                     borderHover: "hover:border-[#78bb30]/40",
                     glowColor: "group-hover:bg-[#78bb30]/5",
                     iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
+                  },
+                  {
+                    title: "Comprehensive RCM Optimization",
+                    desc: "End-to-end revenue cycle management solutions engineered to eliminate claim denials, accelerate reimbursement velocity, and maximize operational cash flow.",
+                    icon: TrendingUp,
+                    badge: "Optimized",
+                    borderHover: "hover:border-[#4bbac3]/40",
+                    glowColor: "group-hover:bg-[#4bbac3]/5",
+                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
+                  },
+                  {
+                    title: "Advanced Compliance Frameworks",
+                    desc: "Strict adherence to HIPAA, ICD-10-CM, and NCCI edit guidelines, safeguarding healthcare organizations against regulatory risks and billing discrepancies.",
+                    icon: BookmarkCheck,
+                    badge: "100% HIPAA",
+                    borderHover: "hover:border-[#0c5597]/40",
+                    glowColor: "group-hover:bg-[#0c5597]/5",
+                    iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
+                  },
+                  {
+                    title: "Multi-Specialty Domain Expertise",
+                    desc: "Deep clinical domain knowledge spanning Anesthesia, Radiology, Emergency Medicine, and complex inpatient/outpatient surgical documentation.",
+                    icon: Layers,
+                    badge: "Specialized",
+                    borderHover: "hover:border-[#78bb30]/40",
+                    glowColor: "group-hover:bg-[#78bb30]/5",
+                    iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
+                  },
+                  {
+                    title: "Technology-Enabled Workflow",
+                    desc: "Leveraging cutting-edge coding analytics and secure EHR integrations to deliver rapid turnaround times and transparent reporting for enterprise health systems.",
+                    icon: Cpu,
+                    badge: "High Velocity",
+                    borderHover: "hover:border-[#4bbac3]/40",
+                    glowColor: "group-hover:bg-[#4bbac3]/5",
+                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
                   },
                 ].map((item, i) => (
                   <motion.div
@@ -209,13 +244,94 @@ export default function WhyUsPage() {
                   <span className="text-primary">Coding Mastery.</span>
                 </h2>
                 <p className="text-sm md:text-base text-slate-500 font-semibold max-w-2xl mx-auto">
-                  A comprehensive, scientifically mapped candidate pathway that
-                  accelerates you from core clinical basics to a certified
-                  coding authority.
+                  A comprehensive, structured operational roadmap that elevates
+                  professional medical coders from foundational clinical
+                  documentation to elite revenue cycle authorities.
                 </p>
               </div>
 
-             
+              {/* 4-Step Professional Roadmap Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                {[
+                  {
+                    step: "01",
+                    title: "Clinical Foundation",
+                    desc: "Mastery of medical terminology, anatomy, and pathophysiology to ensure exact clinical abstraction from provider documentation.",
+                    icon: FileText,
+                    borderColor: "border-[#0c5597]/20 hover:border-[#0c5597]",
+                    textColor: "text-[#0c5597]",
+                    bgAccent: "bg-[#0c5597]/10",
+                  },
+                  {
+                    step: "02",
+                    title: "Regulatory Alignment",
+                    desc: "Comprehensive integration of CPT, ICD-10-CM, and HCPCS Level II coding guidelines tailored to complex payer policies.",
+                    icon: BookmarkCheck,
+                    borderColor: "border-[#4bbac3]/20 hover:border-[#4bbac3]",
+                    textColor: "text-[#4bbac3]",
+                    bgAccent: "bg-[#4bbac3]/10",
+                  },
+                  {
+                    step: "03",
+                    title: "Specialty Sandbox",
+                    desc: "Rigorous case abstraction and multi-tier auditing within simulated environments under the direct supervision of senior QA leadership.",
+                    icon: ShieldCheck,
+                    borderColor: "border-[#78bb30]/20 hover:border-[#78bb30]",
+                    textColor: "text-[#78bb30]",
+                    bgAccent: "bg-[#78bb30]/10",
+                  },
+                  {
+                    step: "04",
+                    title: "Corporate Deployment",
+                    desc: "Autonomous production coding across enterprise healthcare systems, maintaining strict 98.4%+ accuracy thresholds and continuous compliance.",
+                    icon: Award,
+                    borderColor: "border-slate-900/20 hover:border-slate-900",
+                    textColor: "text-slate-900",
+                    bgAccent: "bg-slate-900/10",
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={cardVariants}
+                    className={`group relative p-8 bg-white border rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 text-left flex flex-col justify-between h-[320px] ${item.borderColor}`}
+                  >
+                    <div className="space-y-6">
+                      <div className="flex items-center justify-between">
+                        <div
+                          className={`size-12 rounded-2xl flex items-center justify-center ${item.bgAccent} ${item.textColor} group-hover:scale-110 transition-transform duration-300 shadow-inner`}
+                        >
+                          <item.icon className="size-6" />
+                        </div>
+                        <span
+                          className={`text-xl font-black ${item.textColor} opacity-40 group-hover:opacity-100 transition-opacity`}
+                        >
+                          {item.step}
+                        </span>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-black text-navy uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs font-semibold leading-relaxed text-slate-500 text-justify">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-50 flex items-center justify-between text-slate-400 group-hover:text-primary transition-colors">
+                      <span className="text-[9px] font-black uppercase tracking-widest">
+                        Milestone Verified
+                      </span>
+                      <CheckCircle className="size-4 opacity-40 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </Container>
         </section>
@@ -230,7 +346,7 @@ export default function WhyUsPage() {
           <Container>
             <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
               {/* Left Column: Context Brief */}
-              <div className="lg:col-span-5 space-y-8 text-left">
+              <div className="lg:col-span-6 space-y-8 text-left">
                 <div className="space-y-4">
                   <div className="h-1 w-16 bg-[#4bbac3] rounded-full" />
                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#4bbac3]">
@@ -243,82 +359,95 @@ export default function WhyUsPage() {
                     </span>{" "}
                     <br /> In Motion.
                   </h2>
-                  <p className="text-sm text-slate-400 font-semibold leading-relaxed max-w-sm text-justify">
-                    We continuously evaluate and report our educational
-                    outcomes. Integrity is our absolute benchmark. Our results
-                    speak for themselves.
+                  <p className="text-sm text-slate-400 font-semibold leading-relaxed max-w-md text-justify">
+                    We continuously evaluate and report our operational
+                    outcomes. Absolute integrity is our benchmark, delivering
+                    empirical velocity and financial resilience for healthcare
+                    providers.
                   </p>
                 </div>
 
-                {/* Simplified List of Attributes */}
-                <div className="grid grid-cols-1 gap-3 pt-4">
+                {/* 3 Core Approaches */}
+                <div className="space-y-6 pt-4">
                   {[
-                    "98.4% First-Attempt CPC success",
-                    "AAPC & AHIMA Authorized content",
-                    "Exclusive interview prep dashboard",
-                    "150+ Leading Healthcare MNC recruiters",
-                  ].map((text, i) => (
-                    <div
+                    {
+                      title: 'The "White-Glove" Approach',
+                      badge: "Focus on Service",
+                      desc: "Our white-glove RCM partnership navigates the complexities of the healthcare financial landscape with precision, transforming vendor support into a seamless extension of your clinical mission.",
+                      icon: Users,
+                      accent: "from-[#0c5597] to-[#4bbac3]",
+                    },
+                    {
+                      title: 'The "Empowerment" Approach',
+                      badge: "Focus on Education",
+                      desc: "We bridge the gap between clinical documentation and financial stability by empowering your staff through industry-leading education and aggressive, forward-thinking reimbursement strategies.",
+                      icon: GraduationCap,
+                      accent: "from-[#4bbac3] to-[#78bb30]",
+                    },
+                    {
+                      title: 'The "Growth" Approach',
+                      badge: "Focus on Results",
+                      desc: "Driven by decades of mastery, we resolve the nuances of the revenue cycle to ensure regulatory hurdles never impede your growth or the quality of your patient outcomes.",
+                      icon: TrendingUp,
+                      accent: "from-[#78bb30] to-[#0c5597]",
+                    },
+                  ].map((item, i) => (
+                    <motion.div
                       key={i}
-                      className="flex items-center space-x-4 p-3.5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#4bbac3]/20 hover:bg-white/[0.04] transition-all duration-300 group"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.15, duration: 0.5 }}
+                      className="relative p-6 md:p-7 rounded-[2rem] bg-gradient-to-br from-white/[0.05] to-white/[0.01] backdrop-blur-xl border border-white/10 hover:border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_30px_60px_rgba(12,85,151,0.2)] hover:-translate-y-1.5 transition-all duration-500 group overflow-hidden"
                     >
-                      <span className="text-xs font-black text-[#4bbac3] opacity-50 group-hover:opacity-100 transition-all">
-                        0{i + 1}
-                      </span>
-                      <span className="text-xs font-bold tracking-wider text-slate-300 group-hover:text-white transition-all uppercase">
-                        {text}
-                      </span>
-                    </div>
+                      {/* Gradient top accent bar */}
+                      <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${item.accent} opacity-60 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                      {/* Internal layout */}
+                      <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <div className="size-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-[#4bbac3] group-hover:bg-[#4bbac3] group-hover:text-white transition-all duration-500 shrink-0 shadow-inner">
+                          <item.icon className="size-6" />
+                        </div>
+                        <div className="space-y-2.5 w-full">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <h3 className="text-base font-black text-white tracking-wide uppercase group-hover:text-[#4bbac3] transition-colors">
+                              {item.title}
+                            </h3>
+                            <span className="text-[9px] font-black uppercase px-3 py-1 rounded-full bg-white/[0.08] text-[#4bbac3] border border-[#4bbac3]/30 tracking-widest shadow-sm backdrop-blur-md">
+                              {item.badge}
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-300 font-medium leading-relaxed text-justify">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
 
               {/* Right Column: Premium Outcome Widget */}
-              <div className="lg:col-span-7 flex justify-center lg:justify-end relative z-10">
+              <div className="lg:col-span-6 flex justify-center lg:justify-end relative z-10">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="p-8 md:p-10 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2.5rem] space-y-8 text-left w-full max-w-lg hover:border-[#4bbac3]/30 transition-all duration-300 group shadow-[0_30px_60px_rgba(0,0,0,0.3)] relative overflow-hidden"
+                  transition={{ duration: 0.7 }}
+                  className="p-4 bg-gradient-to-b from-white/[0.07] to-white/[0.02] backdrop-blur-2xl border border-white/15 rounded-[3rem] w-full max-w-xl hover:border-[#4bbac3]/40 transition-all duration-500 group shadow-[0_40px_80px_rgba(0,0,0,0.5)] relative overflow-hidden"
                 >
                   {/* Glowing background blob */}
-                  <div className="absolute -right-24 -top-24 size-56 bg-[#4bbac3]/10 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute -right-24 -top-24 size-72 bg-[#4bbac3]/15 rounded-full blur-[70px] pointer-events-none group-hover:bg-[#4bbac3]/25 group-hover:scale-110 transition-all duration-700" />
+                  <div className="absolute -left-24 -bottom-24 size-72 bg-[#0c5597]/15 rounded-full blur-[70px] pointer-events-none" />
 
-                  <div className="flex items-center justify-between">
-                    <div className="size-12 rounded-2xl bg-[#4bbac3]/10 flex items-center justify-center text-[#4bbac3] group-hover:bg-[#4bbac3] group-hover:text-white transition-colors duration-300 shadow-inner">
-                      <Cpu className="size-6" />
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4bbac3]">
-                      ERO Standard Accuracy
-                    </span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h4 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
-                      98.4%
-                    </h4>
-                    <div className="space-y-2">
-                      <p className="text-sm font-black text-slate-200 uppercase tracking-wider">
-                        AAPC First-Attempt Certification Success
-                      </p>
-                      <p className="text-xs text-slate-400 font-medium leading-relaxed text-justify">
-                        Our candidates achieve an exceptional pass rate on their
-                        first attempt, significantly outpacing the global
-                        average. This is driven by our strict clinical sandbox
-                        audits, licensed curricula, and thorough preparation
-                        methodology.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 pt-2">
-                    <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-[#0c5597] to-[#4bbac3] w-[98.4%] shadow-[0_0_15px_rgba(75,186,195,0.7)]" />
-                    </div>
-                    <div className="flex justify-between items-center text-[10px] text-slate-500 font-black uppercase tracking-wider">
-                      <span>Standard Threshold</span>
-                      <span className="text-[#4bbac3]">98.4% CPC Achieved</span>
-                    </div>
+                  {/* Relevant Content Image */}
+                  <div className="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.3)] group-hover:border-[#4bbac3]/30 transition-colors duration-500">
+                    <img
+                      src="https://ingenioushealthcare.co.in/wp-content/uploads/2021/09/medical-coding.jpg"
+                      alt="Healthcare Financial Accuracy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#09152b]/60 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </motion.div>
               </div>

@@ -120,6 +120,83 @@ export default function CareerPage() {
                   pathways realized by our candidates.
                 </p>
               </div>
+
+              {/* Professional Benchmark Content: Image + Grid */}
+              <div className="grid lg:grid-cols-12 gap-12 items-center">
+                {/* Left Side: Technological / System Image (No Persons) */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="lg:col-span-5 relative"
+                >
+                  <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-50 group">
+                    <img
+                      src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=1200"
+                      alt="Healthcare Analytics Infrastructure"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#0c5597]/20 to-transparent pointer-events-none" />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center space-x-3">
+                    <div className="size-3 rounded-full bg-[#4bbac3] animate-ping" />
+                    <span className="text-[10px] font-black text-navy uppercase tracking-wider">
+                      Systematic Integrity
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* Right Side: Professional Cards Grid */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="lg:col-span-7 space-y-4"
+                >
+                  {[
+                    {
+                      title: "Certified Domain Mastery",
+                      desc: "Rigorous alignment with AAPC and AHIMA professional frameworks, equipping coders to navigate multi-specialty clinical documentation with absolute structural integrity.",
+                      icon: Award,
+                      color: "text-[#0c5597]",
+                      bg: "bg-[#0c5597]/10",
+                    },
+                    {
+                      title: "Payer Compliance Alignment",
+                      desc: "In-depth proficiency in Medicare, Medicaid, and commercial reimbursement guidelines to ensure flawless claim submission and mitigate audit risk.",
+                      icon: ShieldCheck,
+                      color: "text-[#4bbac3]",
+                      bg: "bg-[#4bbac3]/10",
+                    },
+                    {
+                      title: "Advanced Revenue Cycle Leadership",
+                      desc: "Expertise in end-to-end RCM operations, transforming complex medical abstraction into seamless financial velocity across enterprise healthcare systems.",
+                      icon: TrendingUp,
+                      color: "text-[#78bb30]",
+                      bg: "bg-[#78bb30]/10",
+                    },
+                  ].map((card, i) => (
+                    <div
+                      key={i}
+                      className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex items-start space-x-4 hover:border-[#4bbac3]/30 hover:bg-white transition-all duration-300 group shadow-sm"
+                    >
+                      <div className={`size-12 rounded-xl flex items-center justify-center shrink-0 ${card.bg} ${card.color} group-hover:scale-110 transition-transform duration-300`}>
+                        <card.icon className="size-6" />
+                      </div>
+                      <div className="space-y-1.5 text-left">
+                        <h3 className="text-base font-black text-navy uppercase tracking-tight group-hover:text-[#0c5597] transition-colors">
+                          {card.title}
+                        </h3>
+                        <p className="text-xs text-slate-500 font-semibold leading-relaxed text-justify">
+                          {card.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </Container>
         </section>

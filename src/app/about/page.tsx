@@ -45,14 +45,14 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.02] -z-10" />
 
           <Container>
-            <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               {/* Visual Presence - Left Side */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="lg:col-span-5 relative"
+                className="lg:col-span-5 relative w-full max-w-md mx-auto lg:max-w-none"
               >
                 <div className="relative z-10">
                   <div className="relative aspect-[4/5] w-full rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border-8 border-white group">
@@ -78,9 +78,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="lg:col-span-7 space-y-8"
+                className="lg:col-span-7 space-y-8 w-full"
               >
-                <div className="space-y-4">
+                <div className="space-y-4 text-center lg:text-left">
                   <span className="text-primary font-black uppercase text-[10px] tracking-widest pl-0.5">
                     Executive Leadership
                   </span>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
                 <div className="space-y-6">
                   {/* Unified Executive Card containing quotes and leader profile */}
-                  <div className="relative p-10 md:p-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_30px_60px_rgba(12,85,151,0.03)] hover:shadow-[0_45px_90px_rgba(12,85,151,0.08)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden pl-12 md:pl-14 group space-y-8">
+                  <div className="relative p-6 sm:p-10 md:p-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_30px_60px_rgba(12,85,151,0.03)] hover:shadow-[0_45px_90px_rgba(12,85,151,0.08)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden pl-8 sm:pl-12 md:pl-14 group space-y-8">
                     {/* Glowing logo-colored side indicator */}
                     <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#0c5597] via-[#4bbac3] to-[#78bb30]" />
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     <div className="absolute -right-24 -bottom-24 size-72 bg-gradient-to-br from-[#0c5597]/5 to-[#78bb30]/5 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700" />
 
                     {/* Styled Background Quote Icon */}
-                    <div className="absolute top-6 right-10 text-slate-100 select-none pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500">
+                    <div className="absolute top-6 right-8 sm:right-10 text-slate-100 select-none pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500">
                       <svg
                         width="48"
                         height="38"
@@ -116,13 +116,13 @@ export default function AboutPage() {
 
                     <div className="space-y-6 relative z-10">
                       {/* Paragraph 1 */}
-                      <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold pr-4 text-justify">
+                      <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-semibold pr-2 sm:pr-4 text-justify">
                         ERO HealthCare Innovation Private Limited is dedicated
                         to client success and the professional growth of our
                         team. By continually raising the bar on our performance
                         results, we ensure our clients receive the highest level
                         of service. As Aslan famously noted, the purpose of a
-                        new experience is to 'know me better' in one’s own
+                        new experience is to &apos;know me better&apos; in one&apos;s own
                         world. At ERO Health, we believe the work we do here
                         empowers our clients to achieve excellence in their
                         world.
@@ -130,10 +130,10 @@ export default function AboutPage() {
                     </div>
 
                     {/* Leader Profile block */}
-                    <div className="px-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                    <div className="px-0 sm:px-4 md:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
                       <div className="space-y-1">
-                        <div className="text-[#0c5597] text-md md:text-lg font-semibold tracking-widest">
-                          <p className="text-xl font-black uppercase tracking-widest text-[#FF8C00]">
+                        <div className="text-[#0c5597] text-sm sm:text-md md:text-lg font-semibold tracking-widest">
+                          <p className="text-lg sm:text-xl font-black uppercase tracking-widest text-[#FF8C00]">
                             Poovarasan Krishnamoorthi
                           </p>
                           Founder & Chief Executive Officer
@@ -187,13 +187,13 @@ export default function AboutPage() {
                   knowing me here for a little, you may know me better there. We
                   invite you to join us at ERO Healthcare; by knowing us here
                   for a little, you may come to know our excellence even better
-                  in the wider world of healthcare." We invite you to grow with
+                  in the wider world of healthcare.&quot; We invite you to grow with
                   us. By knowing us here at ERO Healthcare for a little, you
                   will find that the same excellence you trusted at Aslan has
                   evolved into something even more powerful.
                 </p>
                 <p className="font-bold text-green-900">
-                  "To know us here is to prepare for the world beyond."
+                  &quot;To know us here is to prepare for the world beyond.&quot;
                 </p>
                 <div className="pt-4">
                   <a href="/why-us" className="inline-block">
