@@ -236,41 +236,53 @@ export default function CareerPage() {
                     name: "Clinical Entities",
                     desc: "Top Hospital Chains & Multi-Specialty Clinics",
                     icon: Building2,
+                    gradient: "from-[#0c5597]/5 to-[#4bbac3]/5",
                   },
                   {
                     name: "RCM Conglomerates",
                     desc: "Tech-Enabled Billing & Coding Multinationals",
                     icon: Briefcase,
+                    gradient: "from-[#4bbac3]/5 to-[#78bb30]/5",
                   },
                   {
                     name: "Payer Networks",
                     desc: "Premium Medical Insurance & Auditing Carriers",
                     icon: ShieldCheck,
+                    gradient: "from-[#78bb30]/5 to-[#0c5597]/5",
                   },
                   {
                     name: "Academic Alliances",
                     desc: "AAPC/AHIMA Licensed Training & Testing Centers",
                     icon: GraduationCap,
+                    gradient: "from-[#0c5597]/5 to-[#4bbac3]/5",
                   },
                 ].map((network, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1, duration: 0.5 }}
-                    className="p-6 bg-slate-50 border border-slate-100 rounded-3xl text-left space-y-4 hover:border-[#4bbac3]/30 hover:bg-white transition-all duration-300 group shadow-sm"
+                    transition={{ delay: idx * 0.1, duration: 0.6 }}
+                    className="group relative p-8 rounded-[2.5rem] bg-[#0b1329] border border-white/5 hover:border-[#4bbac3]/40 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_40px_80px_rgba(12,85,151,0.2)] transition-all duration-500 overflow-hidden text-left"
                   >
-                    <div className="size-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-[#4bbac3] group-hover:text-white group-hover:border-transparent transition-all duration-300 shadow-sm">
-                      <network.icon className="size-5" />
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="text-sm font-black text-navy uppercase tracking-tight group-hover:text-[#0c5597] transition-colors">
-                        {network.name}
-                      </h4>
-                      <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
-                        {network.desc}
-                      </p>
+                    {/* Glowing Decorative Background */}
+                    <div className={`absolute -right-16 -bottom-16 size-48 bg-gradient-to-br ${network.gradient} rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700 opacity-60`} />
+                    
+                    <div className="relative z-10 space-y-6">
+                      {/* Icon Container */}
+                      <div className="size-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#4bbac3] group-hover:bg-[#4bbac3] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-[0_0_20px_rgba(75,186,195,0.1)]">
+                        <network.icon className="size-7" />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <h4 className="text-base font-black text-white uppercase tracking-tight group-hover:text-[#4bbac3] transition-colors">
+                          {network.name}
+                        </h4>
+                        <div className="h-0.5 w-8 bg-[#4bbac3]/30 group-hover:w-12 group-hover:bg-[#4bbac3] transition-all duration-500" />
+                        <p className="text-[11px] text-slate-400 font-semibold leading-relaxed">
+                          {network.desc}
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 ))}

@@ -493,30 +493,42 @@ export default function WhyUsPage() {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
                 {[
-                  { name: "AAPC Standards", desc: "AAPC Curriculum Aligned" },
+                  { 
+                    name: "AAPC Standards", 
+                    desc: "AAPC Curriculum Aligned",
+                    gradient: "from-[#0c5597] to-[#4bbac3]"
+                  },
                   {
                     name: "AHIMA Guidelines",
                     desc: "ICD-10-CM Industry Standard",
+                    gradient: "from-[#4bbac3] to-[#78bb30]"
                   },
                   {
                     name: "HIPAA Compliant",
                     desc: "Total Protected Health Information",
+                    gradient: "from-[#78bb30] to-[#0c5597]"
                   },
                   {
                     name: "ISO 9001:2015",
                     desc: "Quality Management Certified",
+                    gradient: "from-[#09152b] to-[#0c5597]"
                   },
                 ].map((logo, idx) => (
                   <div
                     key={idx}
-                    className="p-6 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-[#0c5597]/5 hover:border-[#0c5597]/15 hover:-translate-y-1 transition-all duration-300"
+                    className={`p-7 bg-gradient-to-br ${logo.gradient} rounded-2xl border border-white/10 shadow-[0_15px_35px_rgba(12,85,151,0.1)] hover:shadow-[0_25px_50px_rgba(12,85,151,0.2)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden`}
                   >
-                    <p className="text-sm font-black uppercase tracking-widest text-navy">
-                      {logo.name}
-                    </p>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-wider mt-1">
-                      {logo.desc}
-                    </p>
+                    {/* Visual pattern overlay */}
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05] pointer-events-none" />
+                    
+                    <div className="relative z-10 space-y-1">
+                      <p className="text-sm font-black uppercase tracking-widest text-white group-hover:scale-105 transition-transform duration-500">
+                        {logo.name}
+                      </p>
+                      <p className="text-[10px] font-black text-white/70 uppercase tracking-wider mt-1">
+                        {logo.desc}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
