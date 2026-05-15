@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
     name: "ERO Healthcare",
     fullName: "ERO Healthcare Innovation Private Limited",
-    title: "ERO Healthcare | Medical Coding & Billing Certification",
+    title: "ERO Healthcare Innovation Private Limited",
     description: "Leading healthcare innovation institute providing expert Medical Coding, Medical Billing, and Professional Certification Courses.",
     url: "https://erohealthcare.com",
     ogImage: "https://erohealthcare.com/og-image.jpg",

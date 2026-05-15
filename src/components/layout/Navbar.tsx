@@ -410,7 +410,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                         <span>
                           {enrollStatus === "loading"
                             ? "Processing..."
-                            : "Transmit Application"}
+                            : "Submit"}
                         </span>
                         <Send className="ml-3 size-3.5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
                       </Button>

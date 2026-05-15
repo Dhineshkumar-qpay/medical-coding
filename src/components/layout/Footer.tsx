@@ -188,7 +188,7 @@ export function Footer() {
       {/* Full-width Accent Golden/Orange Bottom Bar */}
       <div className="bg-stone py-4 px-6 text-center border-t border-slate-800 w-full relative z-10">
         <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white">
-          Copyright © 2025 ERO Healthcare. All Rights Reserved.
+          Copyright © 2026 ERO Healthcare. All Rights Reserved.
         </p>
       </div>
 

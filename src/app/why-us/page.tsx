@@ -156,7 +156,7 @@ export default function WhyUsPage() {
                   },
                   {
                     title: "Advanced Compliance Frameworks",
-                    desc: "Strict adherence to HIPAA, ICD-10-CM, and NCCI edit guidelines, safeguarding healthcare organizations against regulatory risks and billing discrepancies.",
+                    desc: "Strict adherence to HIPAA, safeguarding healthcare organizations against regulatory risks and billing discrepancies.",
                     icon: BookmarkCheck,
                     badge: "100% HIPAA",
                     borderHover: "hover:border-[#0c5597]/40",
@@ -254,7 +254,6 @@ export default function WhyUsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                 {[
                   {
-                    step: "01",
                     title: "Clinical Foundation",
                     desc: "Mastery of medical terminology, anatomy, and pathophysiology to ensure exact clinical abstraction from provider documentation.",
                     icon: FileText,
@@ -263,7 +262,6 @@ export default function WhyUsPage() {
                     bgAccent: "bg-[#0c5597]/10",
                   },
                   {
-                    step: "02",
                     title: "Regulatory Alignment",
                     desc: "Comprehensive integration of CPT, ICD-10-CM, and HCPCS Level II coding guidelines tailored to complex payer policies.",
                     icon: BookmarkCheck,
@@ -272,7 +270,6 @@ export default function WhyUsPage() {
                     bgAccent: "bg-[#4bbac3]/10",
                   },
                   {
-                    step: "03",
                     title: "Specialty Sandbox",
                     desc: "Rigorous case abstraction and multi-tier auditing within simulated environments under the direct supervision of senior QA leadership.",
                     icon: ShieldCheck,
@@ -281,7 +278,6 @@ export default function WhyUsPage() {
                     bgAccent: "bg-[#78bb30]/10",
                   },
                   {
-                    step: "04",
                     title: "Corporate Deployment",
                     desc: "Autonomous production coding across enterprise healthcare systems, maintaining strict 98.4%+ accuracy thresholds and continuous compliance.",
                     icon: Award,
@@ -306,11 +302,6 @@ export default function WhyUsPage() {
                         >
                           <item.icon className="size-6" />
                         </div>
-                        <span
-                          className={`text-xl font-black ${item.textColor} opacity-40 group-hover:opacity-100 transition-opacity`}
-                        >
-                          {item.step}
-                        </span>
                       </div>
 
                       <div className="space-y-3">
@@ -401,7 +392,9 @@ export default function WhyUsPage() {
                       className="relative p-6 md:p-7 rounded-[2rem] bg-gradient-to-br from-white/[0.05] to-white/[0.01] backdrop-blur-xl border border-white/10 hover:border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_30px_60px_rgba(12,85,151,0.2)] hover:-translate-y-1.5 transition-all duration-500 group overflow-hidden"
                     >
                       {/* Gradient top accent bar */}
-                      <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${item.accent} opacity-60 group-hover:opacity-100 transition-opacity duration-500`} />
+                      <div
+                        className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${item.accent} opacity-60 group-hover:opacity-100 transition-opacity duration-500`}
+                      />
 
                       {/* Internal layout */}
                       <div className="flex flex-col sm:flex-row sm:items-start gap-4">
