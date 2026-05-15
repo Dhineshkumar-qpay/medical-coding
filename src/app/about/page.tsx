@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import ceo from "@/assets/ceo.jpeg";
+import AboutBanner from "@/assets/banners/about.jpg";
 
 export default function AboutPage() {
   const fadeIn = {
@@ -36,13 +37,12 @@ export default function AboutPage() {
         <BrandedHero
           title="About Us"
           subtitle="We are transforming the healthcare revenue cycle through unyielding precision, ethical documentation, and forward-thinking analytics."
-          image="/images/about.jpg"
+          image={AboutBanner.src}
         />
 
         {/* Executive Vision Section - Swapped for Professional Flow */}
         <section className="py-32 relative bg-slate-50/30">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-white -z-10 shadow-inner" />
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/double-lined-grid.png')] opacity-[0.02] -z-10" />
 
           <Container>
             <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -122,10 +122,10 @@ export default function AboutPage() {
                         team. By continually raising the bar on our performance
                         results, we ensure our clients receive the highest level
                         of service. As Aslan famously noted, the purpose of a
-                        new experience is to &apos;know me better&apos; in one&apos;s own
-                        world. At ERO Health, we believe the work we do here
-                        empowers our clients to achieve excellence in their
-                        world.
+                        new experience is to &apos;know me better&apos; in
+                        one&apos;s own world. At ERO Health, we believe the work
+                        we do here empowers our clients to achieve excellence in
+                        their world.
                       </p>
                     </div>
 
@@ -187,13 +187,14 @@ export default function AboutPage() {
                   knowing me here for a little, you may know me better there. We
                   invite you to join us at ERO Healthcare; by knowing us here
                   for a little, you may come to know our excellence even better
-                  in the wider world of healthcare.&quot; We invite you to grow with
-                  us. By knowing us here at ERO Healthcare for a little, you
-                  will find that the same excellence you trusted at Aslan has
-                  evolved into something even more powerful.
+                  in the wider world of healthcare.&quot; We invite you to grow
+                  with us. By knowing us here at ERO Healthcare for a little,
+                  you will find that the same excellence you trusted at Aslan
+                  has evolved into something even more powerful.
                 </p>
                 <p className="font-bold text-green-900">
-                  &quot;To know us here is to prepare for the world beyond.&quot;
+                  &quot;To know us here is to prepare for the world
+                  beyond.&quot;
                 </p>
                 <div className="pt-4">
                   <a href="/why-us" className="inline-block">

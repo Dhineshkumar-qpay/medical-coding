@@ -30,6 +30,14 @@ import {
   Compass,
 } from "lucide-react";
 
+import CorporateMeeting from "@/assets/why-us/corporate-meeting.png";
+import PartnershipImg from "@/assets/why-us/partnership.png";
+import AnalyticsImg from "@/assets/why-us/analytics.png";
+import EducationImg from "@/assets/why-us/education.png";
+import BrandingImg from "@/assets/why-us/branding.png";
+import WhyUsBanner from "@/assets/banners/why-us.jpg";
+import CorporateImg from "@/assets/why-us/corporate.jpg";
+
 export default function WhyUsPage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -59,7 +67,7 @@ export default function WhyUsPage() {
         <BrandedHero
           title="Why Us"
           subtitle="Establishing the global benchmark for medical coding excellence through rigorous operational validation and clinical integrity."
-          image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+          image={WhyUsBanner.src}
         />
 
         {/* Key Statement Section */}
@@ -79,7 +87,7 @@ export default function WhyUsPage() {
                 <div className="absolute -right-36 -top-36 size-96 bg-gradient-to-br from-[#4bbac3]/5 to-[#78bb30]/5 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
-                  <div className="md:col-span-8 space-y-4 text-left">
+                  <div className="md:col-span-7 space-y-4 text-left">
                     <span className="text-primary font-black uppercase text-[10px] tracking-[0.25em] pl-0.5">
                       The Trusted Benchmark
                     </span>
@@ -96,6 +104,14 @@ export default function WhyUsPage() {
                       professionals for absolute precision, direct corporate
                       integration, and long-term industry leadership.
                     </p>
+                  </div>
+                  <div className="md:col-span-5 h-full min-h-[220px] relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 group">
+                    <img 
+                      src={CorporateImg.src} 
+                      alt="Corporate Excellence" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
                   </div>
                 </div>
               </motion.div>
@@ -181,7 +197,7 @@ export default function WhyUsPage() {
                   >
                     {/* Abstract overlay to make it look premium */}
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05] pointer-events-none" />
-                    
+
                     <div className="absolute -right-20 -top-20 size-64 bg-white/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-white/20 transition-colors duration-500" />
 
                     <div className="space-y-5 relative z-10">
@@ -238,99 +254,103 @@ export default function WhyUsPage() {
                 </p>
               </div>
 
-              {/* Professional Approaches Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+              {/* Professional Approaches Grid - Redesigned for Premium Look */}
+              <div className="grid grid-cols-1 gap-8 relative z-10">
                 {[
                   {
                     title: 'The "Strategic Partner" Approach',
-                    subtitle: "Best if you want to be seen as an extension of their executive team.",
+                    subtitle: "Strategic Executive Extension",
                     desc: "Our commitment to client success is rooted in Revenue Integrity. We don't just assign codes; we provide the clinical insights and audit-ready precision that allow providers to focus on what matters most—patient outcomes. Your financial stability is the metric of our success.",
                     icon: Users,
                     accentColor: "from-[#0c5597] to-[#4bbac3]",
                     textColor: "text-[#0c5597]",
                     iconBg: "bg-[#0c5597]/10",
-                    hoverBorder: "group-hover:border-[#0c5597]/40",
+                    image: PartnershipImg,
                   },
                   {
                     title: 'The "Efficiency & Speed" Approach',
-                    subtitle: "Best if your main selling point is technology or fast turnaround times.",
+                    subtitle: "Technology-Enabled Velocity",
                     desc: "We define success by the frictionless flow of data. By combining expert human intuition with precision coding workflows, we commit to reducing your Days Sales Outstanding (DSO) and eliminating the burden of denials. We succeed only when your reimbursement is seamless, timely, and complete.",
                     icon: Zap,
                     accentColor: "from-[#4bbac3] to-[#78bb30]",
                     textColor: "text-[#4bbac3]",
                     iconBg: "bg-[#4bbac3]/10",
-                    hoverBorder: "group-hover:border-[#4bbac3]/40",
+                    image: AnalyticsImg,
                   },
                   {
                     title: 'The "Educational & Proactive" Approach',
-                    subtitle: "Best if you focus on Clinical Documentation Improvement (CDI) and consulting.",
+                    subtitle: "Clinical Documentation Integrity",
                     desc: "Client success means moving from reactive to proactive. We are committed to empowering your practice through transparent feedback loops and continuous documentation education. By bridging the gap between the physician's pen and the payer’s portal, we safeguard your practice against risk and lost revenue.",
                     icon: GraduationCap,
                     accentColor: "from-[#78bb30] to-[#0c5597]",
                     textColor: "text-[#78bb30]",
                     iconBg: "bg-[#78bb30]/10",
-                    hoverBorder: "group-hover:border-[#78bb30]/40",
+                    image: EducationImg,
                   },
                   {
                     title: 'The "Short & Punchy" (Modern) Approach',
-                    subtitle: "Best for website headers or marketing materials.",
+                    subtitle: "Zero-Defect Integrity",
                     desc: "\"Your Care, Our Codes, Total Integrity.\" We are committed to elevating the business of medicine through zero-defect coding, advocate-level denial management, and a relentless focus on our clients' bottom line.",
                     icon: Sparkles,
                     accentColor: "from-slate-800 to-[#0c5597]",
                     textColor: "text-slate-800",
                     iconBg: "bg-slate-100",
-                    hoverBorder: "group-hover:border-slate-800/40",
+                    image: BrandingImg,
                   },
                 ].map((item, i) => (
-                  <motion.div
+                                    <motion.div
                     key={i}
                     custom={i}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={cardVariants}
-                    className={`group relative bg-white rounded-[2.5rem] p-8 md:p-10 border border-slate-100 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(12,85,151,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between ${item.hoverBorder} h-full z-10`}
+                    className="group relative bg-white rounded-3xl border border-slate-100 shadow-[0_15px_35px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(12,85,151,0.1)] transition-all duration-700 overflow-hidden flex flex-col md:flex-row items-stretch z-10 hover:-translate-y-1.5"
                   >
-                    {/* Top gradient accent line */}
-                    <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${item.accentColor} opacity-80 group-hover:opacity-100 transition-opacity`} />
-                    
-                    {/* Background glow on hover */}
-                    <div className={`absolute -right-20 -top-20 size-64 bg-gradient-to-br ${item.accentColor} rounded-full blur-[80px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none`} />
-
-                    <div className="space-y-8 relative z-10">
-                      <div className="flex flex-col space-y-5 border-b border-slate-50 pb-6">
-                        <div className="flex items-center justify-between">
-                          <div
-                            className={`size-14 rounded-2xl flex items-center justify-center ${item.iconBg} ${item.textColor} group-hover:scale-110 transition-transform duration-500`}
-                          >
-                            <item.icon className="size-6" />
-                          </div>
-                          <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
-                            Approach Model
-                          </span>
-                        </div>
-                        <div className="space-y-2">
-                          <p className={`text-xs font-bold leading-relaxed ${item.textColor} bg-slate-50/50 p-4 rounded-xl border border-slate-100`}>
-                            {item.subtitle}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="space-y-4">
-                        <h3 className="text-xl md:text-2xl font-black text-navy tracking-tight leading-tight group-hover:text-primary transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm md:text-base font-semibold leading-relaxed text-slate-500 text-justify">
-                          {item.desc}
-                        </p>
+                    {/* Left Side: Image Container */}
+                    <div className="md:w-1/3 relative overflow-hidden min-h-[240px] md:min-h-full">
+                      <img 
+                        src={item.image.src} 
+                        alt={item.title} 
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-navy/20 to-transparent pointer-events-none" />
+                      
+                      {/* Floating Icon on Image */}
+                      <div className={`absolute top-6 left-6 size-12 rounded-xl flex items-center justify-center backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-xl group-hover:scale-110 transition-transform duration-500`}>
+                        <item.icon className="size-5" />
                       </div>
                     </div>
 
-                    <div className="pt-8 mt-8 flex items-center justify-between text-slate-300 group-hover:text-primary transition-colors relative z-10">
-                      <span className="text-[10px] font-black uppercase tracking-widest">
-                        Strategic Objective
-                      </span>
-                      <ArrowRight className="size-5 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
+                    {/* Right Side: Content Area */}
+                    <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center space-y-6 relative">
+                      {/* Decorative Background Element */}
+                      <div className={`absolute -right-20 -top-20 size-64 bg-gradient-to-br ${item.accentColor} rounded-full blur-[100px] opacity-0 group-hover:opacity-[0.05] transition-opacity duration-1000 pointer-events-none`} />
+
+                      <div className="space-y-3">
+                        <div className="inline-flex items-center space-x-3">
+                          <div className={`h-1 w-6 bg-gradient-to-r ${item.accentColor} rounded-full`} />
+                          <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400">
+                            {item.subtitle}
+                          </span>
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-black text-navy tracking-tight leading-tight group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                      </div>
+
+                      <p className="text-sm md:text-base font-semibold leading-relaxed text-slate-500 text-justify">
+                        {item.desc}
+                      </p>
+
+                      <div className="pt-4 flex items-center justify-between border-t border-slate-50">
+                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-300 group-hover:text-primary transition-colors">
+                          Strategic Alignment
+                        </span>
+                        <div className={`size-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-300 group-hover:border-primary group-hover:text-primary transition-all duration-300`}>
+                          <ArrowRight className="size-4" />
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 ))}

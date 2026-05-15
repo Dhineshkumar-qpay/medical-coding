@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Contact } from "@/components/sections/Contact";
 import { Container } from "@/components/ui/Container";
 import { BrandedHero } from "@/components/layout/BrandedHero";
+import ContactBanner from "@/assets/banners/contact-us.jpg";
 
 export const metadata = {
   title: "Contact Us | MedCode Institute",
@@ -18,7 +19,7 @@ export default function ContactPage() {
         <BrandedHero
           title="Get In Touch"
           subtitle="Have questions? We're here to help. Contact our counselors today for a free career roadmap."
-          image="https://t4.ftcdn.net/jpg/04/81/72/77/360_F_481727770_1u2ylNpie8WRosMVbv1COXDnnEK6ofwh.jpg"
+          image={ContactBanner.src}
         />
         <Contact />
       </main>

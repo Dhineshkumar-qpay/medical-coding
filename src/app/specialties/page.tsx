@@ -15,6 +15,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import SpecialtiesBanner from "@/assets/banners/specialties.jpg";
 
 export default function SpecialtiesPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -34,7 +35,7 @@ export default function SpecialtiesPage() {
         <BrandedHero
           title="Our Specialties"
           subtitle="Expert-led training in high-demand medical coding disciplines."
-          image="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2000"
+          image={SpecialtiesBanner.src}
         />
 
         <section className="py-20 bg-white">
@@ -47,7 +48,7 @@ export default function SpecialtiesPage() {
               </h2>
 
               <p className="text-lg text-slate-600 leading-relaxed font-medium text-justify">
-                At the Medical Coding Training Institute, we recognize that
+                At the Ero Healthcare , we recognize that
                 excellence in modern healthcare requires more than general
                 knowledge. Our specialized tracks are meticulously designed by
                 industry veterans to provide deep-dive expertise in the

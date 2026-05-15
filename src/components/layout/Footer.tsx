@@ -65,17 +65,19 @@ export function Footer() {
               cycles.
             </p>
 
-            {/* Minimalist Outlined Social Icons */}
+            {/* Minimalist Outlined Social Icons with Functional Actions */}
             <div className="flex items-center space-x-4 pt-1">
               {[
                 { Icon: Globe, href: "#" },
-                { Icon: MessageSquare, href: "#" },
-                { Icon: Mail, href: "#" },
-                { Icon: Phone, href: "#" },
+                { Icon: MessageSquare, href: "https://wa.me/+919488393395", target: "_blank" },
+                { Icon: Mail, href: "mailto:erohealthcare026@gmail.com" },
+                { Icon: Phone, href: "tel:+919488393395" },
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
+                  target={social.target}
+                  rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
                   className="text-slate-400 hover:text-white transition-colors duration-200"
                 >
                   <social.Icon className="size-4" />
