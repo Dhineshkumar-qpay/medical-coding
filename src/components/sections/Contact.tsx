@@ -26,7 +26,7 @@ export function Contact() {
     setStatus("loading");
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name"),
+      name: `${formData.get("firstName")} ${formData.get("lastName")}`,
       email: formData.get("email"),
       phone: formData.get("phone"),
       course: formData.get("course"),
@@ -34,7 +34,7 @@ export function Contact() {
     };
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://medical-coding-send-mail.onrender.com/api/send-mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -53,25 +53,49 @@ export function Contact() {
 
   if (status === "success") {
     return (
-      <div className="py-32 bg-[#fafbfc]">
+      <div className="py-32 bg-[#fafbfc] relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
         <Container>
-          <div className="max-w-md mx-auto text-center space-y-8 bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] animate-in zoom-in duration-500">
-            <div className="size-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-              <CheckCircle className="size-10 animate-bounce" />
+          <div className="max-w-lg mx-auto relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgba(9,21,43,0.08)] border border-slate-100 overflow-hidden text-center relative">
+              {/* Premium Top Gradient Bar */}
+              <div className="h-2 w-full bg-gradient-to-r from-primary via-emerald-400 to-secondary" />
+              
+              <div className="p-12 md:p-16 space-y-8">
+                {/* Icon Container with multi-layered glow */}
+                <div className="relative mx-auto size-24">
+                  <div className="absolute inset-0 bg-emerald-400/20 rounded-full animate-ping opacity-75 duration-1000" />
+                  <div className="relative size-full bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-full flex items-center justify-center border border-emerald-100 shadow-inner">
+                    <CheckCircle className="size-12 text-emerald-500" />
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">
+                    Inquiry Received
+                  </h2>
+                  <div className="h-1 w-12 bg-primary mx-auto rounded-full" />
+                  <p className="text-base text-slate-500 font-medium leading-relaxed max-w-sm mx-auto pt-2">
+                    Thank you for reaching out to <span className="font-bold text-slate-800">ERO Healthcare</span>. An admissions counselor will review your submission and contact you shortly.
+                  </p>
+                </div>
+
+                <div className="pt-6">
+                  <Button
+                    onClick={() => setStatus("idle")}
+                    className="group relative w-full sm:w-auto overflow-hidden rounded-xl bg-[#09152b] px-10 py-5 text-[11px] font-black uppercase tracking-[0.2em] text-white hover:bg-primary transition-all duration-300 shadow-xl shadow-navy/10 hover:shadow-primary/20 hover:-translate-y-0.5"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      Return to Command Center
+                      <ChevronRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
             </div>
-            <h2 className="text-3xl font-black text-navy tracking-tight">
-              Inquiry Received
-            </h2>
-            <p className="text-sm text-slate-500 font-semibold leading-relaxed">
-              Thank you for reaching out. An admissions counselor will review
-              your selection and contact you shortly.
-            </p>
-            <Button
-              onClick={() => setStatus("idle")}
-              className="w-full bg-navy text-white hover:bg-primary font-black text-[10px] uppercase tracking-widest h-[50px] rounded-xl"
-            >
-              Return to Command Center
-            </Button>
           </div>
         </Container>
       </div>
@@ -110,25 +134,26 @@ export function Contact() {
               {/* Card 1: Direct Line */}
               <a
                 href="tel:+919488393395"
-                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+                className="group/item relative flex items-center justify-between p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(12,85,151,0.08)] hover:-translate-y-1 transition-all duration-300 outline-none cursor-pointer overflow-hidden border border-slate-100"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="size-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
-                    <Phone className="size-4.5" />
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-secondary opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                <div className="flex items-center space-x-5 relative z-10">
+                  <div className="size-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-primary/10 group-hover/item:text-primary transition-all duration-300 flex-shrink-0 border border-slate-100 group-hover/item:border-primary/20 group-hover/item:scale-110">
+                    <Phone className="size-5" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[9px] font-black tracking-widest text-primary uppercase block leading-none">
+                    <span className="text-[9px] font-black tracking-widest text-slate-400 group-hover/item:text-primary transition-colors uppercase block leading-none">
                       Admissions Hotline
                     </span>
-                    <h4 className="text-base font-bold text-navy leading-tight mt-1">
+                    <h4 className="text-[15px] font-black text-navy leading-tight mt-1.5 group-hover/item:text-primary transition-colors">
                       +91-9488393395
                     </h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                    <p className="text-[10px] text-slate-400 font-semibold mt-1 leading-none">
                       Click to call direct office line
                     </p>
                   </div>
                 </div>
-                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-primary/10 group-hover/item:text-primary transition-all duration-300 flex-shrink-0">
+                <div className="relative z-10 size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 flex-shrink-0 group-hover/item:shadow-lg shadow-primary/20">
                   <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
@@ -138,12 +163,13 @@ export function Contact() {
                 href="https://wa.me/+919488393395"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+                className="group/item relative flex items-center justify-between p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(16,185,129,0.08)] hover:-translate-y-1 transition-all duration-300 outline-none cursor-pointer overflow-hidden border border-slate-100"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="size-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-emerald-400 to-emerald-600 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                <div className="flex items-center space-x-5 relative z-10">
+                  <div className="size-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-emerald-50 group-hover/item:text-emerald-500 transition-all duration-300 flex-shrink-0 border border-slate-100 group-hover/item:border-emerald-200 group-hover/item:scale-110">
                     <svg
-                      className="size-4.5 fill-current"
+                      className="size-5 fill-current"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -151,18 +177,18 @@ export function Contact() {
                     </svg>
                   </div>
                   <div className="text-left">
-                    <span className="text-[9px] font-black tracking-widest text-emerald-500 uppercase block leading-none">
+                    <span className="text-[9px] font-black tracking-widest text-slate-400 group-hover/item:text-emerald-500 transition-colors uppercase block leading-none">
                       Instant Chat
                     </span>
-                    <h4 className="text-base font-bold text-navy leading-tight mt-1">
+                    <h4 className="text-[15px] font-black text-navy leading-tight mt-1.5 group-hover/item:text-emerald-500 transition-colors">
                       WhatsApp Messenger
                     </h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                    <p className="text-[10px] text-slate-400 font-semibold mt-1 leading-none">
                       Click to message live advisor
                     </p>
                   </div>
                 </div>
-                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-emerald-500/10 group-hover/item:text-emerald-500 transition-all duration-300 flex-shrink-0">
+                <div className="relative z-10 size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-all duration-300 flex-shrink-0 group-hover/item:shadow-lg shadow-emerald-500/20">
                   <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
@@ -170,53 +196,55 @@ export function Contact() {
               {/* Card 3: Email Inquiry */}
               <a
                 href="mailto:erohealthcare026@gmail.com"
-                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+                className="group/item relative flex items-center justify-between p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(75,186,195,0.08)] hover:-translate-y-1 transition-all duration-300 outline-none cursor-pointer overflow-hidden border border-slate-100"
               >
-                <div className="flex items-center space-x-4 min-w-0">
-                  <div className="size-11 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
-                    <Mail className="size-4.5" />
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-secondary to-teal-400 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                <div className="flex items-center space-x-5 relative z-10 min-w-0">
+                  <div className="size-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-secondary/10 group-hover/item:text-secondary transition-all duration-300 flex-shrink-0 border border-slate-100 group-hover/item:border-secondary/20 group-hover/item:scale-110">
+                    <Mail className="size-5" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="text-[9px] font-black tracking-widest text-secondary uppercase block leading-none">
+                    <span className="text-[9px] font-black tracking-widest text-slate-400 group-hover/item:text-secondary transition-colors uppercase block leading-none">
                       Email Office
                     </span>
-                    <h4 className="text-sm md:text-base font-bold text-navy leading-tight truncate mt-1">
+                    <h4 className="text-[13px] md:text-[14px] font-black text-navy leading-tight mt-1.5 group-hover/item:text-secondary transition-colors truncate">
                       erohealthcare026@gmail.com
                     </h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                    <p className="text-[10px] text-slate-400 font-semibold mt-1 leading-none">
                       Click to send an email query
                     </p>
                   </div>
                 </div>
-                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-secondary/10 group-hover/item:text-secondary transition-all duration-300 flex-shrink-0">
+                <div className="relative z-10 size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover/item:bg-secondary group-hover/item:text-white transition-all duration-300 flex-shrink-0 group-hover/item:shadow-lg shadow-secondary/20">
                   <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
 
               {/* Card 4: Campus Headquarters */}
               <a
-                href="https://maps.google.com/?q=36C,Sukkuramaniya+Valasu,Veerappamchathram,Erode-638004"
+                href="https://maps.google.com/?q=11.3424,77.7282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/item flex items-center justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(9,21,43,0.04)] hover:-translate-y-0.5 transition-all duration-300 outline-none cursor-pointer"
+                className="group/item relative flex items-center justify-between p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(9,21,43,0.08)] hover:-translate-y-1 transition-all duration-300 outline-none cursor-pointer overflow-hidden border border-slate-100"
               >
-                <div className="flex items-center space-x-4 min-w-0">
-                  <div className="size-11 rounded-xl bg-navy/10 flex items-center justify-center text-navy group-hover/item:bg-[#0a1931] group-hover/item:text-white transition-colors duration-300 flex-shrink-0">
-                    <MapPin className="size-4.5" />
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-navy to-slate-700 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                <div className="flex items-center space-x-5 relative z-10 min-w-0">
+                  <div className="size-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-navy/5 group-hover/item:text-navy transition-all duration-300 flex-shrink-0 border border-slate-100 group-hover/item:border-navy/20 group-hover/item:scale-110">
+                    <MapPin className="size-5" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="text-[9px] font-black tracking-widest text-navy uppercase block leading-none">
+                    <span className="text-[9px] font-black tracking-widest text-slate-400 group-hover/item:text-navy transition-colors uppercase block leading-none">
                       Campus HQ
                     </span>
-                    <h4 className="text-xs font-bold text-navy leading-relaxed truncate mt-1">
-                      36C, Sukkuramaniya Valasu, Veerappamchathram, Erode
+                    <h4 className="text-[12px] font-black text-navy leading-relaxed mt-1.5 group-hover/item:text-navy transition-colors truncate">
+                      36C, Sukkuramaniya Valasu, Erode
                     </h4>
-                    <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-none">
+                    <p className="text-[10px] text-slate-400 font-semibold mt-1 leading-none">
                       Click to view on Google Maps
                     </p>
                   </div>
                 </div>
-                <div className="size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-navy/10 group-hover/item:text-navy transition-all duration-300 flex-shrink-0">
+                <div className="relative z-10 size-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover/item:bg-navy group-hover/item:text-white transition-all duration-300 flex-shrink-0 group-hover/item:shadow-lg shadow-navy/20">
                   <ChevronRight className="size-4 group-hover/item:translate-x-0.5 transition-transform" />
                 </div>
               </a>
@@ -245,16 +273,46 @@ export function Contact() {
             >
               <div className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {/* Full Identity / Name */}
+                  {/* First Name */}
                   <div className="relative group/input">
                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
                       <User className="size-4" />
                     </div>
                     <input
                       required
-                      name="name"
+                      name="firstName"
                       type="text"
-                      placeholder="Full Name"
+                      placeholder="First Name"
+                      className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
+                    />
+                  </div>
+
+                  {/* Last Name */}
+                  <div className="relative group/input">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
+                      <User className="size-4" />
+                    </div>
+                    <input
+                      required
+                      name="lastName"
+                      type="text"
+                      placeholder="Last Name"
+                      className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {/* Email Address */}
+                  <div className="relative group/input">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
+                      <Mail className="size-4" />
+                    </div>
+                    <input
+                      required
+                      name="email"
+                      type="email"
+                      placeholder="Email Address"
                       className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                     />
                   </div>
@@ -272,20 +330,6 @@ export function Contact() {
                       className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
                     />
                   </div>
-                </div>
-
-                {/* Email Address */}
-                <div className="relative group/input">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
-                    <Mail className="size-4" />
-                  </div>
-                  <input
-                    required
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
-                  />
                 </div>
 
                 {/* Course / Track Program Selection */}

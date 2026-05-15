@@ -61,7 +61,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name"),
+      name: `${formData.get("firstName")} ${formData.get("lastName")}`,
       email: formData.get("email"),
       phone: formData.get("phone"),
       course: formData.get("course"),
@@ -69,7 +69,7 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
     };
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://medical-coding-send-mail.onrender.com/api/send-mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -326,20 +326,35 @@ export function Navbar({ showTopBanner = false }: { showTopBanner?: boolean }) {
                   ) : (
                     <form className="space-y-6" onSubmit={handleEnrollSubmit}>
                       <div className="space-y-4">
-                        {/* Full Name */}
-                        <div className="relative group/input">
-                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
-                            <User className="size-4" />
+                        <div className="grid grid-cols-2 gap-4">
+                          {/* First Name */}
+                          <div className="relative group/input">
+                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
+                              <User className="size-4" />
+                            </div>
+                            <input
+                              required
+                              name="firstName"
+                              type="text"
+                              placeholder="First Name"
+                              className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
+                            />
                           </div>
-                          <input
-                            required
-                            name="name"
-                            type="text"
-                            placeholder="First Name"
-                            className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
-                          />
-                        </div>
 
+                          {/* Last Name */}
+                          <div className="relative group/input">
+                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-primary transition-colors duration-300">
+                              <User className="size-4" />
+                            </div>
+                            <input
+                              required
+                              name="lastName"
+                              type="text"
+                              placeholder="Last Name"
+                              className="pl-11 pr-4 w-full h-11 bg-white border border-slate-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/15 text-xs font-semibold text-navy placeholder:text-slate-400 outline-none transition-all shadow-sm"
+                            />
+                          </div>
+                        </div>
                         <div className="grid grid-cols-2 gap-4">
                           {/* Primary Email */}
                           <div className="relative group/input">

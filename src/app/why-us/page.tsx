@@ -132,54 +132,42 @@ export default function WhyUsPage() {
                     desc: "Our coding workflows are executed by licensed experts rigorously aligned with global gold standards, ensuring absolute clinical accuracy and regulatory compliance.",
                     icon: Award,
                     badge: "Certified",
-                    borderHover: "hover:border-[#0c5597]/40",
-                    glowColor: "group-hover:bg-[#0c5597]/5",
-                    iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
+                    cardBg: "bg-gradient-to-br from-[#0c5597] to-[#09152b]",
                   },
                   {
                     title: "Seasoned Clinical Auditors",
                     desc: "Our quality assurance leadership brings over 15 years of healthcare revenue cycle tenure, providing rigorous multi-tier reviews and unmatched data integrity.",
                     icon: ShieldCheck,
                     badge: "15+ Years Exp",
-                    borderHover: "hover:border-[#78bb30]/40",
-                    glowColor: "group-hover:bg-[#78bb30]/5",
-                    iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
+                    cardBg: "bg-gradient-to-br from-[#4bbac3] to-[#0c5597]",
                   },
                   {
                     title: "Comprehensive RCM Optimization",
                     desc: "End-to-end revenue cycle management solutions engineered to eliminate claim denials, accelerate reimbursement velocity, and maximize operational cash flow.",
                     icon: TrendingUp,
                     badge: "Optimized",
-                    borderHover: "hover:border-[#4bbac3]/40",
-                    glowColor: "group-hover:bg-[#4bbac3]/5",
-                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
+                    cardBg: "bg-gradient-to-br from-[#78bb30] to-[#3a6813]",
                   },
                   {
                     title: "Advanced Compliance Frameworks",
                     desc: "Strict adherence to HIPAA, safeguarding healthcare organizations against regulatory risks and billing discrepancies.",
                     icon: BookmarkCheck,
                     badge: "100% HIPAA",
-                    borderHover: "hover:border-[#0c5597]/40",
-                    glowColor: "group-hover:bg-[#0c5597]/5",
-                    iconBg: "bg-[#0c5597]/10 text-[#0c5597]",
+                    cardBg: "bg-gradient-to-br from-[#09152b] to-[#0c5597]",
                   },
                   {
                     title: "Multi-Specialty Domain Expertise",
                     desc: "Deep clinical domain knowledge spanning Anesthesia, Radiology, Emergency Medicine, and complex inpatient/outpatient surgical documentation.",
                     icon: Layers,
                     badge: "Specialized",
-                    borderHover: "hover:border-[#78bb30]/40",
-                    glowColor: "group-hover:bg-[#78bb30]/5",
-                    iconBg: "bg-[#78bb30]/10 text-[#78bb30]",
+                    cardBg: "bg-gradient-to-br from-[#0c5597] to-[#4bbac3]",
                   },
                   {
                     title: "Technology-Enabled Workflow",
                     desc: "Leveraging cutting-edge coding analytics and secure EHR integrations to deliver rapid turnaround times and transparent reporting for enterprise health systems.",
                     icon: Cpu,
                     badge: "High Velocity",
-                    borderHover: "hover:border-[#4bbac3]/40",
-                    glowColor: "group-hover:bg-[#4bbac3]/5",
-                    iconBg: "bg-[#4bbac3]/10 text-[#4bbac3]",
+                    cardBg: "bg-gradient-to-br from-[#3a6813] to-[#78bb30]",
                   },
                 ].map((item, i) => (
                   <motion.div
@@ -189,40 +177,40 @@ export default function WhyUsPage() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={cardVariants}
-                    className={`group relative p-8 bg-white border border-slate-100 rounded-3xl hover:shadow-[0_25px_50px_rgba(12,85,151,0.05)] ${item.borderHover} transition-all duration-300 text-left overflow-hidden flex flex-col justify-between h-[300px]`}
+                    className={`group relative p-8 ${item.cardBg} border border-white/10 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-left overflow-hidden flex flex-col justify-between h-[300px] z-10`}
                   >
-                    {/* Glowing card background blob */}
-                    <div
-                      className={`absolute -right-12 -bottom-12 size-36 rounded-full blur-3xl pointer-events-none transition-colors duration-500 ${item.glowColor}`}
-                    />
+                    {/* Abstract overlay to make it look premium */}
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05] pointer-events-none" />
+                    
+                    <div className="absolute -right-20 -top-20 size-64 bg-white/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-white/20 transition-colors duration-500" />
 
                     <div className="space-y-5 relative z-10">
                       <div className="flex items-center justify-between">
                         <div
-                          className={`size-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${item.iconBg} group-hover:bg-navy group-hover:text-white`}
+                          className="size-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform duration-300 shadow-inner backdrop-blur-sm"
                         >
                           <item.icon className="size-6" />
                         </div>
-                        <span className="text-[9px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-slate-50 text-slate-500 border border-slate-100 group-hover:bg-navy/5 group-hover:text-navy group-hover:border-navy/15 transition-all duration-300">
+                        <span className="text-[9px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-sm">
                           {item.badge}
                         </span>
                       </div>
 
                       <div className="space-y-3">
-                        <h3 className="text-lg font-black text-navy uppercase tracking-tight leading-none group-hover:text-primary transition-colors">
+                        <h3 className="text-lg font-black text-white uppercase tracking-tight leading-none group-hover:text-white/90 transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-xs font-semibold leading-relaxed text-slate-500 text-justify">
+                        <p className="text-xs font-semibold leading-relaxed text-white/80 text-justify">
                           {item.desc}
                         </p>
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-slate-50 flex items-center justify-between text-slate-400 group-hover:text-primary transition-colors relative z-10">
+                    <div className="pt-4 border-t border-white/20 flex items-center justify-between text-white/60 group-hover:text-white transition-colors relative z-10">
                       <span className="text-[9px] font-black uppercase tracking-widest">
                         Excellence Benchmark
                       </span>
-                      <Activity className="size-4 opacity-40 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" />
+                      <Activity className="size-4 opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" />
                     </div>
                   </motion.div>
                 ))}
@@ -250,40 +238,48 @@ export default function WhyUsPage() {
                 </p>
               </div>
 
-              {/* 4-Step Professional Roadmap Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+              {/* Professional Approaches Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                 {[
                   {
-                    title: "Clinical Foundation",
-                    desc: "Mastery of medical terminology, anatomy, and pathophysiology to ensure exact clinical abstraction from provider documentation.",
-                    icon: FileText,
-                    borderColor: "border-[#0c5597]/20 hover:border-[#0c5597]",
+                    title: 'The "Strategic Partner" Approach',
+                    subtitle: "Best if you want to be seen as an extension of their executive team.",
+                    desc: "Our commitment to client success is rooted in Revenue Integrity. We don't just assign codes; we provide the clinical insights and audit-ready precision that allow providers to focus on what matters most—patient outcomes. Your financial stability is the metric of our success.",
+                    icon: Users,
+                    accentColor: "from-[#0c5597] to-[#4bbac3]",
                     textColor: "text-[#0c5597]",
-                    bgAccent: "bg-[#0c5597]/10",
+                    iconBg: "bg-[#0c5597]/10",
+                    hoverBorder: "group-hover:border-[#0c5597]/40",
                   },
                   {
-                    title: "Regulatory Alignment",
-                    desc: "Comprehensive integration of CPT, ICD-10-CM, and HCPCS Level II coding guidelines tailored to complex payer policies.",
-                    icon: BookmarkCheck,
-                    borderColor: "border-[#4bbac3]/20 hover:border-[#4bbac3]",
+                    title: 'The "Efficiency & Speed" Approach',
+                    subtitle: "Best if your main selling point is technology or fast turnaround times.",
+                    desc: "We define success by the frictionless flow of data. By combining expert human intuition with precision coding workflows, we commit to reducing your Days Sales Outstanding (DSO) and eliminating the burden of denials. We succeed only when your reimbursement is seamless, timely, and complete.",
+                    icon: Zap,
+                    accentColor: "from-[#4bbac3] to-[#78bb30]",
                     textColor: "text-[#4bbac3]",
-                    bgAccent: "bg-[#4bbac3]/10",
+                    iconBg: "bg-[#4bbac3]/10",
+                    hoverBorder: "group-hover:border-[#4bbac3]/40",
                   },
                   {
-                    title: "Specialty Sandbox",
-                    desc: "Rigorous case abstraction and multi-tier auditing within simulated environments under the direct supervision of senior QA leadership.",
-                    icon: ShieldCheck,
-                    borderColor: "border-[#78bb30]/20 hover:border-[#78bb30]",
+                    title: 'The "Educational & Proactive" Approach',
+                    subtitle: "Best if you focus on Clinical Documentation Improvement (CDI) and consulting.",
+                    desc: "Client success means moving from reactive to proactive. We are committed to empowering your practice through transparent feedback loops and continuous documentation education. By bridging the gap between the physician's pen and the payer’s portal, we safeguard your practice against risk and lost revenue.",
+                    icon: GraduationCap,
+                    accentColor: "from-[#78bb30] to-[#0c5597]",
                     textColor: "text-[#78bb30]",
-                    bgAccent: "bg-[#78bb30]/10",
+                    iconBg: "bg-[#78bb30]/10",
+                    hoverBorder: "group-hover:border-[#78bb30]/40",
                   },
                   {
-                    title: "Corporate Deployment",
-                    desc: "Autonomous production coding across enterprise healthcare systems, maintaining strict 98.4%+ accuracy thresholds and continuous compliance.",
-                    icon: Award,
-                    borderColor: "border-slate-900/20 hover:border-slate-900",
-                    textColor: "text-slate-900",
-                    bgAccent: "bg-slate-900/10",
+                    title: 'The "Short & Punchy" (Modern) Approach',
+                    subtitle: "Best for website headers or marketing materials.",
+                    desc: "\"Your Care, Our Codes, Total Integrity.\" We are committed to elevating the business of medicine through zero-defect coding, advocate-level denial management, and a relentless focus on our clients' bottom line.",
+                    icon: Sparkles,
+                    accentColor: "from-slate-800 to-[#0c5597]",
+                    textColor: "text-slate-800",
+                    iconBg: "bg-slate-100",
+                    hoverBorder: "group-hover:border-slate-800/40",
                   },
                 ].map((item, i) => (
                   <motion.div
@@ -293,32 +289,48 @@ export default function WhyUsPage() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={cardVariants}
-                    className={`group relative p-8 bg-white border rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 text-left flex flex-col justify-between h-[320px] ${item.borderColor}`}
+                    className={`group relative bg-white rounded-[2.5rem] p-8 md:p-10 border border-slate-100 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(12,85,151,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between ${item.hoverBorder} h-full z-10`}
                   >
-                    <div className="space-y-6">
-                      <div className="flex items-center justify-between">
-                        <div
-                          className={`size-12 rounded-2xl flex items-center justify-center ${item.bgAccent} ${item.textColor} group-hover:scale-110 transition-transform duration-300 shadow-inner`}
-                        >
-                          <item.icon className="size-6" />
+                    {/* Top gradient accent line */}
+                    <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${item.accentColor} opacity-80 group-hover:opacity-100 transition-opacity`} />
+                    
+                    {/* Background glow on hover */}
+                    <div className={`absolute -right-20 -top-20 size-64 bg-gradient-to-br ${item.accentColor} rounded-full blur-[80px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none`} />
+
+                    <div className="space-y-8 relative z-10">
+                      <div className="flex flex-col space-y-5 border-b border-slate-50 pb-6">
+                        <div className="flex items-center justify-between">
+                          <div
+                            className={`size-14 rounded-2xl flex items-center justify-center ${item.iconBg} ${item.textColor} group-hover:scale-110 transition-transform duration-500`}
+                          >
+                            <item.icon className="size-6" />
+                          </div>
+                          <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
+                            Approach Model
+                          </span>
+                        </div>
+                        <div className="space-y-2">
+                          <p className={`text-xs font-bold leading-relaxed ${item.textColor} bg-slate-50/50 p-4 rounded-xl border border-slate-100`}>
+                            {item.subtitle}
+                          </p>
                         </div>
                       </div>
 
-                      <div className="space-y-3">
-                        <h3 className="text-lg font-black text-navy uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                      <div className="space-y-4">
+                        <h3 className="text-xl md:text-2xl font-black text-navy tracking-tight leading-tight group-hover:text-primary transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-xs font-semibold leading-relaxed text-slate-500 text-justify">
+                        <p className="text-sm md:text-base font-semibold leading-relaxed text-slate-500 text-justify">
                           {item.desc}
                         </p>
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-slate-50 flex items-center justify-between text-slate-400 group-hover:text-primary transition-colors">
-                      <span className="text-[9px] font-black uppercase tracking-widest">
-                        Milestone Verified
+                    <div className="pt-8 mt-8 flex items-center justify-between text-slate-300 group-hover:text-primary transition-colors relative z-10">
+                      <span className="text-[10px] font-black uppercase tracking-widest">
+                        Strategic Objective
                       </span>
-                      <CheckCircle className="size-4 opacity-40 group-hover:opacity-100 transition-opacity" />
+                      <ArrowRight className="size-5 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
                     </div>
                   </motion.div>
                 ))}

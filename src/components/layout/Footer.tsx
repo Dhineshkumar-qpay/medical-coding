@@ -120,7 +120,6 @@ export function Footer() {
                 { name: "Why Us", href: "/why-us" },
                 { name: "Contact Us", href: "/contact" },
                 { name: "About Us", href: "/about" },
-                { name: "FAQ", href: "/faq" },
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link
@@ -244,34 +243,30 @@ export function Footer() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 space-y-6 text-left">
+                <div className="p-8 text-left">
                   {(() => {
                     const cleanText = selectedSpecialty.description.replace(/([a-z])\.([A-Z])/g, "$1. $2");
                     const sentences = (cleanText.match(/[^.!?]+[.!?]+/g) || [cleanText]).map((s) => s.trim());
-                    const c1 = Math.max(1, Math.ceil(sentences.length / 3));
-                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 3));
+                    const c1 = Math.max(1, Math.ceil(sentences.length / 4));
+                    const c2 = Math.max(c1 + 1, Math.ceil((2 * sentences.length) / 4));
+                    const c3 = Math.max(c2 + 1, Math.ceil((3 * sentences.length) / 4));
+
                     const p1 = sentences.slice(0, c1).join(" ");
                     const p2 = sentences.slice(c1, c2).join(" ");
-                    const p3 = sentences.slice(c2).join(" ");
+                    const p3 = sentences.slice(c2, c3).join(" ");
+                    const p4 = sentences.slice(c3).join(" ");
 
                     return (
-                      <>
-                        {p1 && (
-                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                            &quot;{p1}&quot;
-                          </p>
-                        )}
-                        {p2 && (
-                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                            &quot;{p2}&quot;
-                          </p>
-                        )}
-                        {p3 && (
-                          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify">
-                            &quot;{p3}&quot;
-                          </p>
-                        )}
-                      </>
+                      <div className="space-y-4">
+                        {[p1, p2, p3, p4].filter(Boolean).map((p, idx) => (
+                          <div key={idx} className="relative bg-white border border-slate-100 p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(12,85,151,0.08)] hover:-translate-y-0.5 transition-all duration-300 group overflow-hidden">
+                            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#0c5597] to-[#4bbac3] opacity-80 group-hover:opacity-100 transition-opacity" />
+                            <p className="text-sm md:text-base text-slate-600 leading-relaxed font-semibold text-justify pl-1">
+                              {p}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     );
                   })()}
                 </div>
